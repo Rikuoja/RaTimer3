@@ -88,20 +88,23 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" misplaced="YES" text="Aika" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbM-an-WXA">
-                                            <rect key="frame" x="250" y="1" width="231" height="77"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalCompressionResistancePriority="250" text="Aika" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbM-an-WXA">
+                                            <rect key="frame" x="369" y="1" width="100" height="77"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="sSV-x6-sDq"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" misplaced="YES" text="Nimi" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNZ-hm-fXN">
-                                            <rect key="frame" x="16" y="1" width="234" height="77"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Nimi" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNZ-hm-fXN">
+                                            <rect key="frame" x="16" y="1" width="353" height="77"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9d-Uk-cBK">
-                                            <rect key="frame" x="505" y="25" width="46" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9d-Uk-cBK">
+                                            <rect key="frame" x="489" y="25" width="46" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="46" id="npD-bm-zBW"/>
                                             </constraints>
@@ -112,15 +115,15 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="vNZ-hm-fXN" firstAttribute="firstBaseline" secondItem="WbM-an-WXA" secondAttribute="firstBaseline" id="1Hg-lW-Zrd"/>
-                                        <constraint firstItem="vNZ-hm-fXN" firstAttribute="baseline" secondItem="WbM-an-WXA" secondAttribute="baseline" id="1cB-lj-FLC"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="vNZ-hm-fXN" secondAttribute="bottom" constant="-9" id="EPe-i5-6Nl"/>
+                                        <constraint firstItem="vNZ-hm-fXN" firstAttribute="baseline" secondItem="WbM-an-WXA" secondAttribute="baseline" id="59Y-0R-c2g"/>
+                                        <constraint firstItem="vNZ-hm-fXN" firstAttribute="firstBaseline" secondItem="WbM-an-WXA" secondAttribute="firstBaseline" id="7Mj-K2-2SZ"/>
+                                        <constraint firstItem="vNZ-hm-fXN" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leadingMargin" constant="8" id="8Nv-Mv-vKk"/>
                                         <constraint firstItem="A9d-Uk-cBK" firstAttribute="leading" secondItem="WbM-an-WXA" secondAttribute="trailing" constant="20" id="FkX-C2-QbM"/>
                                         <constraint firstItem="A9d-Uk-cBK" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="topMargin" constant="17" id="G1c-KV-Zh7"/>
-                                        <constraint firstItem="WbM-an-WXA" firstAttribute="leading" secondItem="vNZ-hm-fXN" secondAttribute="trailing" id="Yej-Af-KrH"/>
+                                        <constraint firstItem="WbM-an-WXA" firstAttribute="leading" secondItem="vNZ-hm-fXN" secondAttribute="trailing" id="Pmn-Xa-2P0"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="A9d-Uk-cBK" secondAttribute="bottom" constant="14" id="ZTJ-fh-QZ3"/>
-                                        <constraint firstItem="vNZ-hm-fXN" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="topMargin" constant="-7" id="cj2-lq-2Nk"/>
-                                        <constraint firstItem="vNZ-hm-fXN" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leadingMargin" constant="8" id="jr1-Kw-Qzk"/>
+                                        <constraint firstItem="vNZ-hm-fXN" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="topMargin" constant="-7" id="jXg-KK-9Ep"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="vNZ-hm-fXN" secondAttribute="bottom" constant="-9" id="ko1-oh-pv3"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="A9d-Uk-cBK" secondAttribute="trailing" constant="10" id="o7Y-26-8aU"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -128,6 +131,7 @@
                                 <connections>
                                     <outlet property="aikaLabel" destination="WbM-an-WXA" id="AdV-Nr-LQV"/>
                                     <outlet property="nimiLabel" destination="vNZ-hm-fXN" id="xeS-IU-WVW"/>
+                                    <outlet property="playButton" destination="A9d-Uk-cBK" id="iMc-xU-aX9"/>
                                     <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="6S0-TO-JiA"/>
                                 </connections>
                             </tableViewCell>
@@ -142,7 +146,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="-637"/>
+            <point key="canvasLocation" x="709" y="-641"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
