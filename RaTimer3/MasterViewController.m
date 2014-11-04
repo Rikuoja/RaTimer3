@@ -103,7 +103,9 @@
     AjankayttoKohde *object = self.objects[indexPath.row];
     cell.nimiLabel.text = object.nimi;
     cell.aikaLabel.text = object.aika;
-    cell.kuvaView.image = [UIImage imageNamed:object.kuva];
+    //cell.kuvaView.image = [UIImage imageNamed:object.kuva];
+    //piirretäänkin kuva taustalle:
+    cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:object.kuva]] colorWithAlphaComponent:0.3];
     
     return cell;
 }
