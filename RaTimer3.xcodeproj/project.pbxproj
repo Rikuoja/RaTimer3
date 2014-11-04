@@ -15,6 +15,10 @@
 		3243DFE01A08EC1500C64A65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3243DFDF1A08EC1500C64A65 /* Images.xcassets */; };
 		3243DFE31A08EC1500C64A65 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3243DFE11A08EC1500C64A65 /* LaunchScreen.xib */; };
 		3243DFEF1A08EC1500C64A65 /* RaTimer3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3243DFEE1A08EC1500C64A65 /* RaTimer3Tests.m */; };
+		3243E0001A08EC9900C64A65 /* OmaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3243DFFE1A08EC9900C64A65 /* OmaTableViewCell.m */; };
+		3243E0011A08EC9900C64A65 /* 256px-Common_Squirrel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3243DFFF1A08EC9900C64A65 /* 256px-Common_Squirrel.jpg */; };
+		3243E0051A08ECBB00C64A65 /* AjankayttoKohde.m in Sources */ = {isa = PBXBuildFile; fileRef = 3243E0031A08ECBB00C64A65 /* AjankayttoKohde.m */; };
+		3243E0061A08ECBB00C64A65 /* TallennetutKohteet.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3243E0041A08ECBB00C64A65 /* TallennetutKohteet.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,12 @@
 		3243DFE81A08EC1500C64A65 /* RaTimer3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaTimer3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3243DFED1A08EC1500C64A65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3243DFEE1A08EC1500C64A65 /* RaTimer3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RaTimer3Tests.m; sourceTree = "<group>"; };
+		3243DFFD1A08EC9900C64A65 /* OmaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OmaTableViewCell.h; path = ../../RaTimer/OmaTableViewCell.h; sourceTree = "<group>"; };
+		3243DFFE1A08EC9900C64A65 /* OmaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OmaTableViewCell.m; path = ../../RaTimer/OmaTableViewCell.m; sourceTree = "<group>"; };
+		3243DFFF1A08EC9900C64A65 /* 256px-Common_Squirrel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "256px-Common_Squirrel.jpg"; path = "../../../Downloads/256px-Common_Squirrel.jpg"; sourceTree = "<group>"; };
+		3243E0021A08ECBB00C64A65 /* AjankayttoKohde.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AjankayttoKohde.h; path = ../../RaTimer/RaTimer/AjankayttoKohde.h; sourceTree = "<group>"; };
+		3243E0031A08ECBB00C64A65 /* AjankayttoKohde.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AjankayttoKohde.m; path = ../../RaTimer/RaTimer/AjankayttoKohde.m; sourceTree = "<group>"; };
+		3243E0041A08ECBB00C64A65 /* TallennetutKohteet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TallennetutKohteet.plist; path = ../../RaTimer/RaTimer/TallennetutKohteet.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +94,12 @@
 		3243DFCE1A08EC1500C64A65 /* RaTimer3 */ = {
 			isa = PBXGroup;
 			children = (
+				3243E0021A08ECBB00C64A65 /* AjankayttoKohde.h */,
+				3243E0031A08ECBB00C64A65 /* AjankayttoKohde.m */,
+				3243E0041A08ECBB00C64A65 /* TallennetutKohteet.plist */,
+				3243DFFD1A08EC9900C64A65 /* OmaTableViewCell.h */,
+				3243DFFE1A08EC9900C64A65 /* OmaTableViewCell.m */,
+				3243DFFF1A08EC9900C64A65 /* 256px-Common_Squirrel.jpg */,
 				3243DFD31A08EC1500C64A65 /* AppDelegate.h */,
 				3243DFD41A08EC1500C64A65 /* AppDelegate.m */,
 				3243DFD61A08EC1500C64A65 /* MasterViewController.h */,
@@ -205,6 +221,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3243DFDE1A08EC1500C64A65 /* Main.storyboard in Resources */,
+				3243E0011A08EC9900C64A65 /* 256px-Common_Squirrel.jpg in Resources */,
+				3243E0061A08ECBB00C64A65 /* TallennetutKohteet.plist in Resources */,
 				3243DFE31A08EC1500C64A65 /* LaunchScreen.xib in Resources */,
 				3243DFE01A08EC1500C64A65 /* Images.xcassets in Resources */,
 			);
@@ -226,8 +244,10 @@
 			files = (
 				3243DFD51A08EC1500C64A65 /* AppDelegate.m in Sources */,
 				3243DFD81A08EC1500C64A65 /* MasterViewController.m in Sources */,
+				3243E0001A08EC9900C64A65 /* OmaTableViewCell.m in Sources */,
 				3243DFD21A08EC1500C64A65 /* main.m in Sources */,
 				3243DFDB1A08EC1500C64A65 /* DetailViewController.m in Sources */,
+				3243E0051A08ECBB00C64A65 /* AjankayttoKohde.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
