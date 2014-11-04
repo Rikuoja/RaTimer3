@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3243DFD21A08EC1500C64A65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3243DFD11A08EC1500C64A65 /* main.m */; };
+		3243DFD51A08EC1500C64A65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3243DFD41A08EC1500C64A65 /* AppDelegate.m */; };
+		3243DFD81A08EC1500C64A65 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3243DFD71A08EC1500C64A65 /* MasterViewController.m */; };
+		3243DFDB1A08EC1500C64A65 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3243DFDA1A08EC1500C64A65 /* DetailViewController.m */; };
+		3243DFDE1A08EC1500C64A65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3243DFDC1A08EC1500C64A65 /* Main.storyboard */; };
+		3243DFE01A08EC1500C64A65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3243DFDF1A08EC1500C64A65 /* Images.xcassets */; };
+		3243DFE31A08EC1500C64A65 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3243DFE11A08EC1500C64A65 /* LaunchScreen.xib */; };
+		3243DFEF1A08EC1500C64A65 /* RaTimer3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3243DFEE1A08EC1500C64A65 /* RaTimer3Tests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3243DFE91A08EC1500C64A65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3243DFC41A08EC1500C64A65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3243DFCB1A08EC1500C64A65;
+			remoteInfo = RaTimer3;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3243DFCC1A08EC1500C64A65 /* RaTimer3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaTimer3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3243DFD01A08EC1500C64A65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3243DFD11A08EC1500C64A65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3243DFD31A08EC1500C64A65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3243DFD41A08EC1500C64A65 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3243DFD61A08EC1500C64A65 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		3243DFD71A08EC1500C64A65 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		3243DFD91A08EC1500C64A65 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		3243DFDA1A08EC1500C64A65 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		3243DFDD1A08EC1500C64A65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3243DFDF1A08EC1500C64A65 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3243DFE21A08EC1500C64A65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		3243DFE81A08EC1500C64A65 /* RaTimer3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaTimer3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3243DFED1A08EC1500C64A65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3243DFEE1A08EC1500C64A65 /* RaTimer3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RaTimer3Tests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3243DFC91A08EC1500C64A65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3243DFE51A08EC1500C64A65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3243DFC31A08EC1500C64A65 = {
+			isa = PBXGroup;
+			children = (
+				3243DFCE1A08EC1500C64A65 /* RaTimer3 */,
+				3243DFEB1A08EC1500C64A65 /* RaTimer3Tests */,
+				3243DFCD1A08EC1500C64A65 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3243DFCD1A08EC1500C64A65 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3243DFCC1A08EC1500C64A65 /* RaTimer3.app */,
+				3243DFE81A08EC1500C64A65 /* RaTimer3Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3243DFCE1A08EC1500C64A65 /* RaTimer3 */ = {
+			isa = PBXGroup;
+			children = (
+				3243DFD31A08EC1500C64A65 /* AppDelegate.h */,
+				3243DFD41A08EC1500C64A65 /* AppDelegate.m */,
+				3243DFD61A08EC1500C64A65 /* MasterViewController.h */,
+				3243DFD71A08EC1500C64A65 /* MasterViewController.m */,
+				3243DFD91A08EC1500C64A65 /* DetailViewController.h */,
+				3243DFDA1A08EC1500C64A65 /* DetailViewController.m */,
+				3243DFDC1A08EC1500C64A65 /* Main.storyboard */,
+				3243DFDF1A08EC1500C64A65 /* Images.xcassets */,
+				3243DFE11A08EC1500C64A65 /* LaunchScreen.xib */,
+				3243DFCF1A08EC1500C64A65 /* Supporting Files */,
+			);
+			path = RaTimer3;
+			sourceTree = "<group>";
+		};
+		3243DFCF1A08EC1500C64A65 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3243DFD01A08EC1500C64A65 /* Info.plist */,
+				3243DFD11A08EC1500C64A65 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3243DFEB1A08EC1500C64A65 /* RaTimer3Tests */ = {
+			isa = PBXGroup;
+			children = (
+				3243DFEE1A08EC1500C64A65 /* RaTimer3Tests.m */,
+				3243DFEC1A08EC1500C64A65 /* Supporting Files */,
+			);
+			path = RaTimer3Tests;
+			sourceTree = "<group>";
+		};
+		3243DFEC1A08EC1500C64A65 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3243DFED1A08EC1500C64A65 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3243DFCB1A08EC1500C64A65 /* RaTimer3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3243DFF21A08EC1500C64A65 /* Build configuration list for PBXNativeTarget "RaTimer3" */;
+			buildPhases = (
+				3243DFC81A08EC1500C64A65 /* Sources */,
+				3243DFC91A08EC1500C64A65 /* Frameworks */,
+				3243DFCA1A08EC1500C64A65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RaTimer3;
+			productName = RaTimer3;
+			productReference = 3243DFCC1A08EC1500C64A65 /* RaTimer3.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3243DFE71A08EC1500C64A65 /* RaTimer3Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3243DFF51A08EC1500C64A65 /* Build configuration list for PBXNativeTarget "RaTimer3Tests" */;
+			buildPhases = (
+				3243DFE41A08EC1500C64A65 /* Sources */,
+				3243DFE51A08EC1500C64A65 /* Frameworks */,
+				3243DFE61A08EC1500C64A65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3243DFEA1A08EC1500C64A65 /* PBXTargetDependency */,
+			);
+			name = RaTimer3Tests;
+			productName = RaTimer3Tests;
+			productReference = 3243DFE81A08EC1500C64A65 /* RaTimer3Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3243DFC41A08EC1500C64A65 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Riku Oja";
+				TargetAttributes = {
+					3243DFCB1A08EC1500C64A65 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					3243DFE71A08EC1500C64A65 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 3243DFCB1A08EC1500C64A65;
+					};
+				};
+			};
+			buildConfigurationList = 3243DFC71A08EC1500C64A65 /* Build configuration list for PBXProject "RaTimer3" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3243DFC31A08EC1500C64A65;
+			productRefGroup = 3243DFCD1A08EC1500C64A65 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3243DFCB1A08EC1500C64A65 /* RaTimer3 */,
+				3243DFE71A08EC1500C64A65 /* RaTimer3Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3243DFCA1A08EC1500C64A65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3243DFDE1A08EC1500C64A65 /* Main.storyboard in Resources */,
+				3243DFE31A08EC1500C64A65 /* LaunchScreen.xib in Resources */,
+				3243DFE01A08EC1500C64A65 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3243DFE61A08EC1500C64A65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3243DFC81A08EC1500C64A65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3243DFD51A08EC1500C64A65 /* AppDelegate.m in Sources */,
+				3243DFD81A08EC1500C64A65 /* MasterViewController.m in Sources */,
+				3243DFD21A08EC1500C64A65 /* main.m in Sources */,
+				3243DFDB1A08EC1500C64A65 /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3243DFE41A08EC1500C64A65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3243DFEF1A08EC1500C64A65 /* RaTimer3Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3243DFEA1A08EC1500C64A65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3243DFCB1A08EC1500C64A65 /* RaTimer3 */;
+			targetProxy = 3243DFE91A08EC1500C64A65 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3243DFDC1A08EC1500C64A65 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3243DFDD1A08EC1500C64A65 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3243DFE11A08EC1500C64A65 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3243DFE21A08EC1500C64A65 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3243DFF01A08EC1500C64A65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3243DFF11A08EC1500C64A65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3243DFF31A08EC1500C64A65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RaTimer3/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3243DFF41A08EC1500C64A65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RaTimer3/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3243DFF61A08EC1500C64A65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RaTimer3Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaTimer3.app/RaTimer3";
+			};
+			name = Debug;
+		};
+		3243DFF71A08EC1500C64A65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RaTimer3Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaTimer3.app/RaTimer3";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3243DFC71A08EC1500C64A65 /* Build configuration list for PBXProject "RaTimer3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3243DFF01A08EC1500C64A65 /* Debug */,
+				3243DFF11A08EC1500C64A65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3243DFF21A08EC1500C64A65 /* Build configuration list for PBXNativeTarget "RaTimer3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3243DFF31A08EC1500C64A65 /* Debug */,
+				3243DFF41A08EC1500C64A65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3243DFF51A08EC1500C64A65 /* Build configuration list for PBXNativeTarget "RaTimer3Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3243DFF61A08EC1500C64A65 /* Debug */,
+				3243DFF71A08EC1500C64A65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3243DFC41A08EC1500C64A65 /* Project object */;
+}
