@@ -8,6 +8,8 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "AjankayttoKohde.h"
+#import "OmaTableViewCell.h"
 
 @interface MasterViewController ()
 
@@ -32,6 +34,30 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    //toistaiseksi luetaan plistissä olevat arrayt ja luodaan oliot:
+    NSArray *ajankayttokohteet;
+    NSArray *kuvat;
+    NSArray *kaytetytAjat;
+
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"TallennetutKohteet" ofType:@"plist"];
+    
+    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
+    
+    ajankayttokohteet = [dict objectForKey:@"Nimet"];
+    kuvat = [dict objectForKey:@"Kuvat"];
+    kaytetytAjat = [dict objectForKey:@"AjatMinuutteina"];
+    _objects = [NSMutableArray arrayWithCapacity:[ajankayttokohteet count]];
+    
+    for (NSString *kohteennimi in ajankayttokohteet) {
+        AjankayttoKohde *uusikohde = [[AjankayttoKohde alloc] init];
+        uusikohde.nimi = kohteennimi;
+        NSUInteger kohteenIndeksi = [ajankayttokohteet indexOfObject:kohteennimi]; //key-value-coding
+        uusikohde.aika = kaytetytAjat[kohteenIndeksi];
+        uusikohde.kuva = kuvat[kohteenIndeksi];
+        [_objects addObject:uusikohde];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,10 +98,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    OmaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDate *object = self.objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    AjankayttoKohde *object = self.objects[indexPath.row];
+    cell.nimiLabel.text = object.nimi;
+    cell.aikaLabel.text = object.aika;
+    cell.kuvaView.image = [UIImage imageNamed:object.kuva];
+    
     return cell;
 }
 
@@ -91,6 +120,11 @@
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 78;
 }
 
 @end
