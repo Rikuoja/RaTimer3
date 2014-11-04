@@ -52,7 +52,7 @@
     for (NSString *kohteennimi in ajankayttokohteet) {
         AjankayttoKohde *uusikohde = [[AjankayttoKohde alloc] init];
         uusikohde.nimi = kohteennimi;
-        NSUInteger kohteenIndeksi = [ajankayttokohteet indexOfObject:kohteennimi]; //key-value-coding
+        NSUInteger kohteenIndeksi = [ajankayttokohteet indexOfObject:kohteennimi]; //identifioidaan kohteet vain nimellä!
         uusikohde.aika = kaytetytAjat[kohteenIndeksi];
         uusikohde.kuva = kuvat[kohteenIndeksi];
         [_objects addObject:uusikohde];
@@ -106,6 +106,8 @@
     //cell.kuvaView.image = [UIImage imageNamed:object.kuva];
     //piirretäänkin kuva taustalle:
     cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:object.kuva]] colorWithAlphaComponent:0.3];
+    
+    cell.playButton = [UIButton buttonWithType:UIButtonTypeSystem];
     
     return cell;
 }
