@@ -43,7 +43,23 @@
     
     //kirjoittaa aloitusplistin tiedostoon:
     /*self.objects = [NSMutableArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:@"Opetus",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Materiaali & suunnittelu",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Muut työt",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Opiskelu",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Oravien ruokinta",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],nil];
-     [self.objects writeToFile:path atomically:YES];*/
+    
+    [self.objects writeToFile:path atomically:YES];*/
+    
+    //Propertylistserialization tekee täsmälleen saman optiolla NSDataWritingAtomic:
+    /*
+    if (![NSPropertyListSerialization propertyList:self.objects isValidForFormat:kCFPropertyListXMLFormat_v1_0]) {
+        NSLog(@"Ei onnaa");
+    }
+    
+    NSError *virhe;
+    NSData *data = [NSPropertyListSerialization dataWithPropertyList:self.objects format:kCFPropertyListXMLFormat_v1_0 options:0 error:&virhe];
+    if (data == nil) {
+        NSLog(@"Virhe: ", virhe);
+    }
+    
+    BOOL writeStatus = [data writeToFile:path options:NSDataWritingAtomic error:&virhe];
+    */
     
     //kopioidaan documentdirectoryyn testiplist, jos käyttäjällä ei ole plistiä:
     /*NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -52,8 +68,11 @@
         NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"TallennetutKohteet" ofType:@"plist"];
         [fileManager copyItemAtPath:sourcePath toPath:path error:nil];
     }*/
-    //käytetäänkin suoraan NSArray writetofileä:
-    self.objects = [NSMutableArray arrayWithContentsOfFile:path];
+    //self.objects = [NSMutableArray arrayWithContentsOfFile:path];
+    NSError *virhe;
+    NSPropertyListFormat alkuperainenFormaatti;
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    self.objects = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListMutableContainers format:&alkuperainenFormaatti error:&virhe];
     
     /*
      
@@ -126,7 +145,7 @@
     cell.aikaLabel.text = @"0";
     //cell.kuvaView.image = [UIImage imageNamed:object.kuva];
     //piirretäänkin kuva taustalle:
-    cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:[object objectForKey:@"Nimi"]]] colorWithAlphaComponent:0.3];
+    cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:[object objectForKey:@"Kuva"]]] colorWithAlphaComponent:0.3];
     
     cell.playButton = [UIButton buttonWithType:UIButtonTypeSystem];
     
