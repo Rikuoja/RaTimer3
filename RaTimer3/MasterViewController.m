@@ -40,7 +40,18 @@
     NSArray *kuvat;
     NSArray *kaytetytAjat;
 
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"TallennetutKohteet" ofType:@"plist"];
+    //NSString *path = [[NSBundle mainBundle] pathForResource:@"TallennetutKohteet" ofType:@"plist"];
+    //luetaan documentdirectorysta:
+    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    path = [path stringByAppendingPathComponent:@"TallennetutKohteet.plist"];
+    
+    //kopioidaan documentdirectoryyn testiplist, jos käyttäjällä ei ole plistiä:
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if (![fileManager fileExistsAtPath:path]) {
+        NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"TallennetutKohteet" ofType:@"plist"];
+        [fileManager copyItemAtPath:sourcePath toPath:path error:nil];
+    }
     
     NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
     
