@@ -17,8 +17,6 @@
 		3243DFEF1A08EC1500C64A65 /* RaTimer3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3243DFEE1A08EC1500C64A65 /* RaTimer3Tests.m */; };
 		3243E0001A08EC9900C64A65 /* OmaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3243DFFE1A08EC9900C64A65 /* OmaTableViewCell.m */; };
 		3243E0011A08EC9900C64A65 /* 256px-Common_Squirrel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3243DFFF1A08EC9900C64A65 /* 256px-Common_Squirrel.jpg */; };
-		3243E0051A08ECBB00C64A65 /* AjankayttoKohde.m in Sources */ = {isa = PBXBuildFile; fileRef = 3243E0031A08ECBB00C64A65 /* AjankayttoKohde.m */; };
-		3243E0061A08ECBB00C64A65 /* VanhatKohteet.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3243E0041A08ECBB00C64A65 /* VanhatKohteet.plist */; };
 		3243E0081A0BC85F00C64A65 /* TallennetutKohteet.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3243E0071A0BC85F00C64A65 /* TallennetutKohteet.plist */; };
 /* End PBXBuildFile section */
 
@@ -51,9 +49,6 @@
 		3243DFFD1A08EC9900C64A65 /* OmaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OmaTableViewCell.h; path = ../../RaTimer/OmaTableViewCell.h; sourceTree = "<group>"; };
 		3243DFFE1A08EC9900C64A65 /* OmaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OmaTableViewCell.m; path = ../../RaTimer/OmaTableViewCell.m; sourceTree = "<group>"; };
 		3243DFFF1A08EC9900C64A65 /* 256px-Common_Squirrel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "256px-Common_Squirrel.jpg"; path = "../../../Downloads/256px-Common_Squirrel.jpg"; sourceTree = "<group>"; };
-		3243E0021A08ECBB00C64A65 /* AjankayttoKohde.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AjankayttoKohde.h; path = ../../RaTimer/RaTimer/AjankayttoKohde.h; sourceTree = "<group>"; };
-		3243E0031A08ECBB00C64A65 /* AjankayttoKohde.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AjankayttoKohde.m; path = ../../RaTimer/RaTimer/AjankayttoKohde.m; sourceTree = "<group>"; };
-		3243E0041A08ECBB00C64A65 /* VanhatKohteet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = VanhatKohteet.plist; path = ../../RaTimer/RaTimer/VanhatKohteet.plist; sourceTree = "<group>"; };
 		3243E0071A0BC85F00C64A65 /* TallennetutKohteet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TallennetutKohteet.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,10 +91,7 @@
 		3243DFCE1A08EC1500C64A65 /* RaTimer3 */ = {
 			isa = PBXGroup;
 			children = (
-				3243E0041A08ECBB00C64A65 /* VanhatKohteet.plist */,
 				3243E0071A0BC85F00C64A65 /* TallennetutKohteet.plist */,
-				3243E0021A08ECBB00C64A65 /* AjankayttoKohde.h */,
-				3243E0031A08ECBB00C64A65 /* AjankayttoKohde.m */,
 				3243DFFD1A08EC9900C64A65 /* OmaTableViewCell.h */,
 				3243DFFE1A08EC9900C64A65 /* OmaTableViewCell.m */,
 				3243DFFF1A08EC9900C64A65 /* 256px-Common_Squirrel.jpg */,
@@ -225,7 +217,6 @@
 			files = (
 				3243DFDE1A08EC1500C64A65 /* Main.storyboard in Resources */,
 				3243E0011A08EC9900C64A65 /* 256px-Common_Squirrel.jpg in Resources */,
-				3243E0061A08ECBB00C64A65 /* VanhatKohteet.plist in Resources */,
 				3243DFE31A08EC1500C64A65 /* LaunchScreen.xib in Resources */,
 				3243E0081A0BC85F00C64A65 /* TallennetutKohteet.plist in Resources */,
 				3243DFE01A08EC1500C64A65 /* Images.xcassets in Resources */,
@@ -251,7 +242,6 @@
 				3243E0001A08EC9900C64A65 /* OmaTableViewCell.m in Sources */,
 				3243DFD21A08EC1500C64A65 /* main.m in Sources */,
 				3243DFDB1A08EC1500C64A65 /* DetailViewController.m in Sources */,
-				3243E0051A08ECBB00C64A65 /* AjankayttoKohde.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +434,7 @@
 				3243DFF41A08EC1500C64A65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3243DFF51A08EC1500C64A65 /* Build configuration list for PBXNativeTarget "RaTimer3Tests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +443,7 @@
 				3243DFF71A08EC1500C64A65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

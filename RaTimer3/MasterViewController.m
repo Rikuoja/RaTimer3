@@ -41,7 +41,15 @@
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     path = [path stringByAppendingPathComponent:@"TallennetutKohteet.plist"];
     
-    //kirjoittaa aloitusplistin tiedostoon:
+    //kopioidaan documentdirectoryyn testiplist, jos käyttäjällä ei ole plistiä:
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if (![fileManager fileExistsAtPath:path]) {
+        NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"TallennetutKohteet" ofType:@"plist"];
+        [fileManager copyItemAtPath:sourcePath toPath:path error:nil];
+    }
+    
+    //Tällä voi kirjoittaa aloitusplistin tiedostoon:
     /*self.objects = [NSMutableArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:@"Opetus",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Materiaali & suunnittelu",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Muut työt",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Opiskelu",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Oravien ruokinta",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],nil];
     
     [self.objects writeToFile:path atomically:YES];*/
@@ -61,43 +69,11 @@
     BOOL writeStatus = [data writeToFile:path options:NSDataWritingAtomic error:&virhe];
     */
     
-    //kopioidaan documentdirectoryyn testiplist, jos käyttäjällä ei ole plistiä:
-    /*NSFileManager *fileManager = [NSFileManager defaultManager];
-    
-    if (![fileManager fileExistsAtPath:path]) {
-        NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"TallennetutKohteet" ofType:@"plist"];
-        [fileManager copyItemAtPath:sourcePath toPath:path error:nil];
-    }*/
-    //self.objects = [NSMutableArray arrayWithContentsOfFile:path];
+    //luodaan tiedostosta mutablearray, jossa sisällä mutabledictionaryja:
     NSError *virhe;
     NSPropertyListFormat alkuperainenFormaatti;
     NSData *data = [NSData dataWithContentsOfFile:path];
     self.objects = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListMutableContainers format:&alkuperainenFormaatti error:&virhe];
-    
-    /*
-     
-    //toistaiseksi luetaan plistissä olevat arrayt ja luodaan oliot:
-     NSArray *ajankayttokohteet;
-     NSArray *kuvat;
-     NSArray *kaytetytAjat;
- 
-     
-    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
-    
-    ajankayttokohteet = [dict objectForKey:@"Nimet"];
-    kuvat = [dict objectForKey:@"Kuvat"];
-    kaytetytAjat = [dict objectForKey:@"AjatMinuutteina"];
-    _objects = [NSMutableArray arrayWithCapacity:[ajankayttokohteet count]];
-    
-    for (NSString *kohteennimi in ajankayttokohteet) {
-        AjankayttoKohde *uusikohde = [[AjankayttoKohde alloc] init];
-        uusikohde.nimi = kohteennimi;
-        NSUInteger kohteenIndeksi = [ajankayttokohteet indexOfObject:kohteennimi]; //identifioidaan kohteet vain nimellä!
-        uusikohde.aika = kaytetytAjat[kohteenIndeksi];
-        uusikohde.kuva = kuvat[kohteenIndeksi];
-        [_objects addObject:uusikohde];
-    }
-     */
 }
 
 - (void)didReceiveMemoryWarning {
