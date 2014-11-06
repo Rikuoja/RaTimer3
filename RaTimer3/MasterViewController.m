@@ -115,13 +115,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     OmaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDictionary *object = self.objects[indexPath.row];
-    cell.nimiLabel.text = [object objectForKey:@"Nimi"];
+    NSMutableDictionary *object = self.objects[indexPath.row];
+    cell.nimiLabel.text = object[@"Nimi"];
     cell.aikaLabel.text = @"0";
     //piirretään kuva taustalle:
-    cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:[object objectForKey:@"Kuva"]]] colorWithAlphaComponent:0.3];
+    cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:object[@"Kuva"]]] colorWithAlphaComponent:0.3];
     
     cell.playButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    //lisätään buttoniin target:
+    [cell.playButton addTarget:self action:@selector(playPainettu:withEvent:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }
@@ -143,6 +145,17 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 78;
+}
+
+#pragma mark - UIEvent
+
+- (void)playPainettu:(UIButton *)painettuNappi withEvent:(UIEvent *)event {
+    painettuNappi.selected = !painettuNappi.selected;
+    //eventistä tableview saa tietää, mihin soluun osuttiin:
+    UITouch *touch = [[event touchesForView:painettuNappi] anyObject]; //jos kosketuksia useampi, otetaan yksi
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint: [touch locationInView: self.tableView]];
+    NSMutableDictionary *valittuKohde = self.objects[indexPath.row];
+    if ([valittuKohde[@"Kaytossa"] boolValue]) [valittuKohde setValue:@NO forKey:@"Kaytossa"]; else[valittuKohde setValue:@NO forKey:@"Kaytossa"];
 }
 
 #pragma mark - IBAction

@@ -115,9 +115,6 @@
                                             <state key="selected" title="Stop">
                                                 <color key="titleColor" red="0.97647064920000004" green="0.03529411927" blue="0.1215686351" alpha="1" colorSpace="deviceRGB"/>
                                             </state>
-                                            <connections>
-                                                <action selector="playPainettu:" destination="7bK-jq-Zjz" eventType="touchUpInside" id="0I4-UD-C4f"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
