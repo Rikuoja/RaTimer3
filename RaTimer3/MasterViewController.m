@@ -13,6 +13,7 @@
 
 @interface MasterViewController ()
 
+//tallennetaan kohteet yhteen arrayhin:
 @property NSMutableArray *objects;
 @end
 
@@ -35,24 +36,33 @@
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
-    //toistaiseksi luetaan plistissä olevat arrayt ja luodaan oliot:
-    NSArray *ajankayttokohteet;
-    NSArray *kuvat;
-    NSArray *kaytetytAjat;
-
     //NSString *path = [[NSBundle mainBundle] pathForResource:@"TallennetutKohteet" ofType:@"plist"];
     //luetaan documentdirectorysta:
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     path = [path stringByAppendingPathComponent:@"TallennetutKohteet.plist"];
     
+    //kirjoittaa aloitusplistin tiedostoon:
+    /*self.objects = [NSMutableArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:@"Opetus",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Materiaali & suunnittelu",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Muut työt",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Opiskelu",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Oravien ruokinta",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],nil];
+     [self.objects writeToFile:path atomically:YES];*/
+    
     //kopioidaan documentdirectoryyn testiplist, jos käyttäjällä ei ole plistiä:
-    NSFileManager *fileManager = [NSFileManager defaultManager];
+    /*NSFileManager *fileManager = [NSFileManager defaultManager];
     
     if (![fileManager fileExistsAtPath:path]) {
         NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"TallennetutKohteet" ofType:@"plist"];
         [fileManager copyItemAtPath:sourcePath toPath:path error:nil];
-    }
+    }*/
+    //käytetäänkin suoraan NSArray writetofileä:
+    self.objects = [NSMutableArray arrayWithContentsOfFile:path];
     
+    /*
+     
+    //toistaiseksi luetaan plistissä olevat arrayt ja luodaan oliot:
+     NSArray *ajankayttokohteet;
+     NSArray *kuvat;
+     NSArray *kaytetytAjat;
+ 
+     
     NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
     
     ajankayttokohteet = [dict objectForKey:@"Nimet"];
@@ -68,7 +78,7 @@
         uusikohde.kuva = kuvat[kohteenIndeksi];
         [_objects addObject:uusikohde];
     }
-
+     */
 }
 
 - (void)didReceiveMemoryWarning {
@@ -111,12 +121,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     OmaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    AjankayttoKohde *object = self.objects[indexPath.row];
-    cell.nimiLabel.text = object.nimi;
-    cell.aikaLabel.text = object.aika;
+    NSDictionary *object = self.objects[indexPath.row];
+    cell.nimiLabel.text = [object objectForKey:@"Nimi"];
+    cell.aikaLabel.text = @"0";
     //cell.kuvaView.image = [UIImage imageNamed:object.kuva];
     //piirretäänkin kuva taustalle:
-    cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:object.kuva]] colorWithAlphaComponent:0.3];
+    cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:[object objectForKey:@"Nimi"]]] colorWithAlphaComponent:0.3];
     
     cell.playButton = [UIButton buttonWithType:UIButtonTypeSystem];
     

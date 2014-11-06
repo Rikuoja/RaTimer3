@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Nimi</key>
+		<string>Opetus</string>
+		<key>Kuva</key>
+		<string>256px-Common_Squirrel.jpg</string>
+		<key>Kaytossa</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>Nimi</key>
+		<string>Materiaali &amp; suunnittelu</string>
+		<key>Kuva</key>
+		<string>256px-Common_Squirrel.jpg</string>
+		<key>Kaytossa</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>Nimi</key>
+		<string>Muut työt</string>
+		<key>Kuva</key>
+		<string>256px-Common_Squirrel.jpg</string>
+		<key>Kaytossa</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>Nimi</key>
+		<string>Opiskelu</string>
+		<key>Kuva</key>
+		<string>256px-Common_Squirrel.jpg</string>
+		<key>Kaytossa</key>
+		<false/>
+	</dict>
+	<dict>
+		<key>Nimi</key>
+		<string>Oravien ruokinta</string>
+		<key>Kuva</key>
+		<string>256px-Common_Squirrel.jpg</string>
+		<key>Kaytossa</key>
+		<true/>
+	</dict>
+</array>
+</plist>
