@@ -8,7 +8,6 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
-#import "AjankayttoKohde.h"
 #import "OmaTableViewCell.h"
 
 @interface MasterViewController ()
@@ -49,7 +48,7 @@
         [fileManager copyItemAtPath:sourcePath toPath:path error:nil];
     }
     
-    //Tällä voi kirjoittaa aloitusplistin tiedostoon:
+    //Tällä voi luoda testiplistin uudestaan:
     /*self.objects = [NSMutableArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:@"Opetus",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Materiaali & suunnittelu",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Muut työt",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Opiskelu",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Oravien ruokinta",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],nil];
     
     [self.objects writeToFile:path atomically:YES];*/
@@ -119,8 +118,7 @@
     NSDictionary *object = self.objects[indexPath.row];
     cell.nimiLabel.text = [object objectForKey:@"Nimi"];
     cell.aikaLabel.text = @"0";
-    //cell.kuvaView.image = [UIImage imageNamed:object.kuva];
-    //piirretäänkin kuva taustalle:
+    //piirretään kuva taustalle:
     cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:[object objectForKey:@"Kuva"]]] colorWithAlphaComponent:0.3];
     
     cell.playButton = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -147,4 +145,6 @@
     return 78;
 }
 
+- (IBAction)playPainettu:(id)sender {
+}
 @end
