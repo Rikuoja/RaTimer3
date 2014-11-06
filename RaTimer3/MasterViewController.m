@@ -122,8 +122,6 @@
     cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:object[@"Kuva"]]] colorWithAlphaComponent:0.3];
     
     cell.playButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    //lisätään buttoniin target:
-    [cell.playButton addTarget:self action:@selector(playPainettu:withEvent:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }
@@ -147,26 +145,17 @@
     return 78;
 }
 
-#pragma mark - UIEvent
-
-- (void)playPainettu:(UIButton *)painettuNappi withEvent:(UIEvent *)event {
-    painettuNappi.selected = !painettuNappi.selected;
-    //eventistä tableview saa tietää, mihin soluun osuttiin:
-    UITouch *touch = [[event touchesForView:painettuNappi] anyObject]; //jos kosketuksia useampi, otetaan yksi
-    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint: [touch locationInView: self.tableView]];
-    NSMutableDictionary *valittuKohde = self.objects[indexPath.row];
-    if ([valittuKohde[@"Kaytossa"] boolValue]) [valittuKohde setValue:@NO forKey:@"Kaytossa"]; else[valittuKohde setValue:@NO forKey:@"Kaytossa"];
-}
-
 #pragma mark - IBAction
 
 - (IBAction)playPainettu:(UIButton *)sender {
     sender.selected = !sender.selected;
-    //etsitään solu, joka sisältää buttonin (jos sisäkkäisiä viewejä ennen solua):
-    UIView *superview = [sender superview];
-    while (superview && ![superview isKindOfClass:[OmaTableViewCell class]]) superview = superview.superview;
+    //etsitään solu, joka sisältää buttonin:
+    CGPoint painettuKohta = [sender convertPoint:CGPointZero toView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:painettuKohta];
     //tallennetaan muutos kohteeseen:
-    //self.objects[self.objects indexofObject:[NSMutableDictionary[]]
+    NSMutableDictionary *valittuKohde = self.objects[indexPath.row];
+    if ([valittuKohde[@"Kaytossa"] boolValue]) [valittuKohde setValue:@NO forKey:@"Kaytossa"]; else[valittuKohde setValue:@YES forKey:@"Kaytossa"];
+    //tallennetaan dictionary takaisin arrayhin ja plistiin:
 }
 
 @end
