@@ -145,6 +145,15 @@
     return 78;
 }
 
-- (IBAction)playPainettu:(id)sender {
+#pragma mark - IBAction
+
+- (IBAction)playPainettu:(UIButton *)sender {
+    sender.selected = !sender.selected;
+    //etsitään solu, joka sisältää buttonin (jos sisäkkäisiä viewejä ennen solua):
+    UIView *superview = [sender superview];
+    while (superview && ![superview isKindOfClass:[OmaTableViewCell class]]) superview = superview.superview;
+    //tallennetaan muutos kohteeseen:
+    //self.objects[self.objects indexofObject:[NSMutableDictionary[]]
 }
+
 @end
