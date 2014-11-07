@@ -35,7 +35,6 @@
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
-    //NSString *path = [[NSBundle mainBundle] pathForResource:@"TallennetutKohteet" ofType:@"plist"];
     //luetaan documentdirectorysta:
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     path = [path stringByAppendingPathComponent:@"TallennetutKohteet.plist"];
@@ -48,7 +47,7 @@
         [fileManager copyItemAtPath:sourcePath toPath:path error:nil];
     }
     
-    //Tällä voi luoda testiplistin uudestaan:
+    //Tällä voi halutessaan luoda testiplistin uudestaan:
     /*self.objects = [NSMutableArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:@"Opetus",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Materiaali & suunnittelu",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Muut työt",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Opiskelu",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Oravien ruokinta",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],nil];
     
     [self.objects writeToFile:path atomically:YES];*/
@@ -156,6 +155,17 @@
     NSMutableDictionary *valittuKohde = self.objects[indexPath.row];
     if ([valittuKohde[@"Kaytossa"] boolValue]) [valittuKohde setValue:@NO forKey:@"Kaytossa"]; else[valittuKohde setValue:@YES forKey:@"Kaytossa"];
     //tallennetaan dictionary takaisin arrayhin ja plistiin:
+    self.objects[indexPath.row] = valittuKohde;
+}
+
+#pragma mark - I/O
+
+- (void)tallennaKohteet {
+    
+}
+
+- (void)lueKohteet {
+    
 }
 
 @end
