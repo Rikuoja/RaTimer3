@@ -15,6 +15,8 @@
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
 - (IBAction)playPainettu:(UIButton *)sender;
+- (void)tallennaKohteet;
+- (void)lueKohteet;
 
 @end
 

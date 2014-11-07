@@ -14,6 +14,8 @@
 
 //tallennetaan kohteet yhteen arrayhin:
 @property NSMutableArray *objects;
+//tallennettavan plistin sijainti:
+@property NSString *path;
 @end
 
 @implementation MasterViewController
@@ -35,43 +37,18 @@
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
-    //luetaan documentdirectorysta:
-    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    path = [path stringByAppendingPathComponent:@"TallennetutKohteet.plist"];
+    //asetetaan haluttu sijainti plistille (tässä documentdirectory):
+    self.path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    self.path = [self.path stringByAppendingPathComponent:@"TallennetutKohteet.plist"];
     
     //kopioidaan documentdirectoryyn testiplist, jos käyttäjällä ei ole plistiä:
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
-    if (![fileManager fileExistsAtPath:path]) {
+    if (![fileManager fileExistsAtPath:self.path]) {
         NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"TallennetutKohteet" ofType:@"plist"];
-        [fileManager copyItemAtPath:sourcePath toPath:path error:nil];
+        [fileManager copyItemAtPath:sourcePath toPath:self.path error:nil];
     }
-    
-    //Tällä voi halutessaan luoda testiplistin uudestaan:
-    /*self.objects = [NSMutableArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:@"Opetus",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Materiaali & suunnittelu",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Muut työt",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Opiskelu",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Oravien ruokinta",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],nil];
-    
-    [self.objects writeToFile:path atomically:YES];*/
-    
-    //Propertylistserialization tekee täsmälleen saman optiolla NSDataWritingAtomic:
-    /*
-    if (![NSPropertyListSerialization propertyList:self.objects isValidForFormat:kCFPropertyListXMLFormat_v1_0]) {
-        NSLog(@"Ei onnaa");
-    }
-    
-    NSError *virhe;
-    NSData *data = [NSPropertyListSerialization dataWithPropertyList:self.objects format:kCFPropertyListXMLFormat_v1_0 options:0 error:&virhe];
-    if (data == nil) {
-        NSLog(@"Virhe: ", virhe);
-    }
-    
-    BOOL writeStatus = [data writeToFile:path options:NSDataWritingAtomic error:&virhe];
-    */
-    
-    //luodaan tiedostosta mutablearray, jossa sisällä mutabledictionaryja:
-    NSError *virhe;
-    NSPropertyListFormat alkuperainenFormaatti;
-    NSData *data = [NSData dataWithContentsOfFile:path];
-    self.objects = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListMutableContainers format:&alkuperainenFormaatti error:&virhe];
+    [self lueKohteet];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -156,16 +133,40 @@
     if ([valittuKohde[@"Kaytossa"] boolValue]) [valittuKohde setValue:@NO forKey:@"Kaytossa"]; else[valittuKohde setValue:@YES forKey:@"Kaytossa"];
     //tallennetaan dictionary takaisin arrayhin ja plistiin:
     self.objects[indexPath.row] = valittuKohde;
+    [self tallennaKohteet];
 }
 
 #pragma mark - I/O
 
 - (void)tallennaKohteet {
+    //Tällä voi halutessaan luoda testiplistin uudestaan:
+    /*self.objects = [NSMutableArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:@"Opetus",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Materiaali & suunnittelu",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Muut työt",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Opiskelu",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Oravien ruokinta",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],nil];
+     */
     
+    [self.objects writeToFile:self.path atomically:YES];
+    
+    //Propertylistserialization tekee täsmälleen saman optiolla NSDataWritingAtomic:
+    /*
+     if (![NSPropertyListSerialization propertyList:self.objects isValidForFormat:kCFPropertyListXMLFormat_v1_0]) {
+     NSLog(@"Ei onnaa");
+     }
+     
+     NSError *virhe;
+     NSData *data = [NSPropertyListSerialization dataWithPropertyList:self.objects format:kCFPropertyListXMLFormat_v1_0 options:0 error:&virhe];
+     if (data == nil) {
+     NSLog(@"Virhe: ", virhe);
+     }
+     
+     BOOL writeStatus = [data writeToFile:path options:NSDataWritingAtomic error:&virhe];
+     */
 }
 
 - (void)lueKohteet {
-    
+    //luodaan tiedostosta mutablearray, jossa sisällä mutabledictionaryja:
+    NSError *virhe;
+    NSPropertyListFormat alkuperainenFormaatti;
+    NSData *data = [NSData dataWithContentsOfFile:self.path];
+    self.objects = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListMutableContainers format:&alkuperainenFormaatti error:&virhe];
 }
 
 @end
