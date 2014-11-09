@@ -99,12 +99,13 @@
 
     NSMutableDictionary *object = self.objects[indexPath.row];
     cell.nimiLabel.text = object[@"Nimi"];
-    cell.aikaLabel.text = @"0";
+    cell.aikaLabel.text = [self aikaaKulunut:object];
     //piirretään kuva taustalle:
     cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:object[@"Kuva"]]] colorWithAlphaComponent:0.3];
-    
     cell.playButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    
+    //tarkistetaan, onko ajanotto käynnissä:
+    if ([object[@"Kaytossa"] boolValue]) cell.playButton.selected = @YES;
+        
     return cell;
 }
 
@@ -157,6 +158,10 @@
 
 - (void)paivitaAika:(NSTimer *)ajastin {
     
+}
+
+- (NSString *)aikaaKulunut:(NSMutableDictionary *) kysyttyKohde {
+    return @"0";
 }
 
 #pragma mark - I/O
