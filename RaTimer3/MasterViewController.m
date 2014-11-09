@@ -130,7 +130,17 @@
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:painettuKohta];
     //tallennetaan muutos kohteeseen:
     NSMutableDictionary *valittuKohde = self.objects[indexPath.row];
-    if ([valittuKohde[@"Kaytossa"] boolValue]) [valittuKohde setValue:@NO forKey:@"Kaytossa"]; else[valittuKohde setValue:@YES forKey:@"Kaytossa"];
+    //aloitetaan tai lopetetaan ajanotto tilanteen mukaan:
+    if ([valittuKohde[@"Kaytossa"] boolValue]) {
+        [valittuKohde setValue:@NO forKey:@"Kaytossa"];
+        //lisää lopetusajan Ajat-arrayn viimeiseen dictionaryyn:
+        [[valittuKohde[@"Ajat"] lastObject] setValue:[NSDate date] forKey:@"Loppu"];
+    }
+    else {
+        [valittuKohde setValue:@YES forKey:@"Kaytossa"];
+        //lisätään aloitusaika Ajat-arrayhin uuteen dictionaryyn:
+        [valittuKohde[@"Ajat"] addObject: [NSMutableDictionary dictionaryWithObject:[NSDate date] forKey:@"Alku"]];
+    }
     //tallennetaan dictionary takaisin arrayhin ja plistiin:
     self.objects[indexPath.row] = valittuKohde;
     [self tallennaKohteet];

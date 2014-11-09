@@ -3,6 +3,19 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>Ajat</key>
+		<array>
+			<dict>
+				<key>Alku</key>
+				<date>2014-11-09T22:37:04Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-11-09T22:33:28Z</date>
+				<key>Loppu</key>
+				<date>2014-11-09T22:33:39Z</date>
+			</dict>
+		</array>
 		<key>Kaytossa</key>
 		<false/>
 		<key>Kuva</key>
