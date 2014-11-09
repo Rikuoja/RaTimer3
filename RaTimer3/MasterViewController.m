@@ -16,6 +16,9 @@
 @property NSMutableArray *objects;
 //tallennettavan plistin sijainti:
 @property NSString *path;
+//kuinka tarkkaan kulunut aika halutaan näyttää:
+@property NSTimeInterval ajanotonTarkkuus;
+//miltä aikaväliltä kulunut aika näytetään:
 @end
 
 @implementation MasterViewController
@@ -49,6 +52,9 @@
         [fileManager copyItemAtPath:sourcePath toPath:self.path error:nil];
     }
     [self lueKohteet];
+    
+    //ladataan asetukset:
+    self.ajanotonTarkkuus = 60; //oletusarvo 60 sekuntia
 }
 
 - (void)didReceiveMemoryWarning {
@@ -135,15 +141,22 @@
         [valittuKohde setValue:@NO forKey:@"Kaytossa"];
         //lisää lopetusajan Ajat-arrayn viimeiseen dictionaryyn:
         [[valittuKohde[@"Ajat"] lastObject] setValue:[NSDate date] forKey:@"Loppu"];
+        //lopetetaan mahdollinen ajastin:
     }
     else {
         [valittuKohde setValue:@YES forKey:@"Kaytossa"];
         //lisätään aloitusaika Ajat-arrayhin uuteen dictionaryyn:
         [valittuKohde[@"Ajat"] addObject: [NSMutableDictionary dictionaryWithObject:[NSDate date] forKey:@"Alku"]];
+        //aloita ajastin taulukon päivitystä varten, ajanoton tarkkuus määräytyy asetuksista:
+        [NSTimer scheduledTimerWithTimeInterval:self.ajanotonTarkkuus target:self selector:@selector(paivitaAika:) userInfo:valittuKohde repeats:@YES];
     }
     //tallennetaan dictionary takaisin arrayhin ja plistiin:
     self.objects[indexPath.row] = valittuKohde;
     [self tallennaKohteet];
+}
+
+- (void)paivitaAika:(NSTimer *)ajastin {
+    
 }
 
 #pragma mark - I/O
