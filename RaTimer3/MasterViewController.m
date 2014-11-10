@@ -13,13 +13,13 @@
 @interface MasterViewController ()
 
 //tallennetaan kohteet yhteen arrayhin:
-@property NSMutableArray *objects;
+@property (strong, nonatomic) NSMutableArray *objects;
 //tallennettavan plistin sijainti:
-@property NSString *path;
+@property (strong, nonatomic) NSString *path;
 //kuinka tarkkaan kulunut aika halutaan näyttää:
-@property NSTimeInterval ajanotonTarkkuus;
+@property (nonatomic) NSTimeInterval ajanotonTarkkuus;
 //miltä aikaväliltä kulunut aika näytetään:
-@property enum aikavalit naytettavaAikavali;
+@property (nonatomic) enum aikavalit naytettavaAikavali;
 @end
 
 @implementation MasterViewController
@@ -56,7 +56,7 @@
     
     //ladataan asetukset:
     self.ajanotonTarkkuus = 60; //oletusarvo 60 sekuntia
-    self.naytettavaAikavali = viikko;
+    self.naytettavaAikavali = viikko; //oletusarvot
 }
 
 - (void)didReceiveMemoryWarning {
@@ -101,7 +101,7 @@
 
     NSMutableDictionary *object = self.objects[indexPath.row];
     cell.nimiLabel.text = object[@"Nimi"];
-    cell.aikaLabel.text = [self aikaaKulunut:object aikavalilla:self.naytettavaAikavali];
+    cell.aikaLabel.text = [self aikaaKulunutSelkokielella:[self aikaaKulunut:object aikavalilla:self.naytettavaAikavali]];
     //piirretään kuva taustalle:
     cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:object[@"Kuva"]]] colorWithAlphaComponent:0.3];
     cell.playButton = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -158,12 +158,32 @@
     [self tallennaKohteet];
 }
 
+#pragma mark - NSTimer
+
 - (void)paivitaAika:(NSTimer *)ajastin {
     
 }
 
-- (NSString *)aikaaKulunut:(NSMutableDictionary *) kysyttyKohde aikavalilla:(enum aikavalit)haluttuAikavali {
-    return @"0";
+- (NSDateComponents *)aikaaKulunut:(NSMutableDictionary *) kysyttyKohde aikavalilla:(enum aikavalit)haluttuAikavali {
+    //päivän (viikon, kuukauden, vuoden) alun selvittämiseen tarvitaan NSCalendar-oliota
+    NSCalendar *kayttajanKalenteri = [NSCalendar currentCalendar];
+    NSDate *nykyhetki = [[NSDate alloc] init];
+    //selvitetään, monesko päivä viikossa, kuukaudessa, vuodessa on nyt?
+    NSUInteger viikonpaiva, kuukaudenpaiva, vuodenpaiva;
+    viikonpaiva = [kayttajanKalenteri ordinalityOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitWeekOfMonth forDate:nykyhetki];
+    NSLog(@"%d",(int)viikonpaiva);
+    kuukaudenpaiva = [kayttajanKalenteri ordinalityOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:nykyhetki];
+    NSLog(@"%d",(int)kuukaudenpaiva);
+    vuodenpaiva = [kayttajanKalenteri ordinalityOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitYear forDate:nykyhetki];
+    NSLog(@"%d",(int)vuodenpaiva);
+    //tarkistetaan, onko ajanotto edelleen käynnissä:
+                   
+    //NSDateComponents-olio voi sisältää kuinka monta tuntia tahansa (ei käytetä päiviä jne):
+    return nil;
+}
+
+- (NSString *)aikaaKulunutSelkokielella:(NSDateComponents *)aikaaKulunut{
+    return [NSString stringWithFormat:@"%d h %d min", (int)[aikaaKulunut hour], (int)[aikaaKulunut minute]];
 }
 
 #pragma mark - I/O

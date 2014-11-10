@@ -10,16 +10,17 @@
 
 @class DetailViewController;
 
-@interface MasterViewController : UITableViewController
-
 typedef NS_ENUM(NSInteger, aikavalit) {paiva, viikko, kuukausi, vuosi, aina};
+
+@interface MasterViewController : UITableViewController
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
 - (IBAction)playPainettu:(UIButton *)sender;
 - (void)tallennaKohteet;
 - (void)lueKohteet;
-- (NSString *)aikaaKulunut:(NSMutableDictionary *) kysyttyKohde aikavalilla:(enum aikavalit)haluttuAikavali;
+- (NSDateComponents *)aikaaKulunut:(NSMutableDictionary *)kysyttyKohde aikavalilla:(enum aikavalit)haluttuAikavali;
+- (NSString *)aikaaKulunutSelkokielella:(NSDateComponents *)aikaaKulunut;
 
 @end
 
