@@ -19,6 +19,7 @@
 //kuinka tarkkaan kulunut aika halutaan näyttää:
 @property NSTimeInterval ajanotonTarkkuus;
 //miltä aikaväliltä kulunut aika näytetään:
+@property enum aikavalit naytettavaAikavali;
 @end
 
 @implementation MasterViewController
@@ -55,6 +56,7 @@
     
     //ladataan asetukset:
     self.ajanotonTarkkuus = 60; //oletusarvo 60 sekuntia
+    self.naytettavaAikavali = viikko;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -99,7 +101,7 @@
 
     NSMutableDictionary *object = self.objects[indexPath.row];
     cell.nimiLabel.text = object[@"Nimi"];
-    cell.aikaLabel.text = [self aikaaKulunut:object];
+    cell.aikaLabel.text = [self aikaaKulunut:object aikavalilla:self.naytettavaAikavali];
     //piirretään kuva taustalle:
     cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:object[@"Kuva"]]] colorWithAlphaComponent:0.3];
     cell.playButton = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -160,7 +162,7 @@
     
 }
 
-- (NSString *)aikaaKulunut:(NSMutableDictionary *) kysyttyKohde {
+- (NSString *)aikaaKulunut:(NSMutableDictionary *) kysyttyKohde aikavalilla:(enum aikavalit)haluttuAikavali {
     return @"0";
 }
 
@@ -176,7 +178,7 @@
     //Propertylistserialization tekee täsmälleen saman optiolla NSDataWritingAtomic:
     /*
      if (![NSPropertyListSerialization propertyList:self.objects isValidForFormat:kCFPropertyListXMLFormat_v1_0]) {
-     NSLog(@"Ei onnaa");
+     NSLog(@"Sisältää plistiin sopimattomia olioita");
      }
      
      NSError *virhe;

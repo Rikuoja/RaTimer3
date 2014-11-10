@@ -12,11 +12,14 @@
 
 @interface MasterViewController : UITableViewController
 
+typedef NS_ENUM(NSInteger, aikavalit) {paiva, viikko, kuukausi, vuosi, aina};
+
 @property (strong, nonatomic) DetailViewController *detailViewController;
 
 - (IBAction)playPainettu:(UIButton *)sender;
 - (void)tallennaKohteet;
 - (void)lueKohteet;
+- (NSString *)aikaaKulunut:(NSMutableDictionary *) kysyttyKohde aikavalilla:(enum aikavalit)haluttuAikavali;
 
 @end
 
