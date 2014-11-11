@@ -56,7 +56,7 @@
     
     //ladataan asetukset:
     self.ajanotonTarkkuus = 60; //oletusarvo 60 sekuntia
-    self.naytettavaAikavali = viikko; //oletusarvot
+    self.naytettavaAikavali = aina; //oletusarvot
 }
 
 - (void)didReceiveMemoryWarning {
@@ -164,22 +164,58 @@
     
 }
 
+#pragma mark - NSDate
+
 - (NSDateComponents *)aikaaKulunut:(NSMutableDictionary *) kysyttyKohde aikavalilla:(enum aikavalit)haluttuAikavali {
-    //päivän (viikon, kuukauden, vuoden) alun selvittämiseen tarvitaan NSCalendar-oliota
+    //NScalendaria tarvitaan kalenterilaskujen tekemiseen:
     NSCalendar *kayttajanKalenteri = [NSCalendar currentCalendar];
     NSDate *nykyhetki = [[NSDate alloc] init];
+    NSDateComponents *palautettavatTunnit = [[NSDateComponents alloc] init];
     //selvitetään, monesko päivä viikossa, kuukaudessa, vuodessa on nyt?
-    NSUInteger viikonpaiva, kuukaudenpaiva, vuodenpaiva;
-    viikonpaiva = [kayttajanKalenteri ordinalityOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitWeekOfMonth forDate:nykyhetki];
-    NSLog(@"%d",(int)viikonpaiva);
-    kuukaudenpaiva = [kayttajanKalenteri ordinalityOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:nykyhetki];
-    NSLog(@"%d",(int)kuukaudenpaiva);
-    vuodenpaiva = [kayttajanKalenteri ordinalityOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitYear forDate:nykyhetki];
-    NSLog(@"%d",(int)vuodenpaiva);
-    //tarkistetaan, onko ajanotto edelleen käynnissä:
-                   
-    //NSDateComponents-olio voi sisältää kuinka monta tuntia tahansa (ei käytetä päiviä jne):
-    return nil;
+    NSUInteger moneskoPaiva;
+    switch (haluttuAikavali) {
+        case paiva:
+            moneskoPaiva = 1;
+            break;
+        case viikko:
+            moneskoPaiva = [kayttajanKalenteri ordinalityOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitWeekOfMonth forDate:nykyhetki];
+            break;
+        case kuukausi:
+            moneskoPaiva = [kayttajanKalenteri ordinalityOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:nykyhetki];
+            break;
+        case vuosi:
+            moneskoPaiva = [kayttajanKalenteri ordinalityOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitYear forDate:nykyhetki];
+            break;
+        case aina:
+            moneskoPaiva = [nykyhetki timeIntervalSince1970]/(3600*24);
+    }
+    NSLog(@"Nyt on %d:s päivä",(int)moneskoPaiva);
+    NSLog(@"Aikaa käytetty yhteensä %d h %d min", (int)[palautettavatTunnit hour], (int)[palautettavatTunnit minute]);
+    //haetaan kohteesta ne aikavälit, jotka ovat haluttujen päivien sisällä:
+    for (NSMutableDictionary *ajat in kysyttyKohde[@"Ajat"]) {
+        NSLog(@"Aika alkoi %ld päivää sitten",[[kayttajanKalenteri components:NSCalendarUnitDay fromDate:ajat[@"Alku"] toDate:nykyhetki options:0] day]+1);
+        //NSDateComponents-olio voi sisältää kuinka monta tuntia tahansa (ei käytetä päiviä jne):
+        unsigned int kaytettavatYksikot = NSCalendarUnitHour | NSCalendarUnitMinute;
+        //tarkistetaan, onko ajanotto edelleen käynnissä:
+        if (ajat[@"Loppu"] == nil) {
+            NSDateComponents *tuntejaJaMinuutteja = [kayttajanKalenteri components:kaytettavatYksikot fromDate:ajat[@"Alku"] toDate:nykyhetki options:0];
+            palautettavatTunnit.hour = palautettavatTunnit.hour+tuntejaJaMinuutteja.hour;
+            palautettavatTunnit.minute = palautettavatTunnit.minute+tuntejaJaMinuutteja.minute;
+        }
+        else {
+            NSDateComponents *tuntejaJaMinuutteja = [kayttajanKalenteri components:kaytettavatYksikot fromDate:ajat[@"Alku"] toDate:ajat[@"Loppu"] options:0];
+            palautettavatTunnit.hour = palautettavatTunnit.hour+tuntejaJaMinuutteja.hour;
+            palautettavatTunnit.minute = palautettavatTunnit.minute+tuntejaJaMinuutteja.minute;
+        }
+        //tarkistetaan, alkoiko kohde ennen aikavälin alkua:
+        if ([[kayttajanKalenteri components:NSCalendarUnitDay fromDate:ajat[@"Alku"] toDate:nykyhetki options:0] day]+1 > moneskoPaiva) {
+            //tallennettava vielä homman loppuosa:
+            
+            //ajat tallennettu kronologisessa järjestyksessä!
+            break;
+        }
+    }
+    return palautettavatTunnit;
 }
 
 - (NSString *)aikaaKulunutSelkokielella:(NSDateComponents *)aikaaKulunut{
