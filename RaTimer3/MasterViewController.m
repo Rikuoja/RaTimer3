@@ -19,7 +19,7 @@
 //kuinka tarkkaan kulunut aika halutaan näyttää:
 @property (nonatomic) NSTimeInterval ajanotonTarkkuus;
 //miltä aikaväliltä kulunut aika näytetään:
-@property (nonatomic) enum aikavalit naytettavaAikavali;
+@property (nonatomic) NSCalendarUnit naytettavaAikavali;
 @end
 
 @implementation MasterViewController
@@ -56,7 +56,7 @@
     
     //ladataan asetukset:
     self.ajanotonTarkkuus = 60; //oletusarvo 60 sekuntia
-    self.naytettavaAikavali = aina; //oletusarvot
+    self.naytettavaAikavali = NSCalendarUnitEra; //oletusarvot
 }
 
 - (void)didReceiveMemoryWarning {
@@ -166,54 +166,40 @@
 
 #pragma mark - NSDate
 
-- (NSDateComponents *)aikaaKulunut:(NSMutableDictionary *) kysyttyKohde aikavalilla:(enum aikavalit)haluttuAikavali {
+- (NSDateComponents *)aikaaKulunut:(NSMutableDictionary *)kysyttyKohde aikavalilla:(NSCalendarUnit)haluttuAikavali {
     //NScalendaria tarvitaan kalenterilaskujen tekemiseen:
     NSCalendar *kayttajanKalenteri = [NSCalendar currentCalendar];
     NSDate *nykyhetki = [[NSDate alloc] init];
     NSDateComponents *palautettavatTunnit = [[NSDateComponents alloc] init];
-    //selvitetään, monesko päivä viikossa, kuukaudessa, vuodessa on nyt?
-    NSUInteger moneskoPaiva;
-    switch (haluttuAikavali) {
-        case paiva:
-            moneskoPaiva = 1;
-            break;
-        case viikko:
-            moneskoPaiva = [kayttajanKalenteri ordinalityOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitWeekOfMonth forDate:nykyhetki];
-            break;
-        case kuukausi:
-            moneskoPaiva = [kayttajanKalenteri ordinalityOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:nykyhetki];
-            break;
-        case vuosi:
-            moneskoPaiva = [kayttajanKalenteri ordinalityOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitYear forDate:nykyhetki];
-            break;
-        case aina:
-            moneskoPaiva = [nykyhetki timeIntervalSince1970]/(3600*24);
-    }
-    NSLog(@"Nyt on %d:s päivä",(int)moneskoPaiva);
+    //selvitetään kuluvan päivän/viikon/kuukauden/vuoden alkupäivämäärä:
+    NSDate *alkupaivamaara;
+    NSTimeInterval jaksonPituus;
+    [kayttajanKalenteri rangeOfUnit:haluttuAikavali startDate:&alkupaivamaara interval:&jaksonPituus forDate:nykyhetki];
+    NSLog(@"Jakson alusta kulunut %d sekuntia",(int)jaksonPituus);
     NSLog(@"Aikaa käytetty yhteensä %d h %d min", (int)[palautettavatTunnit hour], (int)[palautettavatTunnit minute]);
-    //haetaan kohteesta ne aikavälit, jotka ovat haluttujen päivien sisällä:
+    //haetaan kohteesta ne aikavälit, jotka ovat halutun jakson sisällä:
     for (NSMutableDictionary *ajat in kysyttyKohde[@"Ajat"]) {
         NSLog(@"Aika alkoi %ld päivää sitten",[[kayttajanKalenteri components:NSCalendarUnitDay fromDate:ajat[@"Alku"] toDate:nykyhetki options:0] day]+1);
-        //NSDateComponents-olio voi sisältää kuinka monta tuntia tahansa (ei käytetä päiviä jne):
-        unsigned int kaytettavatYksikot = NSCalendarUnitHour | NSCalendarUnitMinute;
+        BOOL lopeta=@NO;
         //tarkistetaan, onko ajanotto edelleen käynnissä:
-        if (ajat[@"Loppu"] == nil) {
-            NSDateComponents *tuntejaJaMinuutteja = [kayttajanKalenteri components:kaytettavatYksikot fromDate:ajat[@"Alku"] toDate:nykyhetki options:0];
-            palautettavatTunnit.hour = palautettavatTunnit.hour+tuntejaJaMinuutteja.hour;
-            palautettavatTunnit.minute = palautettavatTunnit.minute+tuntejaJaMinuutteja.minute;
-        }
-        else {
-            NSDateComponents *tuntejaJaMinuutteja = [kayttajanKalenteri components:kaytettavatYksikot fromDate:ajat[@"Alku"] toDate:ajat[@"Loppu"] options:0];
-            palautettavatTunnit.hour = palautettavatTunnit.hour+tuntejaJaMinuutteja.hour;
-            palautettavatTunnit.minute = palautettavatTunnit.minute+tuntejaJaMinuutteja.minute;
-        }
+        NSDate *alkuhetki, *loppuhetki;
+        if (ajat[@"Loppu"] == nil) loppuhetki = nykyhetki;
+        else loppuhetki = ajat[@"Loppu"];
         //tarkistetaan, alkoiko kohde ennen aikavälin alkua:
-        if ([[kayttajanKalenteri components:NSCalendarUnitDay fromDate:ajat[@"Alku"] toDate:nykyhetki options:0] day]+1 > moneskoPaiva) {
-            //tallennettava vielä homman loppuosa:
-            
-            //ajat tallennettu kronologisessa järjestyksessä!
-            break;
+        if ([alkupaivamaara earlierDate:ajat[@"Alku"]] != alkupaivamaara) {
+            alkuhetki = alkupaivamaara;
+            //ajat tallennettu kronologisessa järjestyksessä eli vanhempia aikoja ei haluta käydä läpi:
+            lopeta=@YES;
         }
+        else alkuhetki = ajat[@"Alku"];
+        //NSDateComponents-olio voi sisältää kuinka monta tuntia tahansa (ei käytetä päiviä jne):
+        NSDateComponents *minuutteja = [kayttajanKalenteri components:NSCalendarUnitMinute fromDate:alkuhetki toDate:loppuhetki options:0];
+        palautettavatTunnit.hour = palautettavatTunnit.hour+(int)minuutteja/60;
+        palautettavatTunnit.minute = palautettavatTunnit.minute+(int)minuutteja%60;
+        //tuliko lisää tunteja?
+        palautettavatTunnit.hour=palautettavatTunnit.hour+(int)palautettavatTunnit.minute/60;
+        palautettavatTunnit.minute=palautettavatTunnit.minute+(int)palautettavatTunnit.minute%60;
+        if (lopeta) break;
     }
     return palautettavatTunnit;
 }
