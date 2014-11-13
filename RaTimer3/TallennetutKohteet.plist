@@ -7,23 +7,25 @@
 		<array>
 			<dict>
 				<key>Alku</key>
-				<date>2014-11-09T22:37:04Z</date>
-			</dict>
-			<dict>
-				<key>Alku</key>
 				<date>2014-11-09T22:33:28Z</date>
 				<key>Loppu</key>
 				<date>2014-11-09T22:33:39Z</date>
 			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-11-09T22:37:04Z</date>
+			</dict>
 		</array>
 		<key>Kaytossa</key>
-		<false/>
+		<true/>
 		<key>Kuva</key>
 		<string>256px-Common_Squirrel.jpg</string>
 		<key>Nimi</key>
 		<string>Opetus</string>
 	</dict>
 	<dict>
+		<key>Ajat</key>
+		<array/>
 		<key>Kaytossa</key>
 		<false/>
 		<key>Kuva</key>
@@ -32,6 +34,8 @@
 		<string>Materiaali &amp; suunnittelu</string>
 	</dict>
 	<dict>
+		<key>Ajat</key>
+		<array/>
 		<key>Kaytossa</key>
 		<false/>
 		<key>Kuva</key>
@@ -40,6 +44,8 @@
 		<string>Muut työt</string>
 	</dict>
 	<dict>
+		<key>Ajat</key>
+		<array/>
 		<key>Kaytossa</key>
 		<false/>
 		<key>Kuva</key>
@@ -48,6 +54,8 @@
 		<string>Opiskelu</string>
 	</dict>
 	<dict>
+		<key>Ajat</key>
+		<array/>
 		<key>Kaytossa</key>
 		<false/>
 		<key>Kuva</key>

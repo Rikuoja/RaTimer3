@@ -55,7 +55,7 @@
     [self lueKohteet];
     
     //ladataan asetukset:
-    self.ajanNayttotarkkuus = 900; //oletusarvo 15 minuuttia=900 sekuntia
+    self.ajanNayttotarkkuus = 1; //oletusarvo 15 minuuttia=900 sekuntia
     self.naytettavaAikavali = NSCalendarUnitWeekOfMonth; //oletusarvot
 }
 
@@ -144,14 +144,14 @@
         [valittuKohde setValue:@NO forKey:@"Kaytossa"]; //dictionaryssa YES ja NO pitää wrapata objektiin literaalilla @
         //lisää lopetusajan Ajat-arrayn viimeiseen dictionaryyn:
         [[valittuKohde[@"Ajat"] lastObject] setValue:[NSDate date] forKey:@"Loppu"];
-        //lopetetaan mahdollinen ajastin:
+        //lopetetaan mahdollinen ajastin, miten???!
     }
     else {
         [valittuKohde setValue:@YES forKey:@"Kaytossa"];
         //lisätään aloitusaika Ajat-arrayhin uuteen dictionaryyn:
         [valittuKohde[@"Ajat"] addObject: [NSMutableDictionary dictionaryWithObject:[NSDate date] forKey:@"Alku"]];
         //aloita ajastin taulukon päivitystä varten, ajanoton tarkkuus määräytyy asetuksista:
-        [NSTimer scheduledTimerWithTimeInterval:self.ajanNayttotarkkuus target:self selector:@selector(paivitaAika:) userInfo:valittuKohde repeats:YES];
+        [NSTimer scheduledTimerWithTimeInterval:self.ajanNayttotarkkuus target:self selector:@selector(paivitaAika:) userInfo:[NSNumber numberWithInteger:indexPath.row] repeats:YES]; //userinfoksi laitetaan idiksi castattu rivinumero
     }
     //tallennetaan dictionary takaisin arrayhin ja plistiin:
     self.objects[indexPath.row] = valittuKohde;
@@ -161,7 +161,8 @@
 #pragma mark - NSTimer
 
 - (void)paivitaAika:(NSTimer *)ajastin {
-    
+    //ajastimen userInfo on halutun kohteen rivinumero NSNumberina:
+    [self.tableView reloadRowsAtIndexPaths:ajastin.userInfo withRowAnimation:UITableViewRowAnimationNone];
 }
 
 #pragma mark - NSDate
@@ -183,7 +184,7 @@
     //haetaan kohteesta ne aikavälit, jotka ovat halutun jakson sisällä.
     //uusimmat aikavälit tallentuvat arrayn loppuun, joten tehdään haku käänteisessä järjestyksessä:
     for (NSMutableDictionary *ajat in [kysyttyKohde[@"Ajat"] reverseObjectEnumerator]) {
-        NSLog(@"Aika alkoi %d päivää sitten",[[kayttajanKalenteri components:NSCalendarUnitDay fromDate:ajat[@"Alku"] toDate:nykyhetki options:0] day]);
+        NSLog(@"Aika alkoi %d päivää sitten",(int)[[kayttajanKalenteri components:NSCalendarUnitDay fromDate:ajat[@"Alku"] toDate:nykyhetki options:0] day]);
         BOOL lopeta=NO;
         //tarkistetaan, onko ajanotto edelleen käynnissä:
         NSDate *alkuhetki, *loppuhetki;
