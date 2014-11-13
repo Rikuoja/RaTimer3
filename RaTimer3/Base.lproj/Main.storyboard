@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -88,26 +87,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalCompressionResistancePriority="250" text="Aika" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbM-an-WXA">
-                                            <rect key="frame" x="383" y="1" width="100" height="77"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" horizontalCompressionResistancePriority="250" text="Aika" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbM-an-WXA">
+                                            <rect key="frame" x="449" y="10" width="100" height="31"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="sSV-x6-sDq"/>
+                                                <constraint firstAttribute="width" constant="100" id="6zt-eS-irp"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Nimi" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNZ-hm-fXN">
-                                            <rect key="frame" x="16" y="1" width="367" height="77"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9d-Uk-cBK">
-                                            <rect key="frame" x="503" y="25" width="46" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="46" id="npD-bm-zBW"/>
-                                            </constraints>
+                                            <rect key="frame" x="449" y="36" width="100" height="31"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <state key="normal" title="Start">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -119,18 +109,25 @@
                                                 <action selector="playPainettu:" destination="7bK-jq-Zjz" eventType="touchUpInside" id="oaA-pd-6lt"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Nimi" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNZ-hm-fXN">
+                                            <rect key="frame" x="16" y="0.0" width="430" height="77"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="vNZ-hm-fXN" firstAttribute="baseline" secondItem="WbM-an-WXA" secondAttribute="baseline" id="59Y-0R-c2g"/>
-                                        <constraint firstItem="vNZ-hm-fXN" firstAttribute="firstBaseline" secondItem="WbM-an-WXA" secondAttribute="firstBaseline" id="7Mj-K2-2SZ"/>
-                                        <constraint firstItem="vNZ-hm-fXN" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leadingMargin" constant="8" id="8Nv-Mv-vKk"/>
-                                        <constraint firstItem="A9d-Uk-cBK" firstAttribute="leading" secondItem="WbM-an-WXA" secondAttribute="trailing" constant="20" id="FkX-C2-QbM"/>
-                                        <constraint firstItem="A9d-Uk-cBK" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="topMargin" constant="17" id="G1c-KV-Zh7"/>
-                                        <constraint firstItem="WbM-an-WXA" firstAttribute="leading" secondItem="vNZ-hm-fXN" secondAttribute="trailing" id="Pmn-Xa-2P0"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="A9d-Uk-cBK" secondAttribute="bottom" constant="14" id="ZTJ-fh-QZ3"/>
-                                        <constraint firstItem="vNZ-hm-fXN" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="topMargin" constant="-7" id="jXg-KK-9Ep"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="vNZ-hm-fXN" secondAttribute="bottom" constant="-9" id="ko1-oh-pv3"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="A9d-Uk-cBK" secondAttribute="trailing" constant="10" id="o7Y-26-8aU"/>
+                                        <constraint firstItem="vNZ-hm-fXN" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="top" id="4aA-bF-5Wq"/>
+                                        <constraint firstItem="WbM-an-WXA" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="topMargin" constant="2" id="9AA-Vc-6Pr"/>
+                                        <constraint firstItem="vNZ-hm-fXN" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leadingMargin" constant="8" id="BI2-6f-rsp"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="WbM-an-WXA" secondAttribute="trailing" constant="10" id="PNY-By-ukv"/>
+                                        <constraint firstItem="A9d-Uk-cBK" firstAttribute="trailing" secondItem="WbM-an-WXA" secondAttribute="trailing" id="eYx-D8-7TF"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="A9d-Uk-cBK" secondAttribute="bottom" constant="2" id="nJl-zD-gBv"/>
+                                        <constraint firstItem="WbM-an-WXA" firstAttribute="leading" secondItem="A9d-Uk-cBK" secondAttribute="leading" id="quc-IN-vgS"/>
+                                        <constraint firstItem="WbM-an-WXA" firstAttribute="leading" secondItem="vNZ-hm-fXN" secondAttribute="trailing" constant="3" id="sQg-Wh-AMq"/>
+                                        <constraint firstAttribute="bottom" secondItem="vNZ-hm-fXN" secondAttribute="bottom" id="v3v-VI-nyt"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="WbM-an-WXA" secondAttribute="bottom" constant="28" id="vXe-HM-EbP"/>
+                                        <constraint firstItem="A9d-Uk-cBK" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="topMargin" constant="28" id="we5-sE-oaw"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -152,7 +149,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="-641"/>
+            <point key="canvasLocation" x="709" y="-645"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
