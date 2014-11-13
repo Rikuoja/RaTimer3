@@ -104,10 +104,9 @@
     cell.aikaLabel.text = [self aikaaKulunutSelkokielella:[self aikaaKulunut:object aikavalilla:self.naytettavaAikavali]];
     //piirretään kuva taustalle:
     cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:object[@"Kuva"]]] colorWithAlphaComponent:0.3];
-    cell.playButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    //cell.playButton = [UIButton buttonWithType:UIButtonTypeSystem]; ei pidä luoda uutta nappia, tuhoaa ib:n tekemän napin ominaisuuksineen =)
     //tarkistetaan, onko ajanotto käynnissä:
     if ([object[@"Kaytossa"] boolValue]) cell.playButton.selected = YES;
-        
     return cell;
 }
 
