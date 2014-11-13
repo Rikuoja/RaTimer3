@@ -56,7 +56,7 @@
     
     //ladataan asetukset:
     self.ajanotonTarkkuus = 60; //oletusarvo 60 sekuntia
-    self.naytettavaAikavali = NSCalendarUnitEra; //oletusarvot
+    self.naytettavaAikavali = NSCalendarUnitWeekOfMonth; //oletusarvot
 }
 
 - (void)didReceiveMemoryWarning {
@@ -106,7 +106,7 @@
     cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:object[@"Kuva"]]] colorWithAlphaComponent:0.3];
     cell.playButton = [UIButton buttonWithType:UIButtonTypeSystem];
     //tarkistetaan, onko ajanotto käynnissä:
-    if ([object[@"Kaytossa"] boolValue]) cell.playButton.selected = @YES;
+    if ([object[@"Kaytossa"] boolValue]) cell.playButton.selected = YES;
         
     return cell;
 }
@@ -141,7 +141,7 @@
     NSMutableDictionary *valittuKohde = self.objects[indexPath.row];
     //aloitetaan tai lopetetaan ajanotto tilanteen mukaan:
     if ([valittuKohde[@"Kaytossa"] boolValue]) {
-        [valittuKohde setValue:@NO forKey:@"Kaytossa"];
+        [valittuKohde setValue:@NO forKey:@"Kaytossa"]; //dictionaryssa YES ja NO pitää wrapata objektiin literaalilla @
         //lisää lopetusajan Ajat-arrayn viimeiseen dictionaryyn:
         [[valittuKohde[@"Ajat"] lastObject] setValue:[NSDate date] forKey:@"Loppu"];
         //lopetetaan mahdollinen ajastin:
@@ -151,7 +151,7 @@
         //lisätään aloitusaika Ajat-arrayhin uuteen dictionaryyn:
         [valittuKohde[@"Ajat"] addObject: [NSMutableDictionary dictionaryWithObject:[NSDate date] forKey:@"Alku"]];
         //aloita ajastin taulukon päivitystä varten, ajanoton tarkkuus määräytyy asetuksista:
-        [NSTimer scheduledTimerWithTimeInterval:self.ajanotonTarkkuus target:self selector:@selector(paivitaAika:) userInfo:valittuKohde repeats:@YES];
+        [NSTimer scheduledTimerWithTimeInterval:self.ajanotonTarkkuus target:self selector:@selector(paivitaAika:) userInfo:valittuKohde repeats:YES];
     }
     //tallennetaan dictionary takaisin arrayhin ja plistiin:
     self.objects[indexPath.row] = valittuKohde;
@@ -170,17 +170,21 @@
     //NScalendaria tarvitaan kalenterilaskujen tekemiseen:
     NSCalendar *kayttajanKalenteri = [NSCalendar currentCalendar];
     NSDate *nykyhetki = [[NSDate alloc] init];
+    //NSDateComponents-olio voi sisältää kuinka monta tuntia tahansa (ei käytetä päiviä jne):
     NSDateComponents *palautettavatTunnit = [[NSDateComponents alloc] init];
+    palautettavatTunnit.hour=0;
+    palautettavatTunnit.minute=0;
+    palautettavatTunnit.second=0;
     //selvitetään kuluvan päivän/viikon/kuukauden/vuoden alkupäivämäärä:
     NSDate *alkupaivamaara;
     NSTimeInterval jaksonPituus;
     [kayttajanKalenteri rangeOfUnit:haluttuAikavali startDate:&alkupaivamaara interval:&jaksonPituus forDate:nykyhetki];
-    NSLog(@"Jakson alusta kulunut %d sekuntia",(int)jaksonPituus);
-    NSLog(@"Aikaa käytetty yhteensä %d h %d min", (int)[palautettavatTunnit hour], (int)[palautettavatTunnit minute]);
-    //haetaan kohteesta ne aikavälit, jotka ovat halutun jakson sisällä:
-    for (NSMutableDictionary *ajat in kysyttyKohde[@"Ajat"]) {
-        NSLog(@"Aika alkoi %ld päivää sitten",[[kayttajanKalenteri components:NSCalendarUnitDay fromDate:ajat[@"Alku"] toDate:nykyhetki options:0] day]+1);
-        BOOL lopeta=@NO;
+    NSLog(@"Jakson alusta kulunut %f sekuntia",(double)jaksonPituus);
+    //haetaan kohteesta ne aikavälit, jotka ovat halutun jakson sisällä.
+    //uusimmat aikavälit tallentuvat arrayn loppuun, joten tehdään haku käänteisessä järjestyksessä:
+    for (NSMutableDictionary *ajat in [kysyttyKohde[@"Ajat"] reverseObjectEnumerator]) {
+        NSLog(@"Aika alkoi %d päivää sitten",[[kayttajanKalenteri components:NSCalendarUnitDay fromDate:ajat[@"Alku"] toDate:nykyhetki options:0] day]+1);
+        BOOL lopeta=NO;
         //tarkistetaan, onko ajanotto edelleen käynnissä:
         NSDate *alkuhetki, *loppuhetki;
         if (ajat[@"Loppu"] == nil) loppuhetki = nykyhetki;
@@ -189,23 +193,29 @@
         if ([alkupaivamaara earlierDate:ajat[@"Alku"]] != alkupaivamaara) {
             alkuhetki = alkupaivamaara;
             //ajat tallennettu kronologisessa järjestyksessä eli vanhempia aikoja ei haluta käydä läpi:
-            lopeta=@YES;
+            lopeta=YES;
         }
         else alkuhetki = ajat[@"Alku"];
-        //NSDateComponents-olio voi sisältää kuinka monta tuntia tahansa (ei käytetä päiviä jne):
-        NSDateComponents *minuutteja = [kayttajanKalenteri components:NSCalendarUnitMinute fromDate:alkuhetki toDate:loppuhetki options:0];
-        palautettavatTunnit.hour = palautettavatTunnit.hour+(int)minuutteja/60;
-        palautettavatTunnit.minute = palautettavatTunnit.minute+(int)minuutteja%60;
-        //tuliko lisää tunteja?
+        //tallennetaan varalta sekunnit (voivat summautua minuuteiksi):
+        NSDateComponents *lisattavaAika = [kayttajanKalenteri components:(NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond) fromDate:alkuhetki toDate:loppuhetki options:0];
+        palautettavatTunnit.hour = palautettavatTunnit.hour+(int)lisattavaAika.hour;
+        palautettavatTunnit.minute = palautettavatTunnit.minute+(int)lisattavaAika.minute;
+        palautettavatTunnit.second = palautettavatTunnit.second+(int)lisattavaAika.second;
+        NSLog(@"Aikaa käytetty yhteensä %d h %d min %d s", (int)[palautettavatTunnit hour], (int)[palautettavatTunnit minute], (int)palautettavatTunnit.second);
+        //tuliko lisää kokonaisia minuutteja?
+        palautettavatTunnit.minute=(int)palautettavatTunnit.minute+(int)palautettavatTunnit.second/60;
+        palautettavatTunnit.second=palautettavatTunnit.second%60;
+        //tuliko lisää kokonaisia tunteja?
         palautettavatTunnit.hour=palautettavatTunnit.hour+(int)palautettavatTunnit.minute/60;
-        palautettavatTunnit.minute=palautettavatTunnit.minute+(int)palautettavatTunnit.minute%60;
+        palautettavatTunnit.minute=palautettavatTunnit.minute%60;
+        NSLog(@"Aikaa käytetty yhteensä %d h %d min %d s", (int)[palautettavatTunnit hour], (int)[palautettavatTunnit minute],(int)palautettavatTunnit.second);
         if (lopeta) break;
     }
     return palautettavatTunnit;
 }
 
 - (NSString *)aikaaKulunutSelkokielella:(NSDateComponents *)aikaaKulunut{
-    return [NSString stringWithFormat:@"%d h %d min", (int)[aikaaKulunut hour], (int)[aikaaKulunut minute]];
+    return [NSString stringWithFormat:@"%d:%d", (int)[aikaaKulunut hour], (int)[aikaaKulunut minute]];
 }
 
 #pragma mark - I/O
