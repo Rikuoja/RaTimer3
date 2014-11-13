@@ -17,7 +17,7 @@
 //tallennettavan plistin sijainti:
 @property (strong, nonatomic) NSString *path;
 //kuinka tarkkaan kulunut aika halutaan näyttää:
-@property (nonatomic) NSTimeInterval ajanotonTarkkuus;
+@property (nonatomic) NSTimeInterval ajanNayttotarkkuus;
 //miltä aikaväliltä kulunut aika näytetään:
 @property (nonatomic) NSCalendarUnit naytettavaAikavali;
 @end
@@ -55,7 +55,7 @@
     [self lueKohteet];
     
     //ladataan asetukset:
-    self.ajanotonTarkkuus = 60; //oletusarvo 60 sekuntia
+    self.ajanNayttotarkkuus = 900; //oletusarvo 15 minuuttia=900 sekuntia
     self.naytettavaAikavali = NSCalendarUnitWeekOfMonth; //oletusarvot
 }
 
@@ -151,7 +151,7 @@
         //lisätään aloitusaika Ajat-arrayhin uuteen dictionaryyn:
         [valittuKohde[@"Ajat"] addObject: [NSMutableDictionary dictionaryWithObject:[NSDate date] forKey:@"Alku"]];
         //aloita ajastin taulukon päivitystä varten, ajanoton tarkkuus määräytyy asetuksista:
-        [NSTimer scheduledTimerWithTimeInterval:self.ajanotonTarkkuus target:self selector:@selector(paivitaAika:) userInfo:valittuKohde repeats:YES];
+        [NSTimer scheduledTimerWithTimeInterval:self.ajanNayttotarkkuus target:self selector:@selector(paivitaAika:) userInfo:valittuKohde repeats:YES];
     }
     //tallennetaan dictionary takaisin arrayhin ja plistiin:
     self.objects[indexPath.row] = valittuKohde;
@@ -183,7 +183,7 @@
     //haetaan kohteesta ne aikavälit, jotka ovat halutun jakson sisällä.
     //uusimmat aikavälit tallentuvat arrayn loppuun, joten tehdään haku käänteisessä järjestyksessä:
     for (NSMutableDictionary *ajat in [kysyttyKohde[@"Ajat"] reverseObjectEnumerator]) {
-        NSLog(@"Aika alkoi %d päivää sitten",[[kayttajanKalenteri components:NSCalendarUnitDay fromDate:ajat[@"Alku"] toDate:nykyhetki options:0] day]+1);
+        NSLog(@"Aika alkoi %d päivää sitten",[[kayttajanKalenteri components:NSCalendarUnitDay fromDate:ajat[@"Alku"] toDate:nykyhetki options:0] day]);
         BOOL lopeta=NO;
         //tarkistetaan, onko ajanotto edelleen käynnissä:
         NSDate *alkuhetki, *loppuhetki;
@@ -215,7 +215,14 @@
 }
 
 - (NSString *)aikaaKulunutSelkokielella:(NSDateComponents *)aikaaKulunut{
-    return [NSString stringWithFormat:@"%d:%d", (int)[aikaaKulunut hour], (int)[aikaaKulunut minute]];
+    //halutaan esittää aika muodossa HHH:mm
+    NSNumberFormatter *muotoilu = [[NSNumberFormatter alloc] init];
+    [muotoilu setPaddingCharacter:@"0"];
+    [muotoilu setMinimumIntegerDigits:2];
+    //tulostettava string riippuu halutusta näyttötarkkuudesta, NSTimeInterval ajannayttotarkkuus on sekunteina:
+    NSNumber *tunnit = [NSNumber numberWithInteger:[aikaaKulunut hour]];
+    NSNumber *minuutit = [NSNumber numberWithInteger:(int)([aikaaKulunut minute]/(self.ajanNayttotarkkuus/60))*(int)self.ajanNayttotarkkuus/60]; //(int)-castaus pyöristää alaspäin (ajannayttotarkkuus/60) minuutin tarkkuuteen
+    return [NSString stringWithFormat:@"%@:%@", [muotoilu stringFromNumber:tunnit], [muotoilu stringFromNumber:minuutit]];
 }
 
 #pragma mark - I/O
