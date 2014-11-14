@@ -20,6 +20,8 @@
 @property (nonatomic) NSTimeInterval ajanNayttotarkkuus;
 //miltä aikaväliltä kulunut aika näytetään:
 @property (nonatomic) NSCalendarUnit naytettavaAikavali;
+//tallennetaan käynnissä olevat ajastimet erikseen dictionaryyn rivinumerolla:
+@property (strong, nonatomic) NSMutableDictionary *ajastimet;
 @end
 
 @implementation MasterViewController
@@ -57,6 +59,7 @@
     //ladataan asetukset:
     self.ajanNayttotarkkuus = 15; //oletusarvo 15 minuuttia=900 sekuntia
     self.naytettavaAikavali = NSCalendarUnitWeekOfMonth; //oletusarvot
+    self.ajastimet = [[NSMutableDictionary alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -106,7 +109,12 @@
     cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:object[@"Kuva"]]] colorWithAlphaComponent:0.3];
     //cell.playButton = [UIButton buttonWithType:UIButtonTypeSystem]; ei pidä luoda uutta nappia, tuhoaa ib:n tekemän napin ominaisuuksineen =)
     //tarkistetaan, onko ajanotto käynnissä:
-    if ([object[@"Kaytossa"] boolValue]) cell.playButton.selected = YES;
+    if ([object[@"Kaytossa"] boolValue]) {
+        cell.playButton.selected = YES;
+        //aloitetaan tällöin ajastin:
+        NSTimer *ajastin = [NSTimer scheduledTimerWithTimeInterval:self.ajanNayttotarkkuus target:self selector:@selector(paivitaAika:) userInfo:indexPath repeats:YES];
+        [self.ajastimet setObject:ajastin forKey:indexPath.row]; //userinfoksi laitetaan indexpath
+    }
     return cell;
 }
 
@@ -150,7 +158,7 @@
         //lisätään aloitusaika Ajat-arrayhin uuteen dictionaryyn:
         [valittuKohde[@"Ajat"] addObject: [NSMutableDictionary dictionaryWithObject:[NSDate date] forKey:@"Alku"]];
         //aloita ajastin taulukon päivitystä varten, ajanoton tarkkuus määräytyy asetuksista:
-        [NSTimer scheduledTimerWithTimeInterval:self.ajanNayttotarkkuus target:self selector:@selector(paivitaAika:) userInfo:[NSNumber numberWithInteger:indexPath.row] repeats:YES]; //userinfoksi laitetaan idiksi castattu rivinumero
+        [NSTimer scheduledTimerWithTimeInterval:self.ajanNayttotarkkuus target:self selector:@selector(paivitaAika:) userInfo:indexPath repeats:YES]; //userinfoksi laitetaan indexpath
     }
     //tallennetaan dictionary takaisin arrayhin ja plistiin:
     self.objects[indexPath.row] = valittuKohde;
@@ -160,8 +168,9 @@
 #pragma mark - NSTimer
 
 - (void)paivitaAika:(NSTimer *)ajastin {
-    //ajastimen userInfo on halutun kohteen rivinumero NSNumberina:
-    [self.tableView reloadRowsAtIndexPaths:ajastin.userInfo withRowAnimation:UITableViewRowAnimationNone];
+    //ajastimen userInfo on halutun kohteen indexpath:
+    NSLog(@"Ajastimella userInfo %@", (NSIndexPath *)ajastin.userInfo);
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:ajastin.userInfo] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 #pragma mark - NSDate
