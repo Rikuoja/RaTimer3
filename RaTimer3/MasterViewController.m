@@ -110,9 +110,11 @@
     //tarkistetaan, onko ajanotto käynnissä:
     if ([object[@"Kaytossa"] boolValue]) {
         cell.playButton.selected = YES;
-        //aloitetaan tällöin ajastin:
-        NSTimer *ajastin = [NSTimer scheduledTimerWithTimeInterval:self.ajanNayttotarkkuus target:self selector:@selector(paivitaAika:) userInfo:indexPath repeats:YES];//userinfoksi laitetaan indexpath
-        self.ajastimet[indexPath.row]=ajastin;
+        //aloitetaan ajastin, jos sitä ei vielä ole (kohteet vasta ladattu tiedostosta):
+        if ([self.ajastimet[indexPath.row] isEqual:[NSNull null]]) {
+            NSTimer *ajastin = [NSTimer scheduledTimerWithTimeInterval:self.ajanNayttotarkkuus target:self selector:@selector(paivitaAika:) userInfo:indexPath repeats:YES];//userinfoksi laitetaan indexpath
+            self.ajastimet[indexPath.row]=ajastin;
+        }
     }
     return cell;
 }
