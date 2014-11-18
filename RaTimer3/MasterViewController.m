@@ -57,7 +57,7 @@
     [self lueKohteet];
     
     //ladataan asetukset:
-    self.ajanNayttotarkkuus = 60; //sekunteina (oletusarvo 15 minuuttia=900 sekuntia)
+    self.ajanNayttotarkkuus = 1; //sekunteina (oletusarvo 15 minuuttia=900 sekuntia)
     self.naytettavaAikavali = NSCalendarUnitWeekOfYear; //oletusarvot
 }
 
