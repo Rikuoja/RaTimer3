@@ -20,8 +20,8 @@
 @property (nonatomic) NSTimeInterval ajanNayttotarkkuus;
 //miltä aikaväliltä kulunut aika näytetään:
 @property (nonatomic) NSCalendarUnit naytettavaAikavali;
-//tallennetaan käynnissä olevat ajastimet erikseen dictionaryyn rivinumerolla:
-@property (strong, nonatomic) NSMutableDictionary *ajastimet;
+//tallennetaan ruudunpäivityksestä vastaavat ajastimet toiseen arrayhin (ei voi tallentaa plistiin):
+@property (strong, nonatomic) NSMutableArray *ajastimet;
 @end
 
 @implementation MasterViewController
@@ -57,9 +57,8 @@
     [self lueKohteet];
     
     //ladataan asetukset:
-    self.ajanNayttotarkkuus = 15; //oletusarvo 15 minuuttia=900 sekuntia
-    self.naytettavaAikavali = NSCalendarUnitWeekOfMonth; //oletusarvot
-    self.ajastimet = [[NSMutableDictionary alloc] init];
+    self.ajanNayttotarkkuus = 60; //sekunteina (oletusarvo 15 minuuttia=900 sekuntia)
+    self.naytettavaAikavali = NSCalendarUnitWeekOfYear; //oletusarvot
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,9 +70,9 @@
     if (!self.objects) {
         self.objects = [[NSMutableArray alloc] init];
     }
-    [self.objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    //[self.objects insertObject:[NSDate date] atIndex:0];
+    //NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    //[self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 #pragma mark - Segues
@@ -112,8 +111,8 @@
     if ([object[@"Kaytossa"] boolValue]) {
         cell.playButton.selected = YES;
         //aloitetaan tällöin ajastin:
-        NSTimer *ajastin = [NSTimer scheduledTimerWithTimeInterval:self.ajanNayttotarkkuus target:self selector:@selector(paivitaAika:) userInfo:indexPath repeats:YES];
-        [self.ajastimet setObject:ajastin forKey:indexPath.row]; //userinfoksi laitetaan indexpath
+        NSTimer *ajastin = [NSTimer scheduledTimerWithTimeInterval:self.ajanNayttotarkkuus target:self selector:@selector(paivitaAika:) userInfo:indexPath repeats:YES];//userinfoksi laitetaan indexpath
+        self.ajastimet[indexPath.row]=ajastin;
     }
     return cell;
 }
@@ -151,14 +150,19 @@
         [valittuKohde setValue:@NO forKey:@"Kaytossa"]; //dictionaryssa YES ja NO pitää wrapata objektiin literaalilla @
         //lisää lopetusajan Ajat-arrayn viimeiseen dictionaryyn:
         [[valittuKohde[@"Ajat"] lastObject] setValue:[NSDate date] forKey:@"Loppu"];
-        //lopetetaan mahdollinen ajastin, miten???!
+        //lopetetaan mahdollinen ajastin:
+        if (![self.ajastimet[indexPath.row] isEqual:[NSNull null]]) {
+            [self.ajastimet[indexPath.row] invalidate];
+            self.ajastimet[indexPath.row] = [NSNull null];
+        }
     }
     else {
         [valittuKohde setValue:@YES forKey:@"Kaytossa"];
         //lisätään aloitusaika Ajat-arrayhin uuteen dictionaryyn:
         [valittuKohde[@"Ajat"] addObject: [NSMutableDictionary dictionaryWithObject:[NSDate date] forKey:@"Alku"]];
         //aloita ajastin taulukon päivitystä varten, ajanoton tarkkuus määräytyy asetuksista:
-        [NSTimer scheduledTimerWithTimeInterval:self.ajanNayttotarkkuus target:self selector:@selector(paivitaAika:) userInfo:indexPath repeats:YES]; //userinfoksi laitetaan indexpath
+        NSTimer *ajastin = [NSTimer scheduledTimerWithTimeInterval:self.ajanNayttotarkkuus target:self selector:@selector(paivitaAika:) userInfo:indexPath repeats:YES]; //userinfoksi laitetaan indexpath
+        self.ajastimet[indexPath.row] = ajastin;
     }
     //tallennetaan dictionary takaisin arrayhin ja plistiin:
     self.objects[indexPath.row] = valittuKohde;
@@ -188,15 +192,23 @@
     NSDate *alkupaivamaara;
     NSTimeInterval jaksonPituus;
     [kayttajanKalenteri rangeOfUnit:haluttuAikavali startDate:&alkupaivamaara interval:&jaksonPituus forDate:nykyhetki];
-    NSLog(@"Jakson alusta kulunut %f sekuntia",(double)jaksonPituus);
+    NSLog(@"Jakson Alkupaivamaara %@", alkupaivamaara);
+    NSLog(@"Jakson pituus %f sekuntia",(double)jaksonPituus);
     //haetaan kohteesta ne aikavälit, jotka ovat halutun jakson sisällä.
     //uusimmat aikavälit tallentuvat arrayn loppuun, joten tehdään haku käänteisessä järjestyksessä:
     for (NSMutableDictionary *ajat in [kysyttyKohde[@"Ajat"] reverseObjectEnumerator]) {
+        NSLog(@"Aika alkoi %@", ajat[@"Alku"]);
         NSLog(@"Aika alkoi %d päivää sitten",(int)[[kayttajanKalenteri components:NSCalendarUnitDay fromDate:ajat[@"Alku"] toDate:nykyhetki options:0] day]);
         BOOL lopeta=NO;
-        //tarkistetaan, onko ajanotto edelleen käynnissä:
         NSDate *alkuhetki, *loppuhetki;
+        //tarkistetaan, onko ajanotto edelleen käynnissä:
         if (ajat[@"Loppu"] == nil) loppuhetki = nykyhetki;
+        //tarkistetaan, loppuiko kohde ennen aikavälin alkua:
+        else if ([alkupaivamaara earlierDate:ajat[@"Loppu"]] != alkupaivamaara) {
+            //ajat tallennettu kronologisessa järjestyksessä eli vanhempia aikoja ei haluta käydä läpi:
+            lopeta=YES;
+            break;
+        }
         else loppuhetki = ajat[@"Loppu"];
         //tarkistetaan, alkoiko kohde ennen aikavälin alkua:
         if ([alkupaivamaara earlierDate:ajat[@"Alku"]] != alkupaivamaara) {
@@ -265,6 +277,9 @@
     NSPropertyListFormat alkuperainenFormaatti;
     NSData *data = [NSData dataWithContentsOfFile:self.path];
     self.objects = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListMutableContainers format:&alkuperainenFormaatti error:&virhe];
+    //luodaan samankokoinen tyhjä ajastinarray:
+    self.ajastimet = [NSMutableArray arrayWithCapacity:self.objects.count];
+    for (id kohde in self.objects) [self.ajastimet addObject:[NSNull null]];
 }
 
 @end
