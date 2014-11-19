@@ -111,6 +111,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     OmaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    //sallitaan solujen siirtely:
+    cell.showsReorderControl = YES;
 
     NSMutableDictionary *object = self.objects[indexPath.row];
     cell.nimiLabel.text = object[@"Nimi"];
@@ -138,10 +140,25 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self.objects removeObjectAtIndex:indexPath.row];
+        //lopetetaan ja poistetaan ajastin samalla:
+        if (![self.ajastimet[indexPath.row] isEqual:[NSNull null]]) [self.ajastimet[indexPath.row] invalidate];
+        [self.ajastimet removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self tallennaKohteet];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    //päivitettävä sekä kohteiden että ajastimien järjestys:
+    NSMutableDictionary *siirrettavaKohde = self.objects[sourceIndexPath.row];
+    NSTimer *siirrettavaAjastin = self.ajastimet[sourceIndexPath.row];
+    [self.objects removeObjectAtIndex:sourceIndexPath.row];
+    [self.ajastimet removeObjectAtIndex:sourceIndexPath.row];
+    [self.objects insertObject:siirrettavaKohde atIndex:destinationIndexPath.row];
+    [self.ajastimet insertObject:siirrettavaAjastin atIndex:destinationIndexPath.row];
+    [self tallennaKohteet];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
