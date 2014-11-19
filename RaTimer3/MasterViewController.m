@@ -70,9 +70,20 @@
     if (!self.objects) {
         self.objects = [[NSMutableArray alloc] init];
     }
-    //[self.objects insertObject:[NSDate date] atIndex:0];
-    //NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    //[self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    //initialisoidaan uusi ajankäyttökohde:
+    NSMutableDictionary *uusiKohde = [NSMutableDictionary dictionary];
+    [uusiKohde setValue:@"Uusi kohde" forKey:@"Nimi"];
+    [uusiKohde setValue:@"" forKey:@"Kuva"];
+    [uusiKohde setValue:@NO forKey:@"Kaytossa"];
+    [uusiKohde setValue:[NSMutableArray array] forKey:@"Ajat"];
+    //lisätään kohde luetteloon:
+    [self.objects insertObject:uusiKohde atIndex:0];
+    //lisätään vastaava ajastin:
+    [self.ajastimet insertObject:[NSNull null] atIndex:0];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    //tallennetaan uusi kohde plistiin:
+    [self tallennaKohteet];
 }
 
 #pragma mark - Segues
