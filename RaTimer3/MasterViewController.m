@@ -204,7 +204,9 @@
 - (void)paivitaAika:(NSTimer *)ajastin {
     //ajastimen userInfo on halutun kohteen indexpath:
     NSLog(@"Ajastimella userInfo %@", (NSIndexPath *)ajastin.userInfo);
+    [self.tableView beginUpdates];
     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:ajastin.userInfo] withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView endUpdates];
 }
 
 #pragma mark - NSDate
