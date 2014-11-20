@@ -28,6 +28,7 @@
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {
+        self.detailNavigationBar.title = self.detailItem[@"Nimi"];
         self.detailDescriptionLabel.text = self.detailItem[@"Nimi"];
     }
 }
