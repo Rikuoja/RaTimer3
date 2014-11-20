@@ -39,11 +39,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Spw-ME-zXL">
+                                <rect key="frame" x="16" y="77" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Spw-ME-zXL" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="13" id="6UC-sH-Pij"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="jWN-iV-94e"/>
+                            <constraint firstItem="Spw-ME-zXL" firstAttribute="centerX" secondItem="0XM-y9-sOw" secondAttribute="centerX" id="mhi-74-gpy"/>
+                            <constraint firstItem="Spw-ME-zXL" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="ow2-Ti-xQr"/>
                             <constraint firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" constant="20" symbolic="YES" id="tHV-ZD-HQj"/>
                         </constraints>
                     </view>
@@ -52,6 +60,7 @@
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
                         <outlet property="detailNavigationBar" destination="mOI-FS-AaM" id="kcZ-W1-lCx"/>
+                        <outlet property="nimiTextField" destination="Spw-ME-zXL" id="sOc-x0-ASd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
