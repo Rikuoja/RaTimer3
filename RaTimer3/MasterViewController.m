@@ -202,11 +202,16 @@
 #pragma mark - NSTimer
 
 - (void)paivitaAika:(NSTimer *)ajastin {
-    //ajastimen userInfo on halutun kohteen indexpath:
-    NSLog(@"Ajastimella userInfo %@", (NSIndexPath *)ajastin.userInfo);
-    [self.tableView beginUpdates];
-    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:ajastin.userInfo] withRowAnimation:UITableViewRowAnimationNone];
-    [self.tableView endUpdates];
+    //tableviewiä ei pidä päivittää suoraan ajastinthreadista (kaatuu jos rivin siirtäminen on kesken ajastetulla hetkellä)!!! käytä gcd:tä/nsoperationqueueta??? vai tehdäkö nsoperationqueue suoraan (ilman ajastinta)???
+    //[self.tableView beginUpdates];
+    //[self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:ajastin.userInfo] withRowAnimation:UITableViewRowAnimationNone];
+    //[self.tableView endUpdates];
+    //kokeillaan gcd:llä (vaikuttaako käytökseen?):
+    dispatch_async(dispatch_get_main_queue(), ^{
+        //ajastimen userInfo on halutun kohteen indexpath:
+        NSLog(@"Ajastimella userInfo %@", (NSIndexPath *)ajastin.userInfo);
+        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:ajastin.userInfo] withRowAnimation:UITableViewRowAnimationNone];
+    });
 }
 
 #pragma mark - NSDate
