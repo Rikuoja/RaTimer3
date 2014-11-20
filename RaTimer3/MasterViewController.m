@@ -202,16 +202,11 @@
 #pragma mark - NSTimer
 
 - (void)paivitaAika:(NSTimer *)ajastin {
-    //tableviewiä ei pidä päivittää suoraan ajastinthreadista (kaatuu jos rivin siirtäminen on kesken ajastetulla hetkellä)!!! käytä gcd:tä/nsoperationqueueta??? vai tehdäkö nsoperationqueue suoraan (ilman ajastinta)???
-    //[self.tableView beginUpdates];
-    //[self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:ajastin.userInfo] withRowAnimation:UITableViewRowAnimationNone];
-    //[self.tableView endUpdates];
-    //kokeillaan gcd:llä (vaikuttaako käytökseen?):
-    dispatch_async(dispatch_get_main_queue(), ^{
-        //ajastimen userInfo on halutun kohteen indexpath:
-        NSLog(@"Ajastimella userInfo %@", (NSIndexPath *)ajastin.userInfo);
+    NSLog(@"Ajastimella userInfo %@", (NSIndexPath *)ajastin.userInfo);
+    //Ei päivitetä näyttöä, jos käyttäjä on siirtämässä soluja (kaatuu päivitettäessä):
+    if (!self.tableView.isEditing) {
         [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:ajastin.userInfo] withRowAnimation:UITableViewRowAnimationNone];
-    });
+    }
 }
 
 #pragma mark - NSDate
