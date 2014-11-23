@@ -32,16 +32,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Spw-ME-zXL">
-                                <rect key="frame" x="16" y="77" width="568" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Spw-ME-zXL">
+                                <rect key="frame" x="70" y="77" width="514" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="514" id="IIY-Oc-Enk"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="JEX-9P-axG" id="tYD-YL-kMZ"/>
+                                </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJf-yP-40T">
+                                <rect key="frame" x="16" y="81" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Spw-ME-zXL" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="13" id="6UC-sH-Pij"/>
-                            <constraint firstItem="Spw-ME-zXL" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="ow2-Ti-xQr"/>
+                            <constraint firstItem="OJf-yP-40T" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="17" id="9Bm-Pb-Jq2"/>
+                            <constraint firstItem="Spw-ME-zXL" firstAttribute="trailing" secondItem="svH-Pt-448" secondAttribute="trailingMargin" id="Hkh-NV-4tm"/>
+                            <constraint firstItem="Spw-ME-zXL" firstAttribute="leading" secondItem="OJf-yP-40T" secondAttribute="trailing" constant="8" symbolic="YES" id="N71-9U-w7B"/>
+                            <constraint firstItem="Spw-ME-zXL" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="13" id="Xri-XD-cgZ"/>
                         </constraints>
                     </view>
                     <toolbarItems/>

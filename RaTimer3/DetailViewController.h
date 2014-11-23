@@ -8,11 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController
+//tietojen välittämiseksi takaisin masterviewcontrollerin pitää olla tämän delegaatti:
+@protocol DetailViewControllerDelegate;
+
+@interface DetailViewController : UIViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) NSMutableDictionary *detailItem;
 @property (weak, nonatomic) IBOutlet UINavigationItem *detailNavigationBar;
 @property (weak, nonatomic) IBOutlet UITextField *nimiTextField;
+@property (nonatomic, assign) id <DetailViewControllerDelegate> delegate;
 
+@end
+
+@protocol DetailViewControllerDelegate <NSObject>
+- (void) muuttunutKohde:(NSMutableDictionary *) kohde;
 @end
 

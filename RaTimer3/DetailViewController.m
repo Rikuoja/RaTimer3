@@ -25,6 +25,12 @@
     }
 }
 
+- (BOOL) textFieldShouldReturn:(UITextField *)textField {
+    self.detailItem[@"Nimi"]=self.nimiTextField.text;
+    //self..tallennaKohteet;
+    return YES;
+}
+
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {
