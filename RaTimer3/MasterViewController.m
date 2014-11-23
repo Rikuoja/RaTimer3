@@ -101,6 +101,13 @@
     }
 }
 
+#pragma mark - Protocols
+
+- (void) muuttunutKohde:(NSMutableDictionary *)kohde vanhaKohde:(NSMutableDictionary *)vanha {
+    //kohde pitää ensin löytää arraysta (on voinut siirtyä =):
+    
+}
+
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

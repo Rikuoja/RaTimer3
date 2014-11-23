@@ -21,6 +21,7 @@
 @end
 
 @protocol DetailViewControllerDelegate <NSObject>
-- (void) muuttunutKohde:(NSMutableDictionary *) kohde;
+//metodin pitää kertoa delegaatille *mikä* kohde muuttui ja *miten*:
+- (void) muuttunutKohde:(NSMutableDictionary *) kohde vanhaKohde:(NSMutableDictionary *) vanha;
 @end
 

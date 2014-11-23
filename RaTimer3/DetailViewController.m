@@ -26,8 +26,12 @@
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField {
-    self.detailItem[@"Nimi"]=self.nimiTextField.text;
-    //self..tallennaKohteet;
+    //vanha kohde pitää pitää tallessa jotta delegaatti löytää sen:
+    NSMutableDictionary* muuttunutKohde = self.detailItem.copy;
+    muuttunutKohde[@"Nimi"]=self.nimiTextField.text;
+    [self.delegate muuttunutKohde:(NSMutableDictionary *)muuttunutKohde vanhaKohde:(NSMutableDictionary *)self.detailItem];
+    self.detailItem=muuttunutKohde;
+    [self configureView];
     return YES;
 }
 
