@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -46,14 +48,37 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Background" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEZ-Mb-nA9">
+                                <rect key="frame" x="16" y="122" width="94" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="pcI-xu-d3i">
+                                <rect key="frame" x="118" y="119" width="187" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="187" id="MHa-3q-Mvb"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Color..."/>
+                                    <segment title="Image..."/>
+                                    <segment title="Auto"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="nEZ-Mb-nA9" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="6Mc-cV-U6T"/>
                             <constraint firstItem="OJf-yP-40T" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="17" id="9Bm-Pb-Jq2"/>
-                            <constraint firstItem="Spw-ME-zXL" firstAttribute="trailing" secondItem="svH-Pt-448" secondAttribute="trailingMargin" id="Hkh-NV-4tm"/>
                             <constraint firstItem="Spw-ME-zXL" firstAttribute="leading" secondItem="OJf-yP-40T" secondAttribute="trailing" constant="8" symbolic="YES" id="N71-9U-w7B"/>
-                            <constraint firstItem="Spw-ME-zXL" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="13" id="Xri-XD-cgZ"/>
-                            <constraint firstItem="OJf-yP-40T" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="tDa-xN-LYi"/>
+                            <constraint firstItem="nEZ-Mb-nA9" firstAttribute="baseline" secondItem="pcI-xu-d3i" secondAttribute="baseline" id="OfA-7n-5kF"/>
+                            <constraint firstItem="pcI-xu-d3i" firstAttribute="leading" secondItem="nEZ-Mb-nA9" secondAttribute="trailing" constant="8" symbolic="YES" id="TLt-Rh-36F"/>
+                            <constraint firstItem="nEZ-Mb-nA9" firstAttribute="baseline" secondItem="pcI-xu-d3i" secondAttribute="firstBaseline" id="WNT-PA-Qdw"/>
+                            <constraint firstItem="Spw-ME-zXL" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="13" id="ZIK-WV-ncx"/>
+                            <constraint firstItem="pcI-xu-d3i" firstAttribute="top" secondItem="Spw-ME-zXL" secondAttribute="bottom" constant="12" id="Zda-l9-71K"/>
+                            <constraint firstItem="OJf-yP-40T" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="ZuM-JZ-60O"/>
+                            <constraint firstItem="nEZ-Mb-nA9" firstAttribute="firstBaseline" secondItem="pcI-xu-d3i" secondAttribute="baseline" id="bRi-XV-8Qy"/>
+                            <constraint firstItem="Spw-ME-zXL" firstAttribute="trailing" secondItem="svH-Pt-448" secondAttribute="trailingMargin" id="wcw-up-rJZ"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
