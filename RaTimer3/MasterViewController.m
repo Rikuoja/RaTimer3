@@ -104,8 +104,12 @@
 #pragma mark - Protocols
 
 - (void) muuttunutKohde:(NSMutableDictionary *)kohde vanhaKohde:(NSMutableDictionary *)vanha {
-    //kohde pitää ensin löytää arraysta (on voinut siirtyä =):
-    
+    //etsitään kohteen numero arraysta (on voinut siirtyä) pointtereita vertaamalla:
+    NSInteger kohteenNumero = [self.objects indexOfObject:vanha];
+    self.objects[kohteenNumero] = kohde;
+    [self tallennaKohteet];
+    //ladataan vielä taulukon vastaava rivi uudestaan:
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForItem:kohteenNumero inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 #pragma mark - Table View

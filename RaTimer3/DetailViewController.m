@@ -26,10 +26,12 @@
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField {
-    //vanha kohde pitää pitää tallessa jotta delegaatti löytää sen:
-    NSMutableDictionary* muuttunutKohde = self.detailItem.copy;
+    //pointteri vanhaan kohteeseen säilytettävä jotta delegaatti löytää sen:
+    NSMutableDictionary* muuttunutKohde = [self.detailItem mutableCopy];
     muuttunutKohde[@"Nimi"]=self.nimiTextField.text;
+    //tällä delegaatti kirjoittaa uuden kohteen pointterin vanhan päälle ja päivittää itsensä:
     [self.delegate muuttunutKohde:(NSMutableDictionary *)muuttunutKohde vanhaKohde:(NSMutableDictionary *)self.detailItem];
+    //näillä detailviewcontroller tekee saman:
     self.detailItem=muuttunutKohde;
     [self configureView];
     return YES;
