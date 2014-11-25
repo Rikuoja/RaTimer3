@@ -14,15 +14,35 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-RaTimer3Tests-NSDate-KBSRandom.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-RaTimer3Tests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0CB933EDF49C45465B431C80</key>
+		<key>0138729D67BCA2AEE827C483</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F58135E6584D5283B756557D</key>
+		<key>B3EB48AE6B5C22EBC9D0C434</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D8E7978A73BA938AF2E5208E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F412C37CA4F87A848E304592</key>
 		<dict>
 			<key>primary</key>
 			<true/>

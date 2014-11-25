@@ -32,6 +32,58 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>16C467A0249F7488E85FB71C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-RaTimer3Tests/Pods-RaTimer3Tests-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>18EF59F10ED5A1E04AB2BD20</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-RaTimer3Tests.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-RaTimer3Tests/Pods-RaTimer3Tests.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2C640C17851AD497BB799039</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-RaTimer3Tests.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
 		<key>3243DFC31A08EC1500C64A65</key>
 		<dict>
 			<key>children</key>
@@ -475,7 +527,9 @@
 			<key>buildActionMask</key>
 			<string>2147483647</string>
 			<key>files</key>
-			<array/>
+			<array>
+				<string>4F3BC54BB484E3A36D7C49B0</string>
+			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
@@ -498,9 +552,11 @@
 			<string>3243DFF51A08EC1500C64A65</string>
 			<key>buildPhases</key>
 			<array>
+				<string>4F932215857A4F39F5338DC1</string>
 				<string>3243DFE41A08EC1500C64A65</string>
 				<string>3243DFE51A08EC1500C64A65</string>
 				<string>3243DFE61A08EC1500C64A65</string>
+				<string>16C467A0249F7488E85FB71C</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -833,6 +889,8 @@
 		</dict>
 		<key>3243DFF61A08EC1500C64A65</key>
 		<dict>
+			<key>baseConfigurationReference</key>
+			<string>18EF59F10ED5A1E04AB2BD20</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>BUNDLE_LOADER</key>
@@ -863,6 +921,8 @@
 		</dict>
 		<key>3243DFF71A08EC1500C64A65</key>
 		<dict>
+			<key>baseConfigurationReference</key>
+			<string>E66C53FC715F1D4D97B9939F</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>BUNDLE_LOADER</key>
@@ -963,6 +1023,43 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>4F3BC54BB484E3A36D7C49B0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2C640C17851AD497BB799039</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4F932215857A4F39F5338DC1</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
 		<key>A350834D8009495EC7B202DA</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -1032,6 +1129,21 @@ fi
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
 		</dict>
+		<key>E66C53FC715F1D4D97B9939F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-RaTimer3Tests.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-RaTimer3Tests/Pods-RaTimer3Tests.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>E770BF08DE4B1197911BF605</key>
 		<dict>
 			<key>explicitFileType</key>
@@ -1051,6 +1163,8 @@ fi
 			<array>
 				<string>C0E1D86302B78F476B3D79BA</string>
 				<string>03F2244510B91AD2F5B9D9A5</string>
+				<string>18EF59F10ED5A1E04AB2BD20</string>
+				<string>E66C53FC715F1D4D97B9939F</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1064,6 +1178,7 @@ fi
 			<key>children</key>
 			<array>
 				<string>E770BF08DE4B1197911BF605</string>
+				<string>2C640C17851AD497BB799039</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>

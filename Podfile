@@ -9,5 +9,7 @@ end
 
 target 'RaTimer3Tests' do
 
+pod 'NSDate-KBSRandom'
+
 end
 
