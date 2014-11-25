@@ -3,6 +3,8 @@
 
 target 'RaTimer3' do
 
+pod 'CorePlot'
+
 end
 
 target 'RaTimer3Tests' do
