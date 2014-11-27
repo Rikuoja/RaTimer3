@@ -73,7 +73,7 @@
     //initialisoidaan uusi ajankäyttökohde:
     NSMutableDictionary *uusiKohde = [NSMutableDictionary dictionary];
     [uusiKohde setValue:@"Uusi kohde" forKey:@"Nimi"];
-    [uusiKohde setValue:@"" forKey:@"Kuva"];
+    [uusiKohde setValue:@"" forKey:@"Vari"];
     [uusiKohde setValue:@NO forKey:@"Kaytossa"];
     [uusiKohde setValue:[NSMutableArray array] forKey:@"Ajat"];
     //lisätään kohde luetteloon:
@@ -131,7 +131,7 @@
     cell.nimiLabel.text = object[@"Nimi"];
     cell.aikaLabel.text = [self aikaaKulunutSelkokielella:[self aikaaKulunut:object aikavalilla:self.naytettavaAikavali]];
     //piirretään kuva taustalle:
-    cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:object[@"Kuva"]]] colorWithAlphaComponent:0.3];
+    cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:object[@"Vari"]]] colorWithAlphaComponent:0.3];
     //cell.playButton = [UIButton buttonWithType:UIButtonTypeSystem]; ei pidä luoda uutta nappia, tuhoaa ib:n tekemän napin ominaisuuksineen =)
     //tarkistetaan, onko ajanotto käynnissä:
     if ([object[@"Kaytossa"] boolValue]) {
@@ -295,7 +295,7 @@
 
 - (void)tallennaKohteet {
     //Tällä voi halutessaan luoda testiplistin uudestaan:
-    /*self.objects = [NSMutableArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:@"Opetus",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Materiaali & suunnittelu",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Muut työt",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Opiskelu",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Oravien ruokinta",@"Nimi",@"256px-Common_Squirrel.jpg",@"Kuva",@NO,@"Kaytossa", nil],nil];
+    /*self.objects = [NSMutableArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:@"Opetus",@"Nimi",@"256px-Common_Squirrel.jpg",@"Vari",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Materiaali & suunnittelu",@"Nimi",@"256px-Common_Squirrel.jpg",@"Vari",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Muut työt",@"Nimi",@"256px-Common_Squirrel.jpg",@"Vari",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Opiskelu",@"Nimi",@"256px-Common_Squirrel.jpg",@"Vari",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Oravien ruokinta",@"Nimi",@"256px-Common_Squirrel.jpg",@"Vari",@NO,@"Kaytossa", nil],nil];
      */
     
     [self.objects writeToFile:self.path atomically:YES];

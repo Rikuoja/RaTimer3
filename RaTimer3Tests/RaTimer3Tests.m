@@ -26,7 +26,7 @@
     for (int i=1; i<100; i++) {
         NSMutableDictionary* uusiKohde = [NSMutableDictionary dictionary];
         [uusiKohde setValue:[@(i) stringValue] forKey:@"Nimi"];
-        [uusiKohde setValue:@"" forKey:@"Kuva"];
+        [uusiKohde setValue:@"" forKey:@"Vari"];
         [uusiKohde setValue:@NO forKey:@"Kaytossa"];
         [uusiKohde setValue:[NSMutableArray array] forKey:@"Ajat"];
         for (int j=1; j<100; j++) {

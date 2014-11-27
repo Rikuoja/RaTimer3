@@ -1,1194 +1,556 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>023BDE980234C31EE3F6C7E6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E770BF08DE4B1197911BF605</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>03F2244510B91AD2F5B9D9A5</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-RaTimer3.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-RaTimer3/Pods-RaTimer3.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16C467A0249F7488E85FB71C</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-RaTimer3Tests/Pods-RaTimer3Tests-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>18EF59F10ED5A1E04AB2BD20</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-RaTimer3Tests.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-RaTimer3Tests/Pods-RaTimer3Tests.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2C640C17851AD497BB799039</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-RaTimer3Tests.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>3243DFC31A08EC1500C64A65</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3243DFCE1A08EC1500C64A65</string>
-				<string>3243DFEB1A08EC1500C64A65</string>
-				<string>3243DFCD1A08EC1500C64A65</string>
-				<string>ECCFF9F7A6E0F922C13CC8DD</string>
-				<string>F19F621AF447443E805B278F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFC41A08EC1500C64A65</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0610</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Riku Oja</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>3243DFCB1A08EC1500C64A65</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>6.1</string>
-					</dict>
-					<key>3243DFE71A08EC1500C64A65</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>6.1</string>
-						<key>TestTargetID</key>
-						<string>3243DFCB1A08EC1500C64A65</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>3243DFC71A08EC1500C64A65</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>3243DFC31A08EC1500C64A65</string>
-			<key>productRefGroup</key>
-			<string>3243DFCD1A08EC1500C64A65</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>3243DFCB1A08EC1500C64A65</string>
-				<string>3243DFE71A08EC1500C64A65</string>
-			</array>
-		</dict>
-		<key>3243DFC71A08EC1500C64A65</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>3243DFF01A08EC1500C64A65</string>
-				<string>3243DFF11A08EC1500C64A65</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>3243DFC81A08EC1500C64A65</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>3243DFD51A08EC1500C64A65</string>
-				<string>3243DFD81A08EC1500C64A65</string>
-				<string>3243E0001A08EC9900C64A65</string>
-				<string>3243DFD21A08EC1500C64A65</string>
-				<string>3243DFDB1A08EC1500C64A65</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3243DFC91A08EC1500C64A65</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>023BDE980234C31EE3F6C7E6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3243DFCA1A08EC1500C64A65</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>3243DFDE1A08EC1500C64A65</string>
-				<string>3243E0011A08EC9900C64A65</string>
-				<string>3243DFE31A08EC1500C64A65</string>
-				<string>3243E0081A0BC85F00C64A65</string>
-				<string>3243DFE01A08EC1500C64A65</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3243DFCB1A08EC1500C64A65</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>3243DFF21A08EC1500C64A65</string>
-			<key>buildPhases</key>
-			<array>
-				<string>E4E85E2DF906715382745DBF</string>
-				<string>3243DFC81A08EC1500C64A65</string>
-				<string>3243DFC91A08EC1500C64A65</string>
-				<string>3243DFCA1A08EC1500C64A65</string>
-				<string>A350834D8009495EC7B202DA</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>RaTimer3</string>
-			<key>productName</key>
-			<string>RaTimer3</string>
-			<key>productReference</key>
-			<string>3243DFCC1A08EC1500C64A65</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>3243DFCC1A08EC1500C64A65</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>RaTimer3.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>3243DFCD1A08EC1500C64A65</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3243DFCC1A08EC1500C64A65</string>
-				<string>3243DFE81A08EC1500C64A65</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFCE1A08EC1500C64A65</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3243E0071A0BC85F00C64A65</string>
-				<string>3243DFFD1A08EC9900C64A65</string>
-				<string>3243DFFE1A08EC9900C64A65</string>
-				<string>3243DFFF1A08EC9900C64A65</string>
-				<string>3243DFD31A08EC1500C64A65</string>
-				<string>3243DFD41A08EC1500C64A65</string>
-				<string>3243DFD61A08EC1500C64A65</string>
-				<string>3243DFD71A08EC1500C64A65</string>
-				<string>3243DFD91A08EC1500C64A65</string>
-				<string>3243DFDA1A08EC1500C64A65</string>
-				<string>3243DFDC1A08EC1500C64A65</string>
-				<string>3243DFDF1A08EC1500C64A65</string>
-				<string>3243DFE11A08EC1500C64A65</string>
-				<string>3243DFCF1A08EC1500C64A65</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>RaTimer3</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFCF1A08EC1500C64A65</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3243DFD01A08EC1500C64A65</string>
-				<string>3243DFD11A08EC1500C64A65</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFD01A08EC1500C64A65</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFD11A08EC1500C64A65</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFD21A08EC1500C64A65</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3243DFD11A08EC1500C64A65</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3243DFD31A08EC1500C64A65</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>AppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFD41A08EC1500C64A65</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>AppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFD51A08EC1500C64A65</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3243DFD41A08EC1500C64A65</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3243DFD61A08EC1500C64A65</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>MasterViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFD71A08EC1500C64A65</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>MasterViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFD81A08EC1500C64A65</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3243DFD71A08EC1500C64A65</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3243DFD91A08EC1500C64A65</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>DetailViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFDA1A08EC1500C64A65</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>DetailViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFDB1A08EC1500C64A65</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3243DFDA1A08EC1500C64A65</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3243DFDC1A08EC1500C64A65</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3243DFDD1A08EC1500C64A65</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFDD1A08EC1500C64A65</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFDE1A08EC1500C64A65</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3243DFDC1A08EC1500C64A65</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3243DFDF1A08EC1500C64A65</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Images.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFE01A08EC1500C64A65</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3243DFDF1A08EC1500C64A65</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3243DFE11A08EC1500C64A65</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3243DFE21A08EC1500C64A65</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>LaunchScreen.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFE21A08EC1500C64A65</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/LaunchScreen.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFE31A08EC1500C64A65</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3243DFE11A08EC1500C64A65</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3243DFE41A08EC1500C64A65</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>3243DFEF1A08EC1500C64A65</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3243DFE51A08EC1500C64A65</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>4F3BC54BB484E3A36D7C49B0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3243DFE61A08EC1500C64A65</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>3243DFE71A08EC1500C64A65</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>3243DFF51A08EC1500C64A65</string>
-			<key>buildPhases</key>
-			<array>
-				<string>4F932215857A4F39F5338DC1</string>
-				<string>3243DFE41A08EC1500C64A65</string>
-				<string>3243DFE51A08EC1500C64A65</string>
-				<string>3243DFE61A08EC1500C64A65</string>
-				<string>16C467A0249F7488E85FB71C</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>3243DFEA1A08EC1500C64A65</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>RaTimer3Tests</string>
-			<key>productName</key>
-			<string>RaTimer3Tests</string>
-			<key>productReference</key>
-			<string>3243DFE81A08EC1500C64A65</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>3243DFE81A08EC1500C64A65</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>RaTimer3Tests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>3243DFE91A08EC1500C64A65</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>3243DFC41A08EC1500C64A65</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>3243DFCB1A08EC1500C64A65</string>
-			<key>remoteInfo</key>
-			<string>RaTimer3</string>
-		</dict>
-		<key>3243DFEA1A08EC1500C64A65</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>3243DFCB1A08EC1500C64A65</string>
-			<key>targetProxy</key>
-			<string>3243DFE91A08EC1500C64A65</string>
-		</dict>
-		<key>3243DFEB1A08EC1500C64A65</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3243DFEE1A08EC1500C64A65</string>
-				<string>3243DFEC1A08EC1500C64A65</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>RaTimer3Tests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFEC1A08EC1500C64A65</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3243DFED1A08EC1500C64A65</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFED1A08EC1500C64A65</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFEE1A08EC1500C64A65</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>RaTimer3Tests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFEF1A08EC1500C64A65</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3243DFEE1A08EC1500C64A65</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3243DFF01A08EC1500C64A65</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.1</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>3243DFF11A08EC1500C64A65</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.1</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>3243DFF21A08EC1500C64A65</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>3243DFF31A08EC1500C64A65</string>
-				<string>3243DFF41A08EC1500C64A65</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>3243DFF31A08EC1500C64A65</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>C0E1D86302B78F476B3D79BA</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>INFOPLIST_FILE</key>
-				<string>RaTimer3/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PLIST_FILE_OUTPUT_FORMAT</key>
-				<string>XML</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>3243DFF41A08EC1500C64A65</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>03F2244510B91AD2F5B9D9A5</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>INFOPLIST_FILE</key>
-				<string>RaTimer3/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PLIST_FILE_OUTPUT_FORMAT</key>
-				<string>XML</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>3243DFF51A08EC1500C64A65</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>3243DFF61A08EC1500C64A65</string>
-				<string>3243DFF71A08EC1500C64A65</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>3243DFF61A08EC1500C64A65</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>18EF59F10ED5A1E04AB2BD20</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>RaTimer3Tests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/RaTimer3.app/RaTimer3</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>3243DFF71A08EC1500C64A65</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>E66C53FC715F1D4D97B9939F</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>RaTimer3Tests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/RaTimer3.app/RaTimer3</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>3243DFFD1A08EC9900C64A65</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>OmaTableViewCell.h</string>
-			<key>path</key>
-			<string>../../RaTimer/OmaTableViewCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFFE1A08EC9900C64A65</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>OmaTableViewCell.m</string>
-			<key>path</key>
-			<string>../../RaTimer/OmaTableViewCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243DFFF1A08EC9900C64A65</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.jpeg</string>
-			<key>name</key>
-			<string>256px-Common_Squirrel.jpg</string>
-			<key>path</key>
-			<string>../../../Downloads/256px-Common_Squirrel.jpg</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243E0001A08EC9900C64A65</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3243DFFE1A08EC9900C64A65</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3243E0011A08EC9900C64A65</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3243DFFF1A08EC9900C64A65</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>3243E0071A0BC85F00C64A65</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>TallennetutKohteet.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3243E0081A0BC85F00C64A65</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3243E0071A0BC85F00C64A65</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>4F3BC54BB484E3A36D7C49B0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>2C640C17851AD497BB799039</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>4F932215857A4F39F5338DC1</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>A350834D8009495EC7B202DA</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-RaTimer3/Pods-RaTimer3-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>C0E1D86302B78F476B3D79BA</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-RaTimer3.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-RaTimer3/Pods-RaTimer3.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E4E85E2DF906715382745DBF</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>E66C53FC715F1D4D97B9939F</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-RaTimer3Tests.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods-RaTimer3Tests/Pods-RaTimer3Tests.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E770BF08DE4B1197911BF605</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-RaTimer3.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>ECCFF9F7A6E0F922C13CC8DD</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>C0E1D86302B78F476B3D79BA</string>
-				<string>03F2244510B91AD2F5B9D9A5</string>
-				<string>18EF59F10ED5A1E04AB2BD20</string>
-				<string>E66C53FC715F1D4D97B9939F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F19F621AF447443E805B278F</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>E770BF08DE4B1197911BF605</string>
-				<string>2C640C17851AD497BB799039</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>3243DFC41A08EC1500C64A65</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		023BDE980234C31EE3F6C7E6 /* libPods-RaTimer3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E770BF08DE4B1197911BF605 /* libPods-RaTimer3.a */; };
+		3243DFD21A08EC1500C64A65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3243DFD11A08EC1500C64A65 /* main.m */; };
+		3243DFD51A08EC1500C64A65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3243DFD41A08EC1500C64A65 /* AppDelegate.m */; };
+		3243DFD81A08EC1500C64A65 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3243DFD71A08EC1500C64A65 /* MasterViewController.m */; };
+		3243DFDB1A08EC1500C64A65 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3243DFDA1A08EC1500C64A65 /* DetailViewController.m */; };
+		3243DFDE1A08EC1500C64A65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3243DFDC1A08EC1500C64A65 /* Main.storyboard */; };
+		3243DFE01A08EC1500C64A65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3243DFDF1A08EC1500C64A65 /* Images.xcassets */; };
+		3243DFE31A08EC1500C64A65 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3243DFE11A08EC1500C64A65 /* LaunchScreen.xib */; };
+		3243DFEF1A08EC1500C64A65 /* RaTimer3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3243DFEE1A08EC1500C64A65 /* RaTimer3Tests.m */; };
+		3243E0001A08EC9900C64A65 /* OmaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3243DFFE1A08EC9900C64A65 /* OmaTableViewCell.m */; };
+		3243E0011A08EC9900C64A65 /* 256px-Common_Squirrel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3243DFFF1A08EC9900C64A65 /* 256px-Common_Squirrel.jpg */; };
+		3243E0081A0BC85F00C64A65 /* TallennetutKohteet.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3243E0071A0BC85F00C64A65 /* TallennetutKohteet.plist */; };
+		4F3BC54BB484E3A36D7C49B0 /* libPods-RaTimer3Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C640C17851AD497BB799039 /* libPods-RaTimer3Tests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3243DFE91A08EC1500C64A65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3243DFC41A08EC1500C64A65 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3243DFCB1A08EC1500C64A65;
+			remoteInfo = RaTimer3;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03F2244510B91AD2F5B9D9A5 /* Pods-RaTimer3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaTimer3.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaTimer3/Pods-RaTimer3.release.xcconfig"; sourceTree = "<group>"; };
+		18EF59F10ED5A1E04AB2BD20 /* Pods-RaTimer3Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaTimer3Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaTimer3Tests/Pods-RaTimer3Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		2C640C17851AD497BB799039 /* libPods-RaTimer3Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RaTimer3Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3243DFCC1A08EC1500C64A65 /* RaTimer3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaTimer3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3243DFD01A08EC1500C64A65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3243DFD11A08EC1500C64A65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3243DFD31A08EC1500C64A65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3243DFD41A08EC1500C64A65 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3243DFD61A08EC1500C64A65 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		3243DFD71A08EC1500C64A65 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MasterViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		3243DFD91A08EC1500C64A65 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		3243DFDA1A08EC1500C64A65 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		3243DFDD1A08EC1500C64A65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3243DFDF1A08EC1500C64A65 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3243DFE21A08EC1500C64A65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		3243DFE81A08EC1500C64A65 /* RaTimer3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaTimer3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3243DFED1A08EC1500C64A65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3243DFEE1A08EC1500C64A65 /* RaTimer3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RaTimer3Tests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		3243DFFD1A08EC9900C64A65 /* OmaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = OmaTableViewCell.h; path = ../../RaTimer/OmaTableViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		3243DFFE1A08EC9900C64A65 /* OmaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OmaTableViewCell.m; path = ../../RaTimer/OmaTableViewCell.m; sourceTree = "<group>"; };
+		3243DFFF1A08EC9900C64A65 /* 256px-Common_Squirrel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "256px-Common_Squirrel.jpg"; path = "../../../Downloads/256px-Common_Squirrel.jpg"; sourceTree = "<group>"; };
+		3243E0071A0BC85F00C64A65 /* TallennetutKohteet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TallennetutKohteet.plist; sourceTree = "<group>"; };
+		C0E1D86302B78F476B3D79BA /* Pods-RaTimer3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaTimer3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaTimer3/Pods-RaTimer3.debug.xcconfig"; sourceTree = "<group>"; };
+		E66C53FC715F1D4D97B9939F /* Pods-RaTimer3Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaTimer3Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaTimer3Tests/Pods-RaTimer3Tests.release.xcconfig"; sourceTree = "<group>"; };
+		E770BF08DE4B1197911BF605 /* libPods-RaTimer3.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RaTimer3.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3243DFC91A08EC1500C64A65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				023BDE980234C31EE3F6C7E6 /* libPods-RaTimer3.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3243DFE51A08EC1500C64A65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F3BC54BB484E3A36D7C49B0 /* libPods-RaTimer3Tests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3243DFC31A08EC1500C64A65 = {
+			isa = PBXGroup;
+			children = (
+				3243DFCE1A08EC1500C64A65 /* RaTimer3 */,
+				3243DFEB1A08EC1500C64A65 /* RaTimer3Tests */,
+				3243DFCD1A08EC1500C64A65 /* Products */,
+				ECCFF9F7A6E0F922C13CC8DD /* Pods */,
+				F19F621AF447443E805B278F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3243DFCD1A08EC1500C64A65 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3243DFCC1A08EC1500C64A65 /* RaTimer3.app */,
+				3243DFE81A08EC1500C64A65 /* RaTimer3Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3243DFCE1A08EC1500C64A65 /* RaTimer3 */ = {
+			isa = PBXGroup;
+			children = (
+				3243E0071A0BC85F00C64A65 /* TallennetutKohteet.plist */,
+				3243DFFD1A08EC9900C64A65 /* OmaTableViewCell.h */,
+				3243DFFE1A08EC9900C64A65 /* OmaTableViewCell.m */,
+				3243DFFF1A08EC9900C64A65 /* 256px-Common_Squirrel.jpg */,
+				3243DFD31A08EC1500C64A65 /* AppDelegate.h */,
+				3243DFD41A08EC1500C64A65 /* AppDelegate.m */,
+				3243DFD61A08EC1500C64A65 /* MasterViewController.h */,
+				3243DFD71A08EC1500C64A65 /* MasterViewController.m */,
+				3243DFD91A08EC1500C64A65 /* DetailViewController.h */,
+				3243DFDC1A08EC1500C64A65 /* Main.storyboard */,
+				3243DFDA1A08EC1500C64A65 /* DetailViewController.m */,
+				3243DFDF1A08EC1500C64A65 /* Images.xcassets */,
+				3243DFE11A08EC1500C64A65 /* LaunchScreen.xib */,
+				3243DFCF1A08EC1500C64A65 /* Supporting Files */,
+			);
+			path = RaTimer3;
+			sourceTree = "<group>";
+		};
+		3243DFCF1A08EC1500C64A65 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3243DFD01A08EC1500C64A65 /* Info.plist */,
+				3243DFD11A08EC1500C64A65 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3243DFEB1A08EC1500C64A65 /* RaTimer3Tests */ = {
+			isa = PBXGroup;
+			children = (
+				3243DFEE1A08EC1500C64A65 /* RaTimer3Tests.m */,
+				3243DFEC1A08EC1500C64A65 /* Supporting Files */,
+			);
+			path = RaTimer3Tests;
+			sourceTree = "<group>";
+		};
+		3243DFEC1A08EC1500C64A65 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3243DFED1A08EC1500C64A65 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ECCFF9F7A6E0F922C13CC8DD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C0E1D86302B78F476B3D79BA /* Pods-RaTimer3.debug.xcconfig */,
+				03F2244510B91AD2F5B9D9A5 /* Pods-RaTimer3.release.xcconfig */,
+				18EF59F10ED5A1E04AB2BD20 /* Pods-RaTimer3Tests.debug.xcconfig */,
+				E66C53FC715F1D4D97B9939F /* Pods-RaTimer3Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F19F621AF447443E805B278F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E770BF08DE4B1197911BF605 /* libPods-RaTimer3.a */,
+				2C640C17851AD497BB799039 /* libPods-RaTimer3Tests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3243DFCB1A08EC1500C64A65 /* RaTimer3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3243DFF21A08EC1500C64A65 /* Build configuration list for PBXNativeTarget "RaTimer3" */;
+			buildPhases = (
+				E4E85E2DF906715382745DBF /* Check Pods Manifest.lock */,
+				3243DFC81A08EC1500C64A65 /* Sources */,
+				3243DFC91A08EC1500C64A65 /* Frameworks */,
+				3243DFCA1A08EC1500C64A65 /* Resources */,
+				A350834D8009495EC7B202DA /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RaTimer3;
+			productName = RaTimer3;
+			productReference = 3243DFCC1A08EC1500C64A65 /* RaTimer3.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3243DFE71A08EC1500C64A65 /* RaTimer3Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3243DFF51A08EC1500C64A65 /* Build configuration list for PBXNativeTarget "RaTimer3Tests" */;
+			buildPhases = (
+				4F932215857A4F39F5338DC1 /* Check Pods Manifest.lock */,
+				3243DFE41A08EC1500C64A65 /* Sources */,
+				3243DFE51A08EC1500C64A65 /* Frameworks */,
+				3243DFE61A08EC1500C64A65 /* Resources */,
+				16C467A0249F7488E85FB71C /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3243DFEA1A08EC1500C64A65 /* PBXTargetDependency */,
+			);
+			name = RaTimer3Tests;
+			productName = RaTimer3Tests;
+			productReference = 3243DFE81A08EC1500C64A65 /* RaTimer3Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3243DFC41A08EC1500C64A65 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Riku Oja";
+				TargetAttributes = {
+					3243DFCB1A08EC1500C64A65 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					3243DFE71A08EC1500C64A65 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 3243DFCB1A08EC1500C64A65;
+					};
+				};
+			};
+			buildConfigurationList = 3243DFC71A08EC1500C64A65 /* Build configuration list for PBXProject "RaTimer3" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3243DFC31A08EC1500C64A65;
+			productRefGroup = 3243DFCD1A08EC1500C64A65 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3243DFCB1A08EC1500C64A65 /* RaTimer3 */,
+				3243DFE71A08EC1500C64A65 /* RaTimer3Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3243DFCA1A08EC1500C64A65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3243DFDE1A08EC1500C64A65 /* Main.storyboard in Resources */,
+				3243E0011A08EC9900C64A65 /* 256px-Common_Squirrel.jpg in Resources */,
+				3243DFE31A08EC1500C64A65 /* LaunchScreen.xib in Resources */,
+				3243E0081A0BC85F00C64A65 /* TallennetutKohteet.plist in Resources */,
+				3243DFE01A08EC1500C64A65 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3243DFE61A08EC1500C64A65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16C467A0249F7488E85FB71C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RaTimer3Tests/Pods-RaTimer3Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F932215857A4F39F5338DC1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A350834D8009495EC7B202DA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RaTimer3/Pods-RaTimer3-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4E85E2DF906715382745DBF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3243DFC81A08EC1500C64A65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3243DFD51A08EC1500C64A65 /* AppDelegate.m in Sources */,
+				3243DFD81A08EC1500C64A65 /* MasterViewController.m in Sources */,
+				3243E0001A08EC9900C64A65 /* OmaTableViewCell.m in Sources */,
+				3243DFD21A08EC1500C64A65 /* main.m in Sources */,
+				3243DFDB1A08EC1500C64A65 /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3243DFE41A08EC1500C64A65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3243DFEF1A08EC1500C64A65 /* RaTimer3Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3243DFEA1A08EC1500C64A65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3243DFCB1A08EC1500C64A65 /* RaTimer3 */;
+			targetProxy = 3243DFE91A08EC1500C64A65 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3243DFDC1A08EC1500C64A65 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3243DFDD1A08EC1500C64A65 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3243DFE11A08EC1500C64A65 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3243DFE21A08EC1500C64A65 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3243DFF01A08EC1500C64A65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3243DFF11A08EC1500C64A65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3243DFF31A08EC1500C64A65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0E1D86302B78F476B3D79BA /* Pods-RaTimer3.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RaTimer3/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PLIST_FILE_OUTPUT_FORMAT = XML;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3243DFF41A08EC1500C64A65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03F2244510B91AD2F5B9D9A5 /* Pods-RaTimer3.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RaTimer3/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PLIST_FILE_OUTPUT_FORMAT = XML;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3243DFF61A08EC1500C64A65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18EF59F10ED5A1E04AB2BD20 /* Pods-RaTimer3Tests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RaTimer3Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaTimer3.app/RaTimer3";
+			};
+			name = Debug;
+		};
+		3243DFF71A08EC1500C64A65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E66C53FC715F1D4D97B9939F /* Pods-RaTimer3Tests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RaTimer3Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RaTimer3.app/RaTimer3";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3243DFC71A08EC1500C64A65 /* Build configuration list for PBXProject "RaTimer3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3243DFF01A08EC1500C64A65 /* Debug */,
+				3243DFF11A08EC1500C64A65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3243DFF21A08EC1500C64A65 /* Build configuration list for PBXNativeTarget "RaTimer3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3243DFF31A08EC1500C64A65 /* Debug */,
+				3243DFF41A08EC1500C64A65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3243DFF51A08EC1500C64A65 /* Build configuration list for PBXNativeTarget "RaTimer3Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3243DFF61A08EC1500C64A65 /* Debug */,
+				3243DFF71A08EC1500C64A65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3243DFC41A08EC1500C64A65 /* Project object */;
+}

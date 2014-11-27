@@ -18,7 +18,7 @@
 		</array>
 		<key>Kaytossa</key>
 		<true/>
-		<key>Kuva</key>
+		<key>Vari</key>
 		<string>256px-Common_Squirrel.jpg</string>
 		<key>Nimi</key>
 		<string>Opetus</string>
@@ -28,7 +28,7 @@
 		<array/>
 		<key>Kaytossa</key>
 		<false/>
-		<key>Kuva</key>
+		<key>Vari</key>
 		<string>256px-Common_Squirrel.jpg</string>
 		<key>Nimi</key>
 		<string>Materiaali &amp; suunnittelu</string>
@@ -38,7 +38,7 @@
 		<array/>
 		<key>Kaytossa</key>
 		<false/>
-		<key>Kuva</key>
+		<key>Vari</key>
 		<string>256px-Common_Squirrel.jpg</string>
 		<key>Nimi</key>
 		<string>Muut työt</string>
@@ -48,7 +48,7 @@
 		<array/>
 		<key>Kaytossa</key>
 		<false/>
-		<key>Kuva</key>
+		<key>Vari</key>
 		<string>256px-Common_Squirrel.jpg</string>
 		<key>Nimi</key>
 		<string>Opiskelu</string>
@@ -58,7 +58,7 @@
 		<array/>
 		<key>Kaytossa</key>
 		<false/>
-		<key>Kuva</key>
+		<key>Vari</key>
 		<string>256px-Common_Squirrel.jpg</string>
 		<key>Nimi</key>
 		<string>Oravien ruokinta</string>
