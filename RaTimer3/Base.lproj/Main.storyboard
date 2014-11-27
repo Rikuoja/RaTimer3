@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Spw-ME-zXL">
-                                <rect key="frame" x="70" y="77" width="514" height="30"/>
+                                <rect key="frame" x="118" y="77" width="466" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -61,7 +61,7 @@
                                 </constraints>
                                 <segments>
                                     <segment title="Color..."/>
-                                    <segment title="Image..."/>
+                                    <segment title="Image..." enabled="NO"/>
                                     <segment title="Auto"/>
                                 </segments>
                             </segmentedControl>
@@ -70,9 +70,9 @@
                         <constraints>
                             <constraint firstItem="nEZ-Mb-nA9" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="6Mc-cV-U6T"/>
                             <constraint firstItem="OJf-yP-40T" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="17" id="9Bm-Pb-Jq2"/>
-                            <constraint firstItem="Spw-ME-zXL" firstAttribute="leading" secondItem="OJf-yP-40T" secondAttribute="trailing" constant="8" symbolic="YES" id="N71-9U-w7B"/>
                             <constraint firstItem="nEZ-Mb-nA9" firstAttribute="baseline" secondItem="pcI-xu-d3i" secondAttribute="baseline" id="OfA-7n-5kF"/>
                             <constraint firstItem="pcI-xu-d3i" firstAttribute="leading" secondItem="nEZ-Mb-nA9" secondAttribute="trailing" constant="8" symbolic="YES" id="TLt-Rh-36F"/>
+                            <constraint firstItem="Spw-ME-zXL" firstAttribute="leading" secondItem="pcI-xu-d3i" secondAttribute="leading" id="Ueb-Av-EBf"/>
                             <constraint firstItem="nEZ-Mb-nA9" firstAttribute="baseline" secondItem="pcI-xu-d3i" secondAttribute="firstBaseline" id="WNT-PA-Qdw"/>
                             <constraint firstItem="Spw-ME-zXL" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="13" id="ZIK-WV-ncx"/>
                             <constraint firstItem="pcI-xu-d3i" firstAttribute="top" secondItem="Spw-ME-zXL" secondAttribute="bottom" constant="12" id="Zda-l9-71K"/>

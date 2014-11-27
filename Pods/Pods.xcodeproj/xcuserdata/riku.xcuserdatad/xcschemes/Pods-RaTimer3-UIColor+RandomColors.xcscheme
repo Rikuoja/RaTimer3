@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "53B226D8F4644EBCB2E6DF99"
+               BlueprintIdentifier = "3F07F7F9ABE1B0AA5DFC6D5B"
                BuildableName = "libPods-RaTimer3-UIColor+RandomColors.a"
                BlueprintName = "Pods-RaTimer3-UIColor+RandomColors"
                ReferencedContainer = "container:Pods.xcodeproj">

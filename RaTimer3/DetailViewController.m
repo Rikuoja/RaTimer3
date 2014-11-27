@@ -7,9 +7,13 @@
 //
 
 #import "DetailViewController.h"
+#import "UIColor+RandomColors.h"
+#import "UIColor+Hex.h"
+#import "HRColorPickerView.h"
 
 @interface DetailViewController ()
 
+@property (strong, nonatomic) HRColorPickerView *colorPickerView;
 @end
 
 @implementation DetailViewController
@@ -42,6 +46,13 @@
     if (self.detailItem) {
         self.detailNavigationBar.title = self.detailItem[@"Nimi"];
         self.nimiTextField.text = self.detailItem[@"Nimi"];
+        //lisätään colorpicker:
+        self.colorPickerView = [[HRColorPickerView alloc] init];
+        self.colorPickerView.color = [UIColor colorWithCSS:self.detailItem[@"Vari"]];
+        [self.colorPickerView addTarget:self
+                            action:@selector(paivitaVari:)
+                  forControlEvents:UIControlEventValueChanged];
+        [self.view addSubview:self.colorPickerView];
     }
 }
 
@@ -54,6 +65,19 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Detail item methods
+
+- (void)paivitaVari:(HRColorPickerView *)colorPickerView {
+    //pointteri vanhaan kohteeseen säilytettävä jotta delegaatti löytää sen:
+    NSMutableDictionary* muuttunutKohde = [self.detailItem mutableCopy];
+    muuttunutKohde[@"Vari"]=[colorPickerView.color hexString];
+    //tällä delegaatti kirjoittaa uuden kohteen pointterin vanhan päälle ja päivittää itsensä:
+    [self.delegate muuttunutKohde:(NSMutableDictionary *)muuttunutKohde vanhaKohde:(NSMutableDictionary *)self.detailItem];
+    //näillä detailviewcontroller tekee saman:
+    self.detailItem=muuttunutKohde;
+    [self configureView];
 }
 
 @end

@@ -133,7 +133,7 @@
     cell.nimiLabel.text = object[@"Nimi"];
     cell.aikaLabel.text = [self aikaaKulunutSelkokielella:[self aikaaKulunut:object aikavalilla:self.naytettavaAikavali]];
     //piirretään taustaväri tai -kuva:
-    cell.backgroundColor = [UIColor colorWithCSS:object[@"Vari"]];
+    cell.backgroundColor = [[UIColor colorWithCSS:object[@"Vari"]]colorWithAlphaComponent:0.3];
     //cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:object[@"Vari"]]] colorWithAlphaComponent:0.3];
     
     //tarkistetaan, onko ajanotto käynnissä:

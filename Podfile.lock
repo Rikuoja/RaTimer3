@@ -1,4 +1,5 @@
 PODS:
+  - Color-Picker-for-iOS (2.0)
   - CorePlot (1.5.1)
   - NSDate-KBSRandom (0.1.0)
   - UIColor+Hex (1.0.1):
@@ -8,12 +9,14 @@ PODS:
   - UIColor+RandomColors (0.1.0)
 
 DEPENDENCIES:
+  - Color-Picker-for-iOS
   - CorePlot
   - NSDate-KBSRandom
   - UIColor+Hex
   - UIColor+RandomColors
 
 SPEC CHECKSUMS:
+  Color-Picker-for-iOS: 2eec454aa6b24a8b7c2537da0f61c6ead936949e
   CorePlot: b15cb1a9a687b9576545104248d6e22033e678bb
   NSDate-KBSRandom: 1ddcfd287d0a3934dfdc5af64f0ef23d472538f0
   UIColor+Hex: ac7e1ae4eeea4f522fe3f6eda35de4af69244432

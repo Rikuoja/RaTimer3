@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-RaTimer3-Color-Picker-for-iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-RaTimer3-CorePlot.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,32 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1A9FA95091C09BFFF7C9114A</key>
+		<key>3F07F7F9ABE1B0AA5DFC6D5B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3FC947BD350879C5EAABEDB8</key>
+		<key>4315D46AFBE2EDB53353C979</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>53B226D8F4644EBCB2E6DF99</key>
+		<key>56D865D2F4B6348B4951310C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>95293004A6CF653B18FF9116</key>
+		<key>9DFA337BB3A61E63202CBDCB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A0B5C460019C581574AB44DD</key>
+		<key>B1E670CC8FCC1A262EC2418C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FA2C5B14A773E45CA9354F7E</key>
+		<key>EC5B3C89CA64A89235F0A2BB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FB38F580E047C1F9F039AD8D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

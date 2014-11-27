@@ -6,6 +6,12 @@
 // project.
 
 
+// Color-Picker-for-iOS
+#define COCOAPODS_POD_AVAILABLE_Color_Picker_for_iOS
+#define COCOAPODS_VERSION_MAJOR_Color_Picker_for_iOS 2
+#define COCOAPODS_VERSION_MINOR_Color_Picker_for_iOS 0
+#define COCOAPODS_VERSION_PATCH_Color_Picker_for_iOS 0
+
 // CorePlot
 #define COCOAPODS_POD_AVAILABLE_CorePlot
 #define COCOAPODS_VERSION_MAJOR_CorePlot 1
