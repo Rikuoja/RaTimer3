@@ -2,15 +2,18 @@ PODS:
   - CorePlot (1.5.1)
   - NSDate-KBSRandom (0.1.0)
   - UIColor+RandomColors (0.1.0)
+  - UIColor-HexString (1.1.0)
 
 DEPENDENCIES:
   - CorePlot
   - NSDate-KBSRandom
   - UIColor+RandomColors
+  - UIColor-HexString
 
 SPEC CHECKSUMS:
   CorePlot: b15cb1a9a687b9576545104248d6e22033e678bb
   NSDate-KBSRandom: 1ddcfd287d0a3934dfdc5af64f0ef23d472538f0
   UIColor+RandomColors: ba04bfa1687c7c28fe0b15712fa5437e7148c3bd
+  UIColor-HexString: a9eabf02c1a2f9036ed6ac9cb2a3ea086f3b39e4
 
 COCOAPODS: 0.35.0

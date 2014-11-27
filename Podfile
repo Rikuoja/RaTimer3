@@ -7,6 +7,7 @@ target 'RaTimer3' do
 
 pod 'CorePlot'
 pod 'UIColor+RandomColors'
+pod 'UIColor-HexString'
 
 end
 
