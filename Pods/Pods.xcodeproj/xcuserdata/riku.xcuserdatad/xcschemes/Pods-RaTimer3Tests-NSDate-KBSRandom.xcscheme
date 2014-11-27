@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B3EB48AE6B5C22EBC9D0C434"
+               BlueprintIdentifier = "B065F1EF49A3512318155166"
                BuildableName = "libPods-RaTimer3Tests-NSDate-KBSRandom.a"
                BlueprintName = "Pods-RaTimer3Tests-NSDate-KBSRandom"
                ReferencedContainer = "container:Pods.xcodeproj">

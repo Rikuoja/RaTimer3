@@ -1,13 +1,16 @@
 PODS:
   - CorePlot (1.5.1)
   - NSDate-KBSRandom (0.1.0)
+  - UIColor+RandomColors (0.1.0)
 
 DEPENDENCIES:
   - CorePlot
   - NSDate-KBSRandom
+  - UIColor+RandomColors
 
 SPEC CHECKSUMS:
   CorePlot: b15cb1a9a687b9576545104248d6e22033e678bb
   NSDate-KBSRandom: 1ddcfd287d0a3934dfdc5af64f0ef23d472538f0
+  UIColor+RandomColors: ba04bfa1687c7c28fe0b15712fa5437e7148c3bd
 
 COCOAPODS: 0.35.0

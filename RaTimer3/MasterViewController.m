@@ -130,7 +130,7 @@
     NSMutableDictionary *object = self.objects[indexPath.row];
     cell.nimiLabel.text = object[@"Nimi"];
     cell.aikaLabel.text = [self aikaaKulunutSelkokielella:[self aikaaKulunut:object aikavalilla:self.naytettavaAikavali]];
-    //piirretään kuva taustalle:
+    //piirretään taustaväri tai -kuva:
     cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:object[@"Vari"]]] colorWithAlphaComponent:0.3];
     //cell.playButton = [UIButton buttonWithType:UIButtonTypeSystem]; ei pidä luoda uutta nappia, tuhoaa ib:n tekemän napin ominaisuuksineen =)
     //tarkistetaan, onko ajanotto käynnissä:

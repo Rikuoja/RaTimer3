@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-RaTimer3-UIColor+RandomColors.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-RaTimer3.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0138729D67BCA2AEE827C483</key>
+		<key>59033E6D56BA0884323A51D3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B3EB48AE6B5C22EBC9D0C434</key>
+		<key>AE73936752082D1698400A26</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D8E7978A73BA938AF2E5208E</key>
+		<key>B065F1EF49A3512318155166</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F412C37CA4F87A848E304592</key>
+		<key>D8EA919C339103AD50119B8F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DBF3B5C45B368B284A7A1446</key>
 		<dict>
 			<key>primary</key>
 			<true/>
