@@ -13,6 +13,7 @@
 
 @interface DetailViewController ()
 
+//lisätään colorPickerView samaan kontrolleriin (vai pitäisikö tehdä oma kontrolleri??)
 @property (strong, nonatomic) HRColorPickerView *colorPickerView;
 @end
 
