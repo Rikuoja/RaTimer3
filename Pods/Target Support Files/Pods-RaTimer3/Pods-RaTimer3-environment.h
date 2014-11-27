@@ -12,15 +12,21 @@
 #define COCOAPODS_VERSION_MINOR_CorePlot 5
 #define COCOAPODS_VERSION_PATCH_CorePlot 1
 
+// UIColor+Hex
+#define COCOAPODS_POD_AVAILABLE_UIColor_Hex
+#define COCOAPODS_VERSION_MAJOR_UIColor_Hex 1
+#define COCOAPODS_VERSION_MINOR_UIColor_Hex 0
+#define COCOAPODS_VERSION_PATCH_UIColor_Hex 1
+
+// UIColor+Hex/UIColor
+#define COCOAPODS_POD_AVAILABLE_UIColor_Hex_UIColor
+#define COCOAPODS_VERSION_MAJOR_UIColor_Hex_UIColor 1
+#define COCOAPODS_VERSION_MINOR_UIColor_Hex_UIColor 0
+#define COCOAPODS_VERSION_PATCH_UIColor_Hex_UIColor 1
+
 // UIColor+RandomColors
 #define COCOAPODS_POD_AVAILABLE_UIColor_RandomColors
 #define COCOAPODS_VERSION_MAJOR_UIColor_RandomColors 0
 #define COCOAPODS_VERSION_MINOR_UIColor_RandomColors 1
 #define COCOAPODS_VERSION_PATCH_UIColor_RandomColors 0
-
-// UIColor-HexString
-#define COCOAPODS_POD_AVAILABLE_UIColor_HexString
-#define COCOAPODS_VERSION_MAJOR_UIColor_HexString 1
-#define COCOAPODS_VERSION_MINOR_UIColor_HexString 1
-#define COCOAPODS_VERSION_PATCH_UIColor_HexString 0
 

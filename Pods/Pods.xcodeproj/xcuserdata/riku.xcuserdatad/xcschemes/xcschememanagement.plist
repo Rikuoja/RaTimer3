@@ -9,12 +9,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-RaTimer3-UIColor+RandomColors.xcscheme</key>
+		<key>Pods-RaTimer3-UIColor+Hex.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-RaTimer3-UIColor-HexString.xcscheme</key>
+		<key>Pods-RaTimer3-UIColor+RandomColors.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,32 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>348E93940B2E71E593CC8712</key>
+		<key>1A9FA95091C09BFFF7C9114A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>43C3E76B954EC185A1301360</key>
+		<key>3FC947BD350879C5EAABEDB8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>763A3EF204FADC0B5F3D056B</key>
+		<key>53B226D8F4644EBCB2E6DF99</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>983ACC92362BA52925C055D7</key>
+		<key>95293004A6CF653B18FF9116</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C9F9962B65374FCFDD48093F</key>
+		<key>A0B5C460019C581574AB44DD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E023F36171D7FE1C32D9DF82</key>
+		<key>FA2C5B14A773E45CA9354F7E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
