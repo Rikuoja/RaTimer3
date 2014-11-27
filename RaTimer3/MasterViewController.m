@@ -9,6 +9,8 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "OmaTableViewCell.h"
+#import "UIColor+RandomColors.h"
+#import "UIColor+Hex.h"
 
 @interface MasterViewController ()
 
@@ -73,7 +75,7 @@
     //initialisoidaan uusi ajankäyttökohde:
     NSMutableDictionary *uusiKohde = [NSMutableDictionary dictionary];
     [uusiKohde setValue:@"Uusi kohde" forKey:@"Nimi"];
-    [uusiKohde setValue:@"" forKey:@"Vari"];
+    [uusiKohde setValue:[[UIColor randomLightColor] cssString] forKey:@"Vari"];
     [uusiKohde setValue:@NO forKey:@"Kaytossa"];
     [uusiKohde setValue:[NSMutableArray array] forKey:@"Ajat"];
     //lisätään kohde luetteloon:
@@ -131,8 +133,9 @@
     cell.nimiLabel.text = object[@"Nimi"];
     cell.aikaLabel.text = [self aikaaKulunutSelkokielella:[self aikaaKulunut:object aikavalilla:self.naytettavaAikavali]];
     //piirretään taustaväri tai -kuva:
-    cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:object[@"Vari"]]] colorWithAlphaComponent:0.3];
-    //cell.playButton = [UIButton buttonWithType:UIButtonTypeSystem]; ei pidä luoda uutta nappia, tuhoaa ib:n tekemän napin ominaisuuksineen =)
+    cell.backgroundColor = [UIColor colorWithCSS:object[@"Vari"]];
+    //cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:object[@"Vari"]]] colorWithAlphaComponent:0.3];
+    
     //tarkistetaan, onko ajanotto käynnissä:
     if ([object[@"Kaytossa"] boolValue]) {
         cell.playButton.selected = YES;
