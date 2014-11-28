@@ -13,8 +13,6 @@
 
 @interface DetailViewController ()
 
-//lisätään colorPickerView samaan kontrolleriin (vai pitäisikö tehdä oma kontrolleri??)
-@property (strong, nonatomic) HRColorPickerView *colorPickerView;
 @end
 
 @implementation DetailViewController
@@ -30,6 +28,26 @@
     }
 }
 
+- (void)configureView {
+    // Update the user interface for the detail item.
+    if (self.detailItem) {
+        self.detailNavigationBar.title = self.detailItem[@"Nimi"];
+        self.nimiTextField.text = self.detailItem[@"Nimi"];    }
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+    [self configureView];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Protocols
+
 - (BOOL) textFieldShouldReturn:(UITextField *)textField {
     //pointteri vanhaan kohteeseen säilytettävä jotta delegaatti löytää sen:
     NSMutableDictionary* muuttunutKohde = [self.detailItem mutableCopy];
@@ -42,30 +60,25 @@
     return YES;
 }
 
-- (void)configureView {
-    // Update the user interface for the detail item.
-    if (self.detailItem) {
-        self.detailNavigationBar.title = self.detailItem[@"Nimi"];
-        self.nimiTextField.text = self.detailItem[@"Nimi"];
-        //lisätään colorpicker:
-        self.colorPickerView = [[HRColorPickerView alloc] init];
-        self.colorPickerView.color = [UIColor colorWithCSS:self.detailItem[@"Vari"]];
-        [self.colorPickerView addTarget:self
-                            action:@selector(paivitaVari:)
-                  forControlEvents:UIControlEventValueChanged];
-        [self.view addSubview:self.colorPickerView];
+- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
+    //tarvitaan uipopoverpresentationcontrollerdelegate-protokollaan!
+    return UIModalPresentationNone;
+}
+
+#pragma mark - Segues
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    //detailview asetettava colorpickerin popovercontrollerin delegaatiksi!
+    if ([segue.identifier isEqualToString:@"showPopover"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        UIPopoverPresentationController *popoverController = navigationController.popoverPresentationController;
+        popoverController.delegate = self;
+        //hoidetaan kontrollointi tässä niin ei tarvitse tehdä custom-luokkaa:
+        UIViewController *popoverinViewController = navigationController.viewControllers.firstObject;
+        HRColorPickerView* colorPicker = (HRColorPickerView *)popoverinViewController.view;
+        colorPicker.color = [UIColor colorWithCSS:self.detailItem[@"Vari"]];
+        [colorPicker addTarget:self action:@selector(paivitaVari:) forControlEvents:UIControlEventValueChanged];
     }
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    [self configureView];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Detail item methods

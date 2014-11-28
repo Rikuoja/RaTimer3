@@ -65,7 +65,7 @@
                                     <segment title="Auto"/>
                                 </segments>
                                 <connections>
-                                    <segue destination="YXy-8q-0qd" kind="popoverPresentation" popoverAnchorView="pcI-xu-d3i" id="FG6-Bl-Htb">
+                                    <segue destination="yNh-Y7-mOh" kind="popoverPresentation" popoverAnchorView="pcI-xu-d3i" id="br1-Vl-Hcm">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
@@ -97,23 +97,40 @@
             </objects>
             <point key="canvasLocation" x="709" y="129"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="MHy-pk-c4G">
+        <!--Navigation Controller-->
+        <scene sceneID="ccL-eR-bLI">
             <objects>
-                <viewController id="YXy-8q-0qd" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="yNh-Y7-mOh" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gCO-Tj-EuF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Mop-4m-Am9" kind="relationship" relationship="rootViewController" id="1XQ-vz-L6X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xEa-v7-wbp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1422" y="129"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vFk-xx-s2O">
+            <objects>
+                <viewController id="Mop-4m-Am9" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="03Y-Hd-9TU"/>
-                        <viewControllerLayoutGuide type="bottom" id="4hI-o9-ILv"/>
+                        <viewControllerLayoutGuide type="top" id="YUm-Dw-q0j"/>
+                        <viewControllerLayoutGuide type="bottom" id="pzr-nc-UQg"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CmL-tb-Wqg">
+                    <view key="view" contentMode="scaleToFill" id="E8h-fK-SZ4" customClass="HRColorPickerView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="kpa-r9-vPd"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="htS-yT-E1y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e24-XO-bXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1456" y="129"/>
+            <point key="canvasLocation" x="2102" y="129"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -207,7 +224,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="-645"/>
+            <point key="canvasLocation" x="709" y="-630"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
@@ -222,7 +239,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-45" y="129"/>
+            <point key="canvasLocation" x="-38" y="129"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

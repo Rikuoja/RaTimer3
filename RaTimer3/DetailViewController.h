@@ -11,7 +11,8 @@
 //tietojen välittämiseksi takaisin masterviewcontrollerin pitää olla tämän delegaatti:
 @protocol DetailViewControllerDelegate;
 
-@interface DetailViewController : UIViewController <UITextFieldDelegate>
+//tämän pitää olla tekstikentän sekä colorpickerin popopverpresentaatiokontrollerin delegaatti:
+@interface DetailViewController : UIViewController <UITextFieldDelegate, UIPopoverPresentationControllerDelegate>
 
 @property (strong, nonatomic) NSMutableDictionary *detailItem;
 @property (weak, nonatomic) IBOutlet UINavigationItem *detailNavigationBar;
