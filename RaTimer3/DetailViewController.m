@@ -71,12 +71,14 @@
     //detailview asetetaan colorpickerin popovercontrollerin delegaatiksi
     if ([segue.identifier isEqualToString:@"showPopover"]) {
         UINavigationController *navigationController = segue.destinationViewController;
-        //jos ollaan kompaktissa moodissa, navigation bar pitää laittaa näkyviin ja lisätä siihen back-nappula:
-        
+        UIViewController *popoverinViewController = navigationController.viewControllers.firstObject;
         UIPopoverPresentationController *popoverController = navigationController.popoverPresentationController;
+        //jos ollaan kompaktissa moodissa, navigation bar pitää laittaa näkyviin ja ohjelmoida cancel-nappi:
+        popoverinViewController.navigationItem.leftBarButtonItem.target=popoverController;
+        popoverinViewController.navigationItem.leftBarButtonItem.action=@selector(dismissPopoverAnimated:);
+        
         popoverController.delegate = self;
         //hoidetaan kontrollointi tässä niin ei tarvitse tehdä custom-luokkaa:
-        UIViewController *popoverinViewController = navigationController.viewControllers.firstObject;
         HRColorPickerView* colorPicker = (HRColorPickerView *)popoverinViewController.view;
         colorPicker.color = [UIColor colorWithCSS:self.detailItem[@"Vari"]];
         [colorPicker addTarget:self action:@selector(paivitaVari:) forControlEvents:UIControlEventValueChanged];
