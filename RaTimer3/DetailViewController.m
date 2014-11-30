@@ -68,9 +68,11 @@
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    //detailview asetettava colorpickerin popovercontrollerin delegaatiksi!
+    //detailview asetetaan colorpickerin popovercontrollerin delegaatiksi
     if ([segue.identifier isEqualToString:@"showPopover"]) {
         UINavigationController *navigationController = segue.destinationViewController;
+        //jos ollaan kompaktissa moodissa, navigation bar pitää laittaa näkyviin ja lisätä siihen back-nappula:
+        
         UIPopoverPresentationController *popoverController = navigationController.popoverPresentationController;
         popoverController.delegate = self;
         //hoidetaan kontrollointi tässä niin ei tarvitse tehdä custom-luokkaa:
