@@ -124,10 +124,46 @@
                     <view key="view" contentMode="scaleToFill" id="E8h-fK-SZ4" customClass="HRColorPickerView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOa-7C-Adp" customClass="HRColorMapView">
+                                <rect key="frame" x="0.0" y="219" width="600" height="381"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOg-5l-Cox" customClass="HRColorInfoView">
+                                <rect key="frame" x="0.0" y="64" width="100" height="147"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="p0S-hT-8EY"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ud-Rc-ICi" customClass="HRBrightnessSlider">
+                                <rect key="frame" x="130" y="113" width="454" height="49"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Ud-Rc-ICi" firstAttribute="top" secondItem="YUm-Dw-q0j" secondAttribute="bottom" constant="49" id="AGc-SN-mCV"/>
+                            <constraint firstItem="bOg-5l-Cox" firstAttribute="leading" secondItem="E8h-fK-SZ4" secondAttribute="leadingMargin" constant="-16" id="Hbj-Sy-2ya"/>
+                            <constraint firstItem="QOa-7C-Adp" firstAttribute="top" secondItem="bOg-5l-Cox" secondAttribute="bottom" constant="8" symbolic="YES" id="I8F-nb-m9l"/>
+                            <constraint firstItem="QOa-7C-Adp" firstAttribute="leading" secondItem="E8h-fK-SZ4" secondAttribute="leading" id="ZgD-9l-rxJ"/>
+                            <constraint firstItem="QOa-7C-Adp" firstAttribute="top" secondItem="YUm-Dw-q0j" secondAttribute="bottom" constant="155" id="ehs-dG-SrJ"/>
+                            <constraint firstItem="bOg-5l-Cox" firstAttribute="leading" secondItem="QOa-7C-Adp" secondAttribute="leading" id="glq-SR-Lnf"/>
+                            <constraint firstItem="QOa-7C-Adp" firstAttribute="bottom" secondItem="pzr-nc-UQg" secondAttribute="top" id="i2b-V7-4Th"/>
+                            <constraint firstItem="bOg-5l-Cox" firstAttribute="top" secondItem="YUm-Dw-q0j" secondAttribute="bottom" id="lUR-k1-Sfa"/>
+                            <constraint firstItem="bOg-5l-Cox" firstAttribute="centerY" secondItem="6Ud-Rc-ICi" secondAttribute="centerY" id="loJ-Tt-RYZ"/>
+                            <constraint firstItem="6Ud-Rc-ICi" firstAttribute="trailing" secondItem="E8h-fK-SZ4" secondAttribute="trailingMargin" id="oMz-ei-5Rf"/>
+                            <constraint firstAttribute="trailing" secondItem="QOa-7C-Adp" secondAttribute="trailing" id="p5P-av-aeL"/>
+                            <constraint firstItem="6Ud-Rc-ICi" firstAttribute="leading" secondItem="E8h-fK-SZ4" secondAttribute="leading" constant="130" id="wKO-1R-dpX"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="brightnessSlider" destination="6Ud-Rc-ICi" id="Ifp-Nj-DIJ"/>
+                            <outlet property="colorInfoView" destination="bOg-5l-Cox" id="mUI-9S-G8c"/>
+                            <outlet property="colorMapView" destination="QOa-7C-Adp" id="RfB-BV-LAd"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Pick a color" id="kpa-r9-vPd">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="GtQ-UQ-mcw">
+                        <barButtonItem key="leftBarButtonItem" title="Done" id="GtQ-UQ-mcw">
                             <connections>
                                 <segue destination="JEX-9P-axG" kind="custom" customClass="DismissSegue" id="EwT-GX-BZb"/>
                             </connections>
@@ -136,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e24-XO-bXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2102" y="129"/>
+            <point key="canvasLocation" x="2312" y="326"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
