@@ -13,9 +13,6 @@
 
 @interface DetailViewController ()
 
-//tämä tarvitaan, koska color picker esitetään omalla kontrollerillaan:
-@property (strong, nonatomic) UIViewController* popoverinViewController;
-
 @end
 
 @implementation DetailViewController
@@ -74,24 +71,18 @@
     //detailview asetetaan colorpickerin popovercontrollerin delegaatiksi
     if ([segue.identifier isEqualToString:@"showPopover"]) {
         UINavigationController *navigationController = segue.destinationViewController;
-        self.popoverinViewController = navigationController.viewControllers.firstObject;
+        UIViewController *popoverinViewController = navigationController.viewControllers.firstObject;
         UIPopoverPresentationController *popoverPresentaatioController = navigationController.popoverPresentationController;
         popoverPresentaatioController.delegate = self;
-        //jos ollaan kompaktissa moodissa, navigation bar pitää laittaa näkyviin ja ohjelmoida cancel-nappi:
+        //jos ollaan kompaktissa moodissa, navigation bar pitää laittaa näkyviin:
         navigationController.navigationBarHidden=NO;
-        self.popoverinViewController.navigationItem.leftBarButtonItem.target=self;
-        self.popoverinViewController.navigationItem.leftBarButtonItem.action=@selector(suljePopover:);
- 
         //hoidetaan kontrollointi tässä niin ei tarvitse tehdä custom-luokkaa:
-        HRColorPickerView* colorPicker = (HRColorPickerView *)self.popoverinViewController.view;
+        HRColorPickerView* colorPicker = (HRColorPickerView *)popoverinViewController.view;
         colorPicker.color = [UIColor colorWithCSS:self.detailItem[@"Vari"]];
         [colorPicker addTarget:self action:@selector(paivitaVari:) forControlEvents:UIControlEventValueChanged];
     }
 }
 
--(void)suljePopover:(id)sender {
-    [self.popoverinViewController dismissViewControllerAnimated:YES completion:nil];
-}
 
 #pragma mark - Detail item methods
 
