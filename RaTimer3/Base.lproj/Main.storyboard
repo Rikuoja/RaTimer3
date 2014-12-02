@@ -78,6 +78,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="nEZ-Mb-nA9" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="6Mc-cV-U6T"/>
                             <constraint firstItem="OJf-yP-40T" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="17" id="9Bm-Pb-Jq2"/>
@@ -97,6 +98,7 @@
                     <connections>
                         <outlet property="detailNavigationBar" destination="mOI-FS-AaM" id="kcZ-W1-lCx"/>
                         <outlet property="nimiTextField" destination="Spw-ME-zXL" id="sOc-x0-ASd"/>
+                        <outlet property="popOverAnkkuri" destination="3ka-ae-bbP" id="Dxv-Dt-fp4"/>
                         <outlet property="variSegmentedControl" destination="pcI-xu-d3i" id="st8-mj-FuK"/>
                     </connections>
                 </viewController>

@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UINavigationItem *detailNavigationBar;
 @property (weak, nonatomic) IBOutlet UITextField *nimiTextField;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *variSegmentedControl;
+@property (weak, nonatomic) IBOutlet UIButton *popOverAnkkuri;
 @property (nonatomic, assign) id <DetailViewControllerDelegate> delegate;
 
 @end

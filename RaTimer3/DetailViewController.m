@@ -36,7 +36,7 @@
     if (self.detailItem) {
         self.detailNavigationBar.title = self.detailItem[@"Nimi"];
         self.nimiTextField.text = self.detailItem[@"Nimi"];
-        [self.variSegmentedControl addTarget:self action:@selector(variPainettu:) forControlEvents:UIControlEventTouchUpInside]; //halutaan, että värivalinta tapahtuu aina kun ekaan segmenttiin kosketaan!
+        [self.variSegmentedControl addTarget:self action:@selector(variPainettu:) forControlEvents:UIControlEventAllEditingEvents]; //halutaan, että värivalinta tapahtuu aina kun ekaan segmenttiin kosketaan!
     }
 }
 
@@ -106,13 +106,11 @@
 - (void)variPainettu:(UISegmentedControl *)segmentedControl {
     if (segmentedControl.selectedSegmentIndex == 0) {
         //siirrytään värin valintaan
-            
-            //etsitään segmentedcontrolin sijainti:
-            CGRect displayFrom = CGRectMake(myCell.frame.origin.x + myCell.frame.size.width, myCell.center.y + self.tableView.frame.origin.y - self.tableView.contentOffset.y, 1, 1);
-            
-            //siirretään näkymätön ankkuri oikeaan kohtaan:
-            self.popOverAnchorButton.frame = displayFrom;
-            [self performSegueWithIdentifier:@"naytaPopover" sender:segmentedControl];
+        //etsitään segmentedcontrolin sijainti:
+        CGRect sijainti = CGRectMake(segmentedControl.frame.origin.x, segmentedControl.frame.origin.y, 1, 1);
+        //siirretään näkymätön ankkuri oikeaan kohtaan:
+        self.popOverAnkkuri.frame = sijainti;
+        [self performSegueWithIdentifier:@"naytaPopover" sender:segmentedControl];
     }
     if (segmentedControl.selectedSegmentIndex == 2) {
         //valitaan automaattinen väri
