@@ -35,7 +35,9 @@
     // Update the user interface for the detail item.
     if (self.detailItem) {
         self.detailNavigationBar.title = self.detailItem[@"Nimi"];
-        self.nimiTextField.text = self.detailItem[@"Nimi"];    }
+        self.nimiTextField.text = self.detailItem[@"Nimi"];
+        [self.variSegmentedControl addTarget:self action:@selector(variPainettu:) forControlEvents:UIControlEventTouchUpInside]; //halutaan, että värivalinta tapahtuu aina kun ekaan segmenttiin kosketaan!
+    }
 }
 
 - (void)viewDidLoad {
@@ -88,7 +90,7 @@
 }
 
 
-#pragma mark - Detail item methods
+#pragma mark - Editing methods
 
 - (void)paivitaVari:(HRColorPickerView *)colorPickerView {
     //pointteri vanhaan kohteeseen säilytettävä jotta delegaatti löytää sen:
@@ -99,6 +101,22 @@
     //näillä detailviewcontroller tekee saman:
     self.detailItem=muuttunutKohde;
     [self configureView];
+}
+
+- (void)variPainettu:(UISegmentedControl *)segmentedControl {
+    if (segmentedControl.selectedSegmentIndex == 0) {
+        //siirrytään värin valintaan
+            
+            //etsitään segmentedcontrolin sijainti:
+            CGRect displayFrom = CGRectMake(myCell.frame.origin.x + myCell.frame.size.width, myCell.center.y + self.tableView.frame.origin.y - self.tableView.contentOffset.y, 1, 1);
+            
+            //siirretään näkymätön ankkuri oikeaan kohtaan:
+            self.popOverAnchorButton.frame = displayFrom;
+            [self performSegueWithIdentifier:@"naytaPopover" sender:segmentedControl];
+    }
+    if (segmentedControl.selectedSegmentIndex == 2) {
+        //valitaan automaattinen väri
+    }
 }
 
 @end

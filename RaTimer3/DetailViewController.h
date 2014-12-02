@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSMutableDictionary *detailItem;
 @property (weak, nonatomic) IBOutlet UINavigationItem *detailNavigationBar;
 @property (weak, nonatomic) IBOutlet UITextField *nimiTextField;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *variSegmentedControl;
 @property (nonatomic, assign) id <DetailViewControllerDelegate> delegate;
 
 @end

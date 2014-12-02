@@ -54,7 +54,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="pcI-xu-d3i">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pcI-xu-d3i">
                                 <rect key="frame" x="118" y="119" width="187" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="187" id="MHa-3q-Mvb"/>
@@ -64,18 +64,18 @@
                                     <segment title="Image..." enabled="NO"/>
                                     <segment title="Auto"/>
                                 </segments>
+                            </segmentedControl>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ka-ae-bbP">
+                                <rect key="frame" x="532" y="122" width="52" height="30"/>
+                                <state key="normal" title="Näkymätön popover-ankkuri">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <segue destination="yNh-Y7-mOh" kind="popoverPresentation" identifier="naytaPopover" popoverAnchorView="pcI-xu-d3i" id="br1-Vl-Hcm">
+                                    <segue destination="yNh-Y7-mOh" kind="popoverPresentation" identifier="naytaPopover" popoverAnchorView="3ka-ae-bbP" id="w3z-Pz-oDC">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
-                            </segmentedControl>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Näkymätön popover-ankkuri" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lu1-HT-HEp">
-                                <rect key="frame" x="16" y="571" width="231" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -97,6 +97,7 @@
                     <connections>
                         <outlet property="detailNavigationBar" destination="mOI-FS-AaM" id="kcZ-W1-lCx"/>
                         <outlet property="nimiTextField" destination="Spw-ME-zXL" id="sOc-x0-ASd"/>
+                        <outlet property="variSegmentedControl" destination="pcI-xu-d3i" id="st8-mj-FuK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
@@ -131,11 +132,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOa-7C-Adp" customClass="HRColorMapView">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QOa-7C-Adp" customClass="HRColorMapView">
                                 <rect key="frame" x="0.0" y="170" width="600" height="430"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOg-5l-Cox" customClass="HRColorInfoView">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bOg-5l-Cox" customClass="HRColorInfoView">
                                 <rect key="frame" x="0.0" y="64" width="100" height="110"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -143,7 +144,7 @@
                                     <constraint firstAttribute="width" constant="100" id="p0S-hT-8EY"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ud-Rc-ICi" customClass="HRBrightnessSlider">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ud-Rc-ICi" customClass="HRBrightnessSlider">
                                 <rect key="frame" x="130" y="95" width="454" height="49"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
