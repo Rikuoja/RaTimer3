@@ -144,7 +144,7 @@
             NSTimer *ajastin = [NSTimer scheduledTimerWithTimeInterval:self.ajanNayttotarkkuus target:self selector:@selector(paivitaAika:) userInfo:indexPath repeats:YES];//userinfoksi laitetaan indexpath
             self.ajastimet[indexPath.row]=ajastin;
         }
-    }
+    } else cell.playButton.selected = NO;
     return cell;
 }
 

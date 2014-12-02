@@ -10,6 +10,9 @@
 #import "UIColor+RandomColors.h"
 #import "UIColor+Hex.h"
 #import "HRColorPickerView.h"
+#import "HRColorMapView.h"
+#import "HRBrightnessSlider.h"
+#import "HRColorInfoView.h"
 
 @interface DetailViewController ()
 
@@ -69,7 +72,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     //detailview asetetaan colorpickerin popovercontrollerin delegaatiksi
-    if ([segue.identifier isEqualToString:@"showPopover"]) {
+    if ([segue.identifier isEqualToString:@"naytaPopover"]) {
         UINavigationController *navigationController = segue.destinationViewController;
         UIViewController *popoverinViewController = navigationController.viewControllers.firstObject;
         UIPopoverPresentationController *popoverPresentaatioController = navigationController.popoverPresentationController;
@@ -80,6 +83,12 @@
         HRColorPickerView* colorPicker = (HRColorPickerView *)popoverinViewController.view;
         colorPicker.color = [UIColor colorWithCSS:self.detailItem[@"Vari"]];
         [colorPicker addTarget:self action:@selector(paivitaVari:) forControlEvents:UIControlEventValueChanged];
+        
+        //komponenttien värit pitää jostain syystä asettaa käsin?:
+        colorPicker.colorInfoView.color = colorPicker.color;
+        colorPicker.colorMapView.color = colorPicker.color;
+        colorPicker.brightnessSlider.color = colorPicker.color;
+        
     }
 }
 
@@ -89,7 +98,7 @@
 - (void)paivitaVari:(HRColorPickerView *)colorPickerView {
     //pointteri vanhaan kohteeseen säilytettävä jotta delegaatti löytää sen:
     NSMutableDictionary* muuttunutKohde = [self.detailItem mutableCopy];
-    muuttunutKohde[@"Vari"]=[colorPickerView.color hexString];
+    muuttunutKohde[@"Vari"]=[colorPickerView.color cssString];
     //tällä delegaatti kirjoittaa uuden kohteen pointterin vanhan päälle ja päivittää itsensä:
     [self.delegate muuttunutKohde:(NSMutableDictionary *)muuttunutKohde vanhaKohde:(NSMutableDictionary *)self.detailItem];
     //näillä detailviewcontroller tekee saman:
