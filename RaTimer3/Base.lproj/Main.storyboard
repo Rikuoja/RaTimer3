@@ -2,8 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -34,40 +32,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Spw-ME-zXL">
-                                <rect key="frame" x="118" y="77" width="466" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Spw-ME-zXL">
+                                <rect key="frame" x="118" y="30" width="466" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="JEX-9P-axG" id="tYD-YL-kMZ"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJf-yP-40T">
-                                <rect key="frame" x="16" y="81" width="46" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJf-yP-40T">
+                                <rect key="frame" x="16" y="34" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Background" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEZ-Mb-nA9">
-                                <rect key="frame" x="16" y="122" width="94" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Background" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEZ-Mb-nA9">
+                                <rect key="frame" x="16" y="75" width="94" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pcI-xu-d3i">
-                                <rect key="frame" x="118" y="119" width="187" height="29"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ka-ae-bbP">
+                                <rect key="frame" x="122" y="71" width="77" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="187" id="MHa-3q-Mvb"/>
+                                    <constraint firstAttribute="width" constant="77" id="Ua6-cO-5pH"/>
+                                    <constraint firstAttribute="height" constant="30" id="uUG-uV-lvN"/>
                                 </constraints>
-                                <segments>
-                                    <segment title="Color..."/>
-                                    <segment title="Image..." enabled="NO"/>
-                                    <segment title="Auto"/>
-                                </segments>
-                            </segmentedControl>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ka-ae-bbP">
-                                <rect key="frame" x="532" y="122" width="52" height="30"/>
-                                <state key="normal" title="Näkymätön popover-ankkuri">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Pick color">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -81,16 +73,14 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="nEZ-Mb-nA9" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="6Mc-cV-U6T"/>
-                            <constraint firstItem="OJf-yP-40T" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="17" id="9Bm-Pb-Jq2"/>
-                            <constraint firstItem="nEZ-Mb-nA9" firstAttribute="baseline" secondItem="pcI-xu-d3i" secondAttribute="baseline" id="OfA-7n-5kF"/>
-                            <constraint firstItem="pcI-xu-d3i" firstAttribute="leading" secondItem="nEZ-Mb-nA9" secondAttribute="trailing" constant="8" symbolic="YES" id="TLt-Rh-36F"/>
-                            <constraint firstItem="Spw-ME-zXL" firstAttribute="leading" secondItem="pcI-xu-d3i" secondAttribute="leading" id="Ueb-Av-EBf"/>
-                            <constraint firstItem="nEZ-Mb-nA9" firstAttribute="baseline" secondItem="pcI-xu-d3i" secondAttribute="firstBaseline" id="WNT-PA-Qdw"/>
-                            <constraint firstItem="Spw-ME-zXL" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="13" id="ZIK-WV-ncx"/>
-                            <constraint firstItem="pcI-xu-d3i" firstAttribute="top" secondItem="Spw-ME-zXL" secondAttribute="bottom" constant="12" id="Zda-l9-71K"/>
-                            <constraint firstItem="OJf-yP-40T" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="ZuM-JZ-60O"/>
-                            <constraint firstItem="nEZ-Mb-nA9" firstAttribute="firstBaseline" secondItem="pcI-xu-d3i" secondAttribute="baseline" id="bRi-XV-8Qy"/>
-                            <constraint firstItem="Spw-ME-zXL" firstAttribute="trailing" secondItem="svH-Pt-448" secondAttribute="trailingMargin" id="wcw-up-rJZ"/>
+                            <constraint firstItem="3ka-ae-bbP" firstAttribute="top" secondItem="Spw-ME-zXL" secondAttribute="bottom" constant="11" id="93c-c5-tEK"/>
+                            <constraint firstItem="Spw-ME-zXL" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="10" id="EbR-4c-6Fd"/>
+                            <constraint firstItem="Spw-ME-zXL" firstAttribute="leading" secondItem="OJf-yP-40T" secondAttribute="trailing" constant="56" id="NdA-gJ-W3Z"/>
+                            <constraint firstItem="nEZ-Mb-nA9" firstAttribute="top" secondItem="OJf-yP-40T" secondAttribute="bottom" constant="20" id="QDi-2T-56Z"/>
+                            <constraint firstItem="OJf-yP-40T" firstAttribute="leading" secondItem="nEZ-Mb-nA9" secondAttribute="leading" id="Shv-61-cLS"/>
+                            <constraint firstItem="3ka-ae-bbP" firstAttribute="leading" secondItem="nEZ-Mb-nA9" secondAttribute="trailing" constant="12" id="VVv-Ty-hce"/>
+                            <constraint firstItem="Spw-ME-zXL" firstAttribute="trailing" secondItem="svH-Pt-448" secondAttribute="trailingMargin" id="XQp-mO-nrE"/>
+                            <constraint firstItem="3ka-ae-bbP" firstAttribute="baseline" secondItem="nEZ-Mb-nA9" secondAttribute="baseline" id="vlV-1a-OTn"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -99,7 +89,6 @@
                         <outlet property="detailNavigationBar" destination="mOI-FS-AaM" id="kcZ-W1-lCx"/>
                         <outlet property="nimiTextField" destination="Spw-ME-zXL" id="sOc-x0-ASd"/>
                         <outlet property="popOverAnkkuri" destination="3ka-ae-bbP" id="Dxv-Dt-fp4"/>
-                        <outlet property="variSegmentedControl" destination="pcI-xu-d3i" id="st8-mj-FuK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
