@@ -77,18 +77,12 @@
         UIViewController *popoverinViewController = navigationController.viewControllers.firstObject;
         UIPopoverPresentationController *popoverPresentaatioController = navigationController.popoverPresentationController;
         popoverPresentaatioController.delegate = self;
-        //jos ollaan kompaktissa moodissa, navigation bar pitää laittaa näkyviin:
-        navigationController.navigationBarHidden=NO;
-        //hoidetaan kontrollointi tässä niin ei tarvitse tehdä custom-luokkaa:
-        HRColorPickerView* colorPicker = (HRColorPickerView *)popoverinViewController.view;
+        //hoidetaan kontrollointi tässä niin ei tarvitse tehdä custom-luokkaa
+        //oletusmuotoinen colorPicker toimii (storyboardilla tehty bugittaa):
+        HRColorPickerView* colorPicker = [[HRColorPickerView alloc] init];
         colorPicker.color = [UIColor colorWithCSS:self.detailItem[@"Vari"]];
+        popoverinViewController.view=colorPicker;
         [colorPicker addTarget:self action:@selector(paivitaVari:) forControlEvents:UIControlEventValueChanged];
-        
-        //komponenttien värit pitää jostain syystä asettaa käsin?:
-        colorPicker.colorInfoView.color = colorPicker.color;
-        colorPicker.colorMapView.color = colorPicker.color;
-        colorPicker.brightnessSlider.color = colorPicker.color;
-        
     }
 }
 
