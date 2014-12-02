@@ -133,18 +133,22 @@
     cell.nimiLabel.text = object[@"Nimi"];
     cell.aikaLabel.text = [self aikaaKulunutSelkokielella:[self aikaaKulunut:object aikavalilla:self.naytettavaAikavali]];
     //piirretään taustaväri tai -kuva:
-    cell.backgroundColor = [[UIColor colorWithCSS:object[@"Vari"]]colorWithAlphaComponent:0.3];
+    cell.backgroundColor = [[UIColor colorWithCSS:object[@"Vari"]]colorWithAlphaComponent:0.5];
     //cell.backgroundColor = [[UIColor colorWithPatternImage:[UIImage imageNamed:object[@"Vari"]]] colorWithAlphaComponent:0.3];
     
     //tarkistetaan, onko ajanotto käynnissä:
     if ([object[@"Kaytossa"] boolValue]) {
         cell.playButton.selected = YES;
+        [cell.playIndikaattori startAnimating];
         //aloitetaan ajastin, jos sitä ei vielä ole (kohteet vasta ladattu tiedostosta):
         if ([self.ajastimet[indexPath.row] isEqual:[NSNull null]]) {
             NSTimer *ajastin = [NSTimer scheduledTimerWithTimeInterval:self.ajanNayttotarkkuus target:self selector:@selector(paivitaAika:) userInfo:indexPath repeats:YES];//userinfoksi laitetaan indexpath
             self.ajastimet[indexPath.row]=ajastin;
         }
-    } else cell.playButton.selected = NO;
+    } else {
+        cell.playButton.selected = NO;
+        [cell.playIndikaattori stopAnimating];
+    }
     return cell;
 }
 
@@ -213,6 +217,8 @@
     //tallennetaan dictionary takaisin arrayhin ja plistiin:
     self.objects[indexPath.row] = valittuKohde;
     [self tallennaKohteet];
+    //päivitetään vielä taulukko välittömästi:
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 #pragma mark - NSTimer

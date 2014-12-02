@@ -218,9 +218,7 @@
                                             <state key="normal" title="Start">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <state key="selected" title="Stop">
-                                                <color key="titleColor" red="0.97647064920000004" green="0.03529411927" blue="0.1215686351" alpha="1" colorSpace="deviceRGB"/>
-                                            </state>
+                                            <state key="selected" title="Stop"/>
                                             <connections>
                                                 <action selector="playPainettu:" destination="7bK-jq-Zjz" eventType="touchUpInside" id="oaA-pd-6lt"/>
                                             </connections>
@@ -231,6 +229,9 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="c87-84-oG1">
+                                            <rect key="frame" x="539" y="29" width="20" height="20"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="vNZ-hm-fXN" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="top" id="4aA-bF-5Wq"/>
@@ -239,11 +240,13 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="WbM-an-WXA" secondAttribute="trailing" constant="10" id="PNY-By-ukv"/>
                                         <constraint firstItem="A9d-Uk-cBK" firstAttribute="trailing" secondItem="WbM-an-WXA" secondAttribute="trailing" id="eYx-D8-7TF"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="A9d-Uk-cBK" secondAttribute="bottom" constant="2" id="nJl-zD-gBv"/>
+                                        <constraint firstItem="c87-84-oG1" firstAttribute="trailing" secondItem="37f-cq-3Eg" secondAttribute="trailingMargin" id="pRU-PI-vME"/>
                                         <constraint firstItem="WbM-an-WXA" firstAttribute="leading" secondItem="A9d-Uk-cBK" secondAttribute="leading" id="quc-IN-vgS"/>
                                         <constraint firstItem="WbM-an-WXA" firstAttribute="leading" secondItem="vNZ-hm-fXN" secondAttribute="trailing" constant="3" id="sQg-Wh-AMq"/>
                                         <constraint firstAttribute="bottom" secondItem="vNZ-hm-fXN" secondAttribute="bottom" id="v3v-VI-nyt"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="WbM-an-WXA" secondAttribute="bottom" constant="28" id="vXe-HM-EbP"/>
                                         <constraint firstItem="A9d-Uk-cBK" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="topMargin" constant="28" id="we5-sE-oaw"/>
+                                        <constraint firstItem="c87-84-oG1" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="topMargin" constant="21" id="x42-Qe-A6v"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -251,6 +254,7 @@
                                     <outlet property="aikaLabel" destination="WbM-an-WXA" id="AdV-Nr-LQV"/>
                                     <outlet property="nimiLabel" destination="vNZ-hm-fXN" id="xeS-IU-WVW"/>
                                     <outlet property="playButton" destination="A9d-Uk-cBK" id="iMc-xU-aX9"/>
+                                    <outlet property="playIndikaattori" destination="c87-84-oG1" id="ogD-qJ-AaG"/>
                                     <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="6S0-TO-JiA"/>
                                 </connections>
                             </tableViewCell>
