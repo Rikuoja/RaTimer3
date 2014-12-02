@@ -81,6 +81,7 @@
         //oletusmuotoinen colorPicker toimii (storyboardilla tehty bugittaa):
         HRColorPickerView* colorPicker = [[HRColorPickerView alloc] init];
         colorPicker.color = [UIColor colorWithCSS:self.detailItem[@"Vari"]];
+        //colorPicker.colorMapView.saturationUpperLimit=@0.6; ei toimi
         popoverinViewController.view=colorPicker;
         [colorPicker addTarget:self action:@selector(paivitaVari:) forControlEvents:UIControlEventValueChanged];
     }
