@@ -14,7 +14,7 @@ end
 
 target 'RaTimer3Tests' do
 
-pod 'NSDate-KBSRandom'
+pod 'NSDate-RORandom', :git => 'https://github.com/Rikuoja/NSDate-RORandom.git'
 
 end
 
