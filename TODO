@@ -1,8 +1,9 @@
 TODO
 
 -julkaise cocoapod trunk servicellä
--toteuta, kokeile performance testing randomdaten avulla; muu yksikkötestaus, mitä tarvitaan?
 -distribuutiokonfiguraatio!
+-asetukset UI:hin, tallennus plistiin!!!
+-muu yksikkötestaus, mitä tarvitaan?
 -CoreDatalla visualisaatio!
 -tallennetun datan editointi (undo)!
 -Color Pickerin säätäminen Storyboardilla tarvittaessa

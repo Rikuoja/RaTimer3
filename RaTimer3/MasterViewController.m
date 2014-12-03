@@ -14,16 +14,8 @@
 
 @interface MasterViewController ()
 
-//tallennetaan kohteet yhteen arrayhin:
-@property (strong, nonatomic) NSMutableArray *objects;
 //tallennettavan plistin sijainti:
 @property (strong, nonatomic) NSString *path;
-//kuinka tarkkaan kulunut aika halutaan näyttää:
-@property (nonatomic) NSTimeInterval ajanNayttotarkkuus;
-//miltä aikaväliltä kulunut aika näytetään:
-@property (nonatomic) NSCalendarUnit naytettavaAikavali;
-//tallennetaan ruudunpäivityksestä vastaavat ajastimet toiseen arrayhin (ei voi tallentaa plistiin):
-@property (strong, nonatomic) NSMutableArray *ajastimet;
 @end
 
 @implementation MasterViewController
@@ -59,7 +51,7 @@
     [self lueKohteet];
     
     //ladataan asetukset:
-    self.ajanNayttotarkkuus = 1; //sekunteina (oletusarvo 15 minuuttia=900 sekuntia)
+    self.ajanNayttotarkkuus = 60;
     self.naytettavaAikavali = NSCalendarUnitEra; //oletusarvot
 }
 
