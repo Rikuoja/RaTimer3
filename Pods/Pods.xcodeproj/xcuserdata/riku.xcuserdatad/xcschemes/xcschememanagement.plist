@@ -29,7 +29,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-RaTimer3Tests-NSDate-KBSRandom.xcscheme</key>
+		<key>Pods-RaTimer3Tests-NSDate-RORandom.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,37 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3F07F7F9ABE1B0AA5DFC6D5B</key>
+		<key>32BDB1E7E184EEEDDA118AC2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4315D46AFBE2EDB53353C979</key>
+		<key>D67986692ABA4014C5CF8BA0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>56D865D2F4B6348B4951310C</key>
+		<key>E0F6F5974B890B77F7715D72</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9DFA337BB3A61E63202CBDCB</key>
+		<key>E22E7BAE7C672367E3184C24</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B1E670CC8FCC1A262EC2418C</key>
+		<key>E25C926AD1E2F08A72D39222</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EC5B3C89CA64A89235F0A2BB</key>
+		<key>F2881640EC28CA939B6E17A8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FB38F580E047C1F9F039AD8D</key>
+		<key>F6C2B44FBB0E722C23BF351E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
