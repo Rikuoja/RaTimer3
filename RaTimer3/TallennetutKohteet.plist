@@ -7,6 +7,125 @@
 		<array>
 			<dict>
 				<key>Alku</key>
+				<date>2014-12-01T22:02:45Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T11:29:49Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T14:45:49Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T14:46:23Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T21:51:51Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T21:52:05Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:08:17Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:08:18Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:08:18Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:08:20Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:17:55Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:17:57Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:17:58Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:17:59Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:18:00Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:18:00Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:18:01Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:18:02Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:18:03Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:18:06Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:41:30Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:41:31Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:44:20Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:44:32Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:47:14Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:47:15Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:47:16Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:47:17Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:47:28Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:47:31Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:50:52Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:50:53Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:51:14Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:51:15Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-03T18:57:05Z</date>
+				<key>Loppu</key>
+				<date>2014-12-03T18:57:06Z</date>
+			</dict>
+		</array>
+		<key>Kaytossa</key>
+		<false/>
+		<key>Nimi</key>
+		<string>Testikohde</string>
+		<key>Vari</key>
+		<string>#e6ffe6</string>
+	</dict>
+	<dict>
+		<key>Ajat</key>
+		<array>
+			<dict>
+				<key>Alku</key>
 				<date>2014-11-09T22:33:28Z</date>
 				<key>Loppu</key>
 				<date>2014-11-09T22:33:39Z</date>
@@ -14,54 +133,179 @@
 			<dict>
 				<key>Alku</key>
 				<date>2014-11-09T22:37:04Z</date>
+				<key>Loppu</key>
+				<date>2014-11-27T12:01:00Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:08:21Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:10:26Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:40:05Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:40:13Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:44:06Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:44:27Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:47:18Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:48:37Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:50:48Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:50:51Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-03T17:03:29Z</date>
+				<key>Loppu</key>
+				<date>2014-12-03T17:03:37Z</date>
 			</dict>
 		</array>
 		<key>Kaytossa</key>
-		<true/>
-		<key>Vari</key>
-		<string>256px-Common_Squirrel.jpg</string>
+		<false/>
 		<key>Nimi</key>
-		<string>Opetus</string>
+		<string>Opetus jne.</string>
+		<key>Vari</key>
+		<string>#e4306c</string>
 	</dict>
 	<dict>
 		<key>Ajat</key>
-		<array/>
+		<array>
+			<dict>
+				<key>Alku</key>
+				<date>2014-11-27T12:34:08Z</date>
+				<key>Loppu</key>
+				<date>2014-11-27T14:28:54Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:04:57Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:08:10Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:08:11Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:08:13Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:08:14Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:08:16Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:11:05Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:11:05Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:11:06Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:11:22Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:51:07Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:51:08Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:51:09Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:51:13Z</date>
+			</dict>
+		</array>
 		<key>Kaytossa</key>
 		<false/>
-		<key>Vari</key>
-		<string>256px-Common_Squirrel.jpg</string>
 		<key>Nimi</key>
 		<string>Materiaali &amp; suunnittelu</string>
+		<key>Vari</key>
+		<string>#ffff87</string>
 	</dict>
 	<dict>
 		<key>Ajat</key>
-		<array/>
+		<array>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:10:27Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:10:58Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:10:59Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:11:00Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:11:01Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:11:02Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:11:02Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:11:03Z</date>
+			</dict>
+		</array>
 		<key>Kaytossa</key>
 		<false/>
-		<key>Vari</key>
-		<string>256px-Common_Squirrel.jpg</string>
 		<key>Nimi</key>
 		<string>Muut työt</string>
+		<key>Vari</key>
+		<string>#ffe6ee</string>
 	</dict>
 	<dict>
 		<key>Ajat</key>
 		<array/>
 		<key>Kaytossa</key>
 		<false/>
-		<key>Vari</key>
-		<string>256px-Common_Squirrel.jpg</string>
 		<key>Nimi</key>
 		<string>Opiskelu</string>
+		<key>Vari</key>
+		<string>#00ffaa</string>
 	</dict>
 	<dict>
 		<key>Ajat</key>
-		<array/>
+		<array>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:12:32Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:12:33Z</date>
+			</dict>
+			<dict>
+				<key>Alku</key>
+				<date>2014-12-02T22:12:34Z</date>
+				<key>Loppu</key>
+				<date>2014-12-02T22:12:36Z</date>
+			</dict>
+		</array>
 		<key>Kaytossa</key>
 		<false/>
-		<key>Vari</key>
-		<string>256px-Common_Squirrel.jpg</string>
 		<key>Nimi</key>
 		<string>Oravien ruokinta</string>
+		<key>Vari</key>
+		<string>#00ff00</string>
 	</dict>
 </array>
 </plist>

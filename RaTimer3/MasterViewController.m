@@ -60,7 +60,7 @@
     
     //ladataan asetukset:
     self.ajanNayttotarkkuus = 1; //sekunteina (oletusarvo 15 minuuttia=900 sekuntia)
-    self.naytettavaAikavali = NSCalendarUnitWeekOfYear; //oletusarvot
+    self.naytettavaAikavali = NSCalendarUnitEra; //oletusarvot
 }
 
 - (void)didReceiveMemoryWarning {
@@ -224,7 +224,7 @@
 #pragma mark - NSTimer
 
 - (void)paivitaAika:(NSTimer *)ajastin {
-    NSLog(@"Ajastimella userInfo %@", (NSIndexPath *)ajastin.userInfo);
+    //NSLog(@"Ajastimella userInfo %@", (NSIndexPath *)ajastin.userInfo);
     //Ei päivitetä näyttöä, jos käyttäjä on siirtämässä soluja (kaatuu päivitettäessä):
     if (!self.tableView.isEditing) {
         [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:ajastin.userInfo] withRowAnimation:UITableViewRowAnimationNone];
@@ -246,13 +246,13 @@
     NSDate *alkupaivamaara;
     NSTimeInterval jaksonPituus;
     [kayttajanKalenteri rangeOfUnit:haluttuAikavali startDate:&alkupaivamaara interval:&jaksonPituus forDate:nykyhetki];
-    NSLog(@"Jakson Alkupaivamaara %@", alkupaivamaara);
-    NSLog(@"Jakson pituus %f sekuntia",(double)jaksonPituus);
+    //NSLog(@"Jakson Alkupaivamaara %@", alkupaivamaara);
+    //NSLog(@"Jakson pituus %f sekuntia",(double)jaksonPituus);
     //haetaan kohteesta ne aikavälit, jotka ovat halutun jakson sisällä.
     //uusimmat aikavälit tallentuvat arrayn loppuun, joten tehdään haku käänteisessä järjestyksessä:
     for (NSMutableDictionary *ajat in [kysyttyKohde[@"Ajat"] reverseObjectEnumerator]) {
-        NSLog(@"Aika alkoi %@", ajat[@"Alku"]);
-        NSLog(@"Aika alkoi %d päivää sitten",(int)[[kayttajanKalenteri components:NSCalendarUnitDay fromDate:ajat[@"Alku"] toDate:nykyhetki options:0] day]);
+        //NSLog(@"Aika alkoi %@", ajat[@"Alku"]);
+        //NSLog(@"Aika alkoi %d päivää sitten",(int)[[kayttajanKalenteri components:NSCalendarUnitDay fromDate:ajat[@"Alku"] toDate:nykyhetki options:0] day]);
         BOOL lopeta=NO;
         NSDate *alkuhetki, *loppuhetki;
         //tarkistetaan, onko ajanotto edelleen käynnissä:
@@ -276,14 +276,14 @@
         palautettavatTunnit.hour = palautettavatTunnit.hour+(int)lisattavaAika.hour;
         palautettavatTunnit.minute = palautettavatTunnit.minute+(int)lisattavaAika.minute;
         palautettavatTunnit.second = palautettavatTunnit.second+(int)lisattavaAika.second;
-        NSLog(@"Aikaa käytetty yhteensä %d h %d min %d s", (int)[palautettavatTunnit hour], (int)[palautettavatTunnit minute], (int)palautettavatTunnit.second);
+        //NSLog(@"Aikaa käytetty yhteensä %d h %d min %d s", (int)[palautettavatTunnit hour], (int)[palautettavatTunnit minute], (int)palautettavatTunnit.second);
         //tuliko lisää kokonaisia minuutteja?
         palautettavatTunnit.minute=(int)palautettavatTunnit.minute+(int)palautettavatTunnit.second/60;
         palautettavatTunnit.second=palautettavatTunnit.second%60;
         //tuliko lisää kokonaisia tunteja?
         palautettavatTunnit.hour=palautettavatTunnit.hour+(int)palautettavatTunnit.minute/60;
         palautettavatTunnit.minute=palautettavatTunnit.minute%60;
-        NSLog(@"Aikaa käytetty yhteensä %d h %d min %d s", (int)[palautettavatTunnit hour], (int)[palautettavatTunnit minute],(int)palautettavatTunnit.second);
+        //NSLog(@"Aikaa käytetty yhteensä %d h %d min %d s", (int)[palautettavatTunnit hour], (int)[palautettavatTunnit minute],(int)palautettavatTunnit.second);
         if (lopeta) break;
     }
     return palautettavatTunnit;

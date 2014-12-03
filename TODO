@@ -4,4 +4,5 @@ TODO
 -toteuta, kokeile performance testing randomdaten avulla; muu yksikkötestaus, mitä tarvitaan?
 -distribuutiokonfiguraatio!
 -CoreDatalla visualisaatio!
+-tallennetun datan editointi (undo)!
 -Color Pickerin säätäminen Storyboardilla tarvittaessa
