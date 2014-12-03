@@ -79,7 +79,7 @@
         UIPopoverPresentationController *popoverPresentaatioController = navigationController.popoverPresentationController;
         popoverPresentaatioController.delegate = self;
         //hoidetaan kontrollointi tässä niin ei tarvitse tehdä custom-luokkaa
-        //oletusmuotoinen colorPicker toimii (storyboardilla tehty bugittaa):
+        //oletusmuotoinen colorPicker toimii tässä (storyboardilla tehty bugittaa):
         HRColorPickerView* colorPicker = [[HRColorPickerView alloc] init];
         colorPicker.color = [UIColor colorWithCSS:self.detailItem[@"Vari"]];
         //colorPicker.colorMapView.saturationUpperLimit=@0.6; ei toimi

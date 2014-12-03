@@ -1,7 +1,8 @@
 TODO
 
--julkaise cocoapod trunk servicellä
--distribuutiokonfiguraatio!
+-julkaise ROrandom cocoapod trunk servicellä
+-distribuutiokonfiguraatio! => koodi githubiin!
+-testaa toimivuus eri laitteilla, näytöillä. oletusdetail??
 -asetukset UI:hin, tallennus plistiin!!!
 -muu yksikkötestaus, mitä tarvitaan?
 -CoreDatalla visualisaatio!

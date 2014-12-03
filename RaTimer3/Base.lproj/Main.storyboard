@@ -96,6 +96,70 @@
             <point key="canvasLocation" x="709" y="129"/>
         </scene>
         <!--Navigation Controller-->
+        <scene sceneID="ZAb-d2-BIi">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="YrR-1S-fLY" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2ez-He-elO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="zzx-j3-j3x" kind="relationship" relationship="rootViewController" id="dxg-Jf-QLF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mog-Gu-mcj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1422" y="-630"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="8Ug-3U-ZUN">
+            <objects>
+                <viewController title="Settings" id="zzx-j3-j3x" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iPe-34-E6e"/>
+                        <viewControllerLayoutGuide type="bottom" id="2mV-mE-uDM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PFt-Dp-RKz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Range" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVl-5e-5QN">
+                                <rect key="frame" x="16" y="35" width="54" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="54" id="4Tn-hi-fOM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Rlv-xc-S9U">
+                                <rect key="frame" x="78" y="32" width="209" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="209" id="wKn-Ip-nMc"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Day"/>
+                                    <segment title="Week"/>
+                                    <segment title="Month"/>
+                                    <segment title="Year"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Rlv-xc-S9U" firstAttribute="top" secondItem="iPe-34-E6e" secondAttribute="bottom" constant="12" id="9eq-fV-Fp0"/>
+                            <constraint firstItem="mVl-5e-5QN" firstAttribute="leading" secondItem="PFt-Dp-RKz" secondAttribute="leadingMargin" id="Ed0-Yl-iNu"/>
+                            <constraint firstItem="Rlv-xc-S9U" firstAttribute="leading" secondItem="mVl-5e-5QN" secondAttribute="trailing" constant="8" id="dmj-62-6fZ"/>
+                            <constraint firstItem="Rlv-xc-S9U" firstAttribute="baseline" secondItem="mVl-5e-5QN" secondAttribute="baseline" id="oF6-FW-aj3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="5KM-Ii-Ucv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9WN-fF-omr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2148" y="-630"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="ccL-eR-bLI">
             <objects>
                 <navigationController navigationBarHidden="YES" id="yNh-Y7-mOh" sceneMemberID="viewController">
@@ -265,7 +329,15 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="RaTimer" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="RaTimer" id="Zdf-7t-Un8">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="Zuy-C9-pHF">
+                            <connections>
+                                <segue destination="YrR-1S-fLY" kind="popoverPresentation" identifier="naytaPopover" popoverAnchorBarButtonItem="Zuy-C9-pHF" id="b36-cY-nPn">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>

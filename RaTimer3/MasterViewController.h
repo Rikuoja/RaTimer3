@@ -11,7 +11,7 @@
 
 @class DetailViewController;
 
-@interface MasterViewController : UITableViewController <DetailViewControllerDelegate>
+@interface MasterViewController : UITableViewController <DetailViewControllerDelegate, UIPopoverPresentationControllerDelegate>
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 //tallennetaan kohteet yhteen arrayhin:

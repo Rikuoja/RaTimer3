@@ -34,7 +34,17 @@
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    
+    //säädetään settings-napin logo ja fontti:
+    self.navigationItem.rightBarButtonItem.title=@"\u2699";
+    UIFont *customFont = [UIFont fontWithName:@"Helvetica" size:23.0];
+    NSDictionary *fontDictionary = @{NSFontAttributeName : customFont};
+    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:fontDictionary forState:UIControlStateNormal];
+    
+    //lisätään add-nappi tuhoamatta settings-nappia:
+    NSArray* oikeatNapit = [[NSArray alloc] initWithObjects:addButton, self.navigationItem.rightBarButtonItem, nil];
+    self.navigationItem.rightBarButtonItems = oikeatNapit;
+    
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     //asetetaan haluttu sijainti plistille (tässä documentdirectory):
@@ -93,6 +103,15 @@
         //dataa pitää siirtää detailviewistä takaisinpäin:
         controller.delegate=self;
     }
+    //masterview asetetaan settingsin popovercontrollerin delegaatiksi
+    if ([segue.identifier isEqualToString:@"naytaPopover"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        UIViewController *popoverinViewController = navigationController.viewControllers.firstObject;
+        UIPopoverPresentationController *popoverPresentaatioController = navigationController.popoverPresentationController;
+        popoverPresentaatioController.delegate = self;
+        //luotava vielä customluokka asetusten näyttämiseen (kytketään UISegmentedControl siihen):
+    }
+
 }
 
 #pragma mark - Protocols
@@ -105,6 +124,12 @@
     //ladataan vielä taulukon vastaava rivi uudestaan:
     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForItem:kohteenNumero inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
 }
+
+- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
+    //tarvitaan uipopoverpresentationcontrollerdelegate-protokollaan!
+    return UIModalPresentationNone;
+}
+
 
 #pragma mark - Table View
 
