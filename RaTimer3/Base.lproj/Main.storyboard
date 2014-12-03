@@ -114,7 +114,7 @@
         <!--Settings-->
         <scene sceneID="8Ug-3U-ZUN">
             <objects>
-                <viewController title="Settings" id="zzx-j3-j3x" sceneMemberID="viewController">
+                <viewController title="Settings" id="zzx-j3-j3x" customClass="SettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iPe-34-E6e"/>
                         <viewControllerLayoutGuide type="bottom" id="2mV-mE-uDM"/>
@@ -154,6 +154,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5KM-Ii-Ucv"/>
+                    <connections>
+                        <outlet property="rangeSegmentedControl" destination="Rlv-xc-S9U" id="HFS-aT-gk1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9WN-fF-omr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

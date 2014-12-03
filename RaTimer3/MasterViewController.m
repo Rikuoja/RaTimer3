@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "SettingsViewController.h"
 #import "OmaTableViewCell.h"
 #import "UIColor+RandomColors.h"
 #import "UIColor+Hex.h"
@@ -62,7 +63,7 @@
     
     //ladataan asetukset:
     self.ajanNayttotarkkuus = 60;
-    self.naytettavaAikavali = NSCalendarUnitEra; //oletusarvot
+    self.naytettavaAikavali = NSCalendarUnitWeekOfMonth; //oletusarvot
 }
 
 - (void)didReceiveMemoryWarning {
@@ -106,10 +107,17 @@
     //masterview asetetaan settingsin popovercontrollerin delegaatiksi
     if ([segue.identifier isEqualToString:@"naytaPopover"]) {
         UINavigationController *navigationController = segue.destinationViewController;
-        UIViewController *popoverinViewController = navigationController.viewControllers.firstObject;
+        SettingsViewController *settingsViewController = navigationController.viewControllers.firstObject;
         UIPopoverPresentationController *popoverPresentaatioController = navigationController.popoverPresentationController;
         popoverPresentaatioController.delegate = self;
-        //luotava vielä customluokka asetusten näyttämiseen (kytketään UISegmentedControl siihen):
+        //asetetaan settingsin kontrollit asetusten mukaisiksi ja tehdään niille actionit:
+        [settingsViewController.rangeSegmentedControl addTarget:self action:@selector(paivitaAikavali:) forControlEvents:UIControlEventValueChanged];
+        switch (self.naytettavaAikavali) {
+            case (NSCalendarUnitDay): settingsViewController.rangeSegmentedControl.selectedSegmentIndex=1;
+            case (NSCalendarUnitWeekOfMonth): settingsViewController.rangeSegmentedControl.selectedSegmentIndex=2;
+            case (NSCalendarUnitMonth): settingsViewController.rangeSegmentedControl.selectedSegmentIndex=3;
+            case (NSCalendarUnitYear): settingsViewController.rangeSegmentedControl.selectedSegmentIndex=4;
+        }
     }
 
 }
@@ -130,6 +138,9 @@
     return UIModalPresentationNone;
 }
 
+- (void) paivitaAikavali:(id) sender {
+    
+}
 
 #pragma mark - Table View
 
