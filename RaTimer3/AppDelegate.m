@@ -26,7 +26,7 @@
     
     //halutaan masterin näkyvän aina split viewssä:
     splitViewController.preferredDisplayMode = UISplitViewControllerDisplayModeAllVisible;
-    //jos ollaan split-moodissa,valitaan aina ensimmäinen kohde näkymään detail viewssä:
+    //jos leveys regular (eikä compact),valitaan aina ensimmäinen kohde näkymään detail viewssä:
     if (splitViewController.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassRegular) {
         MasterViewController* masterViewController = ((UINavigationController *)splitViewController.viewControllers.firstObject).viewControllers.firstObject;
         [masterViewController valitseKohde:0];
