@@ -8,11 +8,11 @@ Requires XCode 6.
 
 Requires cocoapods, which can be installed with
 
-sudo gem install cocoapods
+    sudo gem install cocoapods
 
 Then, pods used by RaTimer can be installed with
 
-pod install
+    pod install
 
 ## Usage
 
