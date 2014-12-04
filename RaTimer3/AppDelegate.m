@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DetailViewController.h"
+#import "MasterViewController.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -23,6 +24,14 @@
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
     splitViewController.delegate = self;
     
+    //halutaan masterin näkyvän aina split viewssä:
+    splitViewController.preferredDisplayMode = UISplitViewControllerDisplayModeAllVisible;
+    //jos ollaan split-moodissa,valitaan aina ensimmäinen kohde näkymään detail viewssä:
+    if (splitViewController.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassRegular) {
+        MasterViewController* masterViewController = ((UINavigationController *)splitViewController.viewControllers.firstObject).viewControllers.firstObject;
+        [masterViewController valitseKohde:0];
+        [masterViewController performSegueWithIdentifier:@"showDetail" sender:self];
+    }
     #if TARGET_IPHONE_SIMULATOR
     // where are you?
     NSLog(@"Documents Directory: %@", [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject]);

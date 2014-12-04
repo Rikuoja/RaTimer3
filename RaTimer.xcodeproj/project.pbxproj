@@ -37,7 +37,7 @@
 		03F2244510B91AD2F5B9D9A5 /* Pods-RaTimer3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaTimer3.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaTimer3/Pods-RaTimer3.release.xcconfig"; sourceTree = "<group>"; };
 		18EF59F10ED5A1E04AB2BD20 /* Pods-RaTimer3Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaTimer3Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaTimer3Tests/Pods-RaTimer3Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		2C640C17851AD497BB799039 /* libPods-RaTimer3Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RaTimer3Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3243DFCC1A08EC1500C64A65 /* RaTimer3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaTimer3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3243DFCC1A08EC1500C64A65 /* RaTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3243DFD01A08EC1500C64A65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3243DFD11A08EC1500C64A65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3243DFD31A08EC1500C64A65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		3243DFCD1A08EC1500C64A65 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3243DFCC1A08EC1500C64A65 /* RaTimer3.app */,
+				3243DFCC1A08EC1500C64A65 /* RaTimer.app */,
 				3243DFE81A08EC1500C64A65 /* RaTimer3Tests.xctest */,
 			);
 			name = Products;
@@ -193,7 +193,7 @@
 			);
 			name = RaTimer3;
 			productName = RaTimer3;
-			productReference = 3243DFCC1A08EC1500C64A65 /* RaTimer3.app */;
+			productReference = 3243DFCC1A08EC1500C64A65 /* RaTimer.app */;
 			productType = "com.apple.product-type.application";
 		};
 		3243DFE71A08EC1500C64A65 /* RaTimer3Tests */ = {
@@ -476,7 +476,7 @@
 				INFOPLIST_FILE = RaTimer3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PLIST_FILE_OUTPUT_FORMAT = XML;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RaTimer;
 			};
 			name = Debug;
 		};
@@ -488,7 +488,7 @@
 				INFOPLIST_FILE = RaTimer3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PLIST_FILE_OUTPUT_FORMAT = XML;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RaTimer;
 			};
 			name = Release;
 		};

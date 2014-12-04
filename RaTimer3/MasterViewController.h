@@ -31,6 +31,7 @@
 - (NSString *)aikaaKulunutSelkokielella:(NSDateComponents *)aikaaKulunut;
 - (void)muuttunutKohde:(NSMutableDictionary *) kohde vanhaKohde:(NSMutableDictionary *) vanha;
 - (void)paivitaTaulukko;
+- (void)valitseKohde:(NSInteger) kohde;
 
 @end
 

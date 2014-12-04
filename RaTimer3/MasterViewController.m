@@ -99,7 +99,8 @@
         NSMutableDictionary *object = self.objects[indexPath.row];
         DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
         [controller setDetailItem:object];
-        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+        //ei haluta detailia full screeniin:
+        //controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
         //dataa pitää siirtää detailviewistä takaisinpäin:
         controller.delegate=self;
@@ -135,6 +136,10 @@
 
 - (void)paivitaTaulukko {
     [self.tableView reloadData];
+}
+
+- (void)valitseKohde:(NSInteger)kohde {
+    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:kohde inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
 }
 
 #pragma mark - Table View
