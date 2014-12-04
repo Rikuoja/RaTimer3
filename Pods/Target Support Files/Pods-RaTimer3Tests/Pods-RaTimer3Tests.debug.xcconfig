@@ -1,6 +1,0 @@
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Color-Picker-for-iOS" "${PODS_ROOT}/Headers/Public/CorePlot" "${PODS_ROOT}/Headers/Public/NSDate-RORandom" "${PODS_ROOT}/Headers/Public/UIColor+Hex" "${PODS_ROOT}/Headers/Public/UIColor+RandomColors"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Color-Picker-for-iOS" -isystem "${PODS_ROOT}/Headers/Public/CorePlot" -isystem "${PODS_ROOT}/Headers/Public/NSDate-RORandom" -isystem "${PODS_ROOT}/Headers/Public/UIColor+Hex" -isystem "${PODS_ROOT}/Headers/Public/UIColor+RandomColors"
-OTHER_LDFLAGS = -ObjC -l"Pods-RaTimer3Tests-NSDate-RORandom"
-OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
-PODS_ROOT = ${SRCROOT}/Pods
