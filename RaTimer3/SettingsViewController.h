@@ -13,13 +13,16 @@
 @interface SettingsViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *rangeSegmentedControl;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *tarkkuusSegmentedControl;
 @property (nonatomic, assign) id <SettingsViewControllerDelegate> delegate;
 
 - (IBAction)paivitaAikavali:(id)sender;
+- (IBAction)paivitaTarkkuus:(id)sender;
 
 @end
 
 @protocol SettingsViewControllerDelegate <NSObject>
 @property (nonatomic) NSCalendarUnit naytettavaAikavali;
+@property (nonatomic) NSTimeInterval ajanNayttotarkkuus;
 - (void)paivitaTaulukko;
 @end

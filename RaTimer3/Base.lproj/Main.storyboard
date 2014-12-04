@@ -126,16 +126,16 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Range" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVl-5e-5QN">
                                 <rect key="frame" x="16" y="35" width="54" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="54" id="4Tn-hi-fOM"/>
+                                    <constraint firstAttribute="width" constant="54" id="KX4-c8-4u2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Rlv-xc-S9U">
-                                <rect key="frame" x="78" y="32" width="209" height="29"/>
+                                <rect key="frame" x="78" y="33" width="209" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="209" id="wKn-Ip-nMc"/>
+                                    <constraint firstAttribute="width" constant="209" id="jNX-fJ-pXi"/>
                                 </constraints>
                                 <segments>
                                     <segment title="Day"/>
@@ -147,18 +147,47 @@
                                     <action selector="paivitaAikavali:" destination="zzx-j3-j3x" eventType="valueChanged" id="jWy-e7-E2H"/>
                                 </connections>
                             </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="98K-AP-VrR">
+                                <rect key="frame" x="78" y="72" width="209" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="209" id="det-gC-win"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="1 min"/>
+                                    <segment title="15 min"/>
+                                    <segment title="30 min"/>
+                                    <segment title="1 h"/>
+                                </segments>
+                                <connections>
+                                    <action selector="paivitaTarkkuus:" destination="zzx-j3-j3x" eventType="valueChanged" id="JgO-Hb-aTn"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aC-if-9Hp">
+                                <rect key="frame" x="16" y="73" width="54" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="54" id="yda-B0-G6B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Rlv-xc-S9U" firstAttribute="top" secondItem="iPe-34-E6e" secondAttribute="bottom" constant="12" id="9eq-fV-Fp0"/>
-                            <constraint firstItem="mVl-5e-5QN" firstAttribute="leading" secondItem="PFt-Dp-RKz" secondAttribute="leadingMargin" id="Ed0-Yl-iNu"/>
-                            <constraint firstItem="Rlv-xc-S9U" firstAttribute="leading" secondItem="mVl-5e-5QN" secondAttribute="trailing" constant="8" id="dmj-62-6fZ"/>
-                            <constraint firstItem="Rlv-xc-S9U" firstAttribute="baseline" secondItem="mVl-5e-5QN" secondAttribute="baseline" id="oF6-FW-aj3"/>
+                            <constraint firstItem="98K-AP-VrR" firstAttribute="leading" secondItem="1aC-if-9Hp" secondAttribute="trailing" constant="8" id="1hC-8t-ghj"/>
+                            <constraint firstItem="mVl-5e-5QN" firstAttribute="leading" secondItem="PFt-Dp-RKz" secondAttribute="leadingMargin" id="8Id-HY-Kwr"/>
+                            <constraint firstItem="1aC-if-9Hp" firstAttribute="top" secondItem="mVl-5e-5QN" secondAttribute="bottom" constant="17" id="D7j-qR-uHw"/>
+                            <constraint firstItem="98K-AP-VrR" firstAttribute="top" secondItem="Rlv-xc-S9U" secondAttribute="bottom" constant="11" id="MPA-zk-CAb"/>
+                            <constraint firstItem="mVl-5e-5QN" firstAttribute="top" secondItem="iPe-34-E6e" secondAttribute="bottom" constant="15" id="SFe-Xy-8WR"/>
+                            <constraint firstItem="Rlv-xc-S9U" firstAttribute="leading" secondItem="mVl-5e-5QN" secondAttribute="trailing" constant="8" id="hgl-CK-xaZ"/>
+                            <constraint firstItem="Rlv-xc-S9U" firstAttribute="baseline" secondItem="mVl-5e-5QN" secondAttribute="baseline" id="vFe-j1-qxB"/>
+                            <constraint firstItem="mVl-5e-5QN" firstAttribute="leading" secondItem="1aC-if-9Hp" secondAttribute="leading" id="yPV-Qs-Xob"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5KM-Ii-Ucv"/>
                     <connections>
-                        <outlet property="rangeSegmentedControl" destination="Rlv-xc-S9U" id="HFS-aT-gk1"/>
+                        <outlet property="rangeSegmentedControl" destination="Rlv-xc-S9U" id="TNr-cG-vYr"/>
+                        <outlet property="tarkkuusSegmentedControl" destination="98K-AP-VrR" id="yxE-eQ-8A4"/>
                         <segue destination="7bK-jq-Zjz" kind="custom" identifier="dismiss" customClass="DismissSegue" id="EbG-Sj-002"/>
                     </connections>
                 </viewController>

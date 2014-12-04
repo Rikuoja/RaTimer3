@@ -163,11 +163,16 @@
     if ([object[@"Kaytossa"] boolValue]) {
         cell.playButton.selected = YES;
         [cell.playIndikaattori startAnimating];
-        //aloitetaan ajastin, jos sitä ei vielä ole (kohteet vasta ladattu tiedostosta):
-        if ([self.ajastimet[indexPath.row] isEqual:[NSNull null]]) {
-            NSTimer *ajastin = [NSTimer scheduledTimerWithTimeInterval:self.ajanNayttotarkkuus target:self selector:@selector(paivitaAika:) userInfo:indexPath repeats:YES];//userinfoksi laitetaan indexpath
-            self.ajastimet[indexPath.row]=ajastin;
+        //ajannäyttötarkkuus on voinut muuttua, muistettava päivittää myös ajastinten päivitysnopeus!
+        //nollataan, mikäli vanha ajastin on olemassa:
+        if (![self.ajastimet[indexPath.row] isEqual:[NSNull null]]) {
+            [self.ajastimet[indexPath.row] invalidate];
+            self.ajastimet[indexPath.row] = [NSNull null];
         }
+        //aloitetaan uusi ajastin:
+        NSTimer *ajastin = [NSTimer scheduledTimerWithTimeInterval:self.ajanNayttotarkkuus target:self selector:@selector(paivitaAika:) userInfo:indexPath repeats:YES];//userinfoksi laitetaan indexpath
+        self.ajastimet[indexPath.row]=ajastin;
+        
     } else {
         cell.playButton.selected = NO;
         [cell.playIndikaattori stopAnimating];

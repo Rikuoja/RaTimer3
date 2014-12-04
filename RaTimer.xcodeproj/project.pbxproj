@@ -16,11 +16,10 @@
 		3243DFE01A08EC1500C64A65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3243DFDF1A08EC1500C64A65 /* Images.xcassets */; };
 		3243DFE31A08EC1500C64A65 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3243DFE11A08EC1500C64A65 /* LaunchScreen.xib */; };
 		3243DFEF1A08EC1500C64A65 /* RaTimer3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3243DFEE1A08EC1500C64A65 /* RaTimer3Tests.m */; };
-		3243E0001A08EC9900C64A65 /* OmaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3243DFFE1A08EC9900C64A65 /* OmaTableViewCell.m */; };
-		3243E0011A08EC9900C64A65 /* 256px-Common_Squirrel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3243DFFF1A08EC9900C64A65 /* 256px-Common_Squirrel.jpg */; };
 		3243E0081A0BC85F00C64A65 /* TallennetutKohteet.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3243E0071A0BC85F00C64A65 /* TallennetutKohteet.plist */; };
 		32A4038F1A2D1D5400330615 /* DismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A4038E1A2D1D5400330615 /* DismissSegue.m */; };
 		32C489041A2FC62D0043D080 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C489031A2FC62D0043D080 /* SettingsViewController.m */; };
+		32C489071A309A970043D080 /* OmaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C489061A309A970043D080 /* OmaTableViewCell.m */; };
 		4F3BC54BB484E3A36D7C49B0 /* libPods-RaTimer3Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C640C17851AD497BB799039 /* libPods-RaTimer3Tests.a */; };
 /* End PBXBuildFile section */
 
@@ -53,14 +52,13 @@
 		3243DFE81A08EC1500C64A65 /* RaTimer3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaTimer3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3243DFED1A08EC1500C64A65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3243DFEE1A08EC1500C64A65 /* RaTimer3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RaTimer3Tests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		3243DFFD1A08EC9900C64A65 /* OmaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = OmaTableViewCell.h; path = ../../RaTimer/OmaTableViewCell.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		3243DFFE1A08EC9900C64A65 /* OmaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OmaTableViewCell.m; path = ../../RaTimer/OmaTableViewCell.m; sourceTree = "<group>"; };
-		3243DFFF1A08EC9900C64A65 /* 256px-Common_Squirrel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "256px-Common_Squirrel.jpg"; path = "../../../Downloads/256px-Common_Squirrel.jpg"; sourceTree = "<group>"; };
 		3243E0071A0BC85F00C64A65 /* TallennetutKohteet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TallennetutKohteet.plist; sourceTree = "<group>"; };
 		32A4038D1A2D1D5400330615 /* DismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissSegue.h; sourceTree = "<group>"; };
 		32A4038E1A2D1D5400330615 /* DismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissSegue.m; sourceTree = "<group>"; };
 		32C489021A2FC62D0043D080 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		32C489031A2FC62D0043D080 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		32C489051A309A970043D080 /* OmaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OmaTableViewCell.h; sourceTree = "<group>"; };
+		32C489061A309A970043D080 /* OmaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OmaTableViewCell.m; sourceTree = "<group>"; };
 		C0E1D86302B78F476B3D79BA /* Pods-RaTimer3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaTimer3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaTimer3/Pods-RaTimer3.debug.xcconfig"; sourceTree = "<group>"; };
 		E66C53FC715F1D4D97B9939F /* Pods-RaTimer3Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaTimer3Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaTimer3Tests/Pods-RaTimer3Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E770BF08DE4B1197911BF605 /* libPods-RaTimer3.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RaTimer3.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,10 +109,9 @@
 			children = (
 				32C489021A2FC62D0043D080 /* SettingsViewController.h */,
 				32C489031A2FC62D0043D080 /* SettingsViewController.m */,
+				32C489051A309A970043D080 /* OmaTableViewCell.h */,
+				32C489061A309A970043D080 /* OmaTableViewCell.m */,
 				3243E0071A0BC85F00C64A65 /* TallennetutKohteet.plist */,
-				3243DFFD1A08EC9900C64A65 /* OmaTableViewCell.h */,
-				3243DFFE1A08EC9900C64A65 /* OmaTableViewCell.m */,
-				3243DFFF1A08EC9900C64A65 /* 256px-Common_Squirrel.jpg */,
 				3243DFD31A08EC1500C64A65 /* AppDelegate.h */,
 				3243DFD41A08EC1500C64A65 /* AppDelegate.m */,
 				3243DFD61A08EC1500C64A65 /* MasterViewController.h */,
@@ -237,7 +234,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3243DFC71A08EC1500C64A65 /* Build configuration list for PBXProject "RaTimer3" */;
+			buildConfigurationList = 3243DFC71A08EC1500C64A65 /* Build configuration list for PBXProject "RaTimer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -262,7 +259,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3243DFDE1A08EC1500C64A65 /* Main.storyboard in Resources */,
-				3243E0011A08EC9900C64A65 /* 256px-Common_Squirrel.jpg in Resources */,
 				3243DFE31A08EC1500C64A65 /* LaunchScreen.xib in Resources */,
 				3243E0081A0BC85F00C64A65 /* TallennetutKohteet.plist in Resources */,
 				3243DFE01A08EC1500C64A65 /* Images.xcassets in Resources */,
@@ -347,8 +343,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3243DFD51A08EC1500C64A65 /* AppDelegate.m in Sources */,
+				32C489071A309A970043D080 /* OmaTableViewCell.m in Sources */,
 				3243DFD81A08EC1500C64A65 /* MasterViewController.m in Sources */,
-				3243E0001A08EC9900C64A65 /* OmaTableViewCell.m in Sources */,
 				3243DFD21A08EC1500C64A65 /* main.m in Sources */,
 				32A4038F1A2D1D5400330615 /* DismissSegue.m in Sources */,
 				3243DFDB1A08EC1500C64A65 /* DetailViewController.m in Sources */,
@@ -535,7 +531,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3243DFC71A08EC1500C64A65 /* Build configuration list for PBXProject "RaTimer3" */ = {
+		3243DFC71A08EC1500C64A65 /* Build configuration list for PBXProject "RaTimer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3243DFF01A08EC1500C64A65 /* Debug */,

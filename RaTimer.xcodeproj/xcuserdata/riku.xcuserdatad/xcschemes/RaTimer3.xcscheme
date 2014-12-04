@@ -17,7 +17,7 @@
                BlueprintIdentifier = "3243DFCB1A08EC1500C64A65"
                BuildableName = "RaTimer3.app"
                BlueprintName = "RaTimer3"
-               ReferencedContainer = "container:RaTimer3.xcodeproj">
+               ReferencedContainer = "container:RaTimer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "3243DFE71A08EC1500C64A65"
                BuildableName = "RaTimer3Tests.xctest"
                BlueprintName = "RaTimer3Tests"
-               ReferencedContainer = "container:RaTimer3.xcodeproj">
+               ReferencedContainer = "container:RaTimer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -49,7 +49,7 @@
                BlueprintIdentifier = "3243DFE71A08EC1500C64A65"
                BuildableName = "RaTimer3Tests.xctest"
                BlueprintName = "RaTimer3Tests"
-               ReferencedContainer = "container:RaTimer3.xcodeproj">
+               ReferencedContainer = "container:RaTimer.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -59,7 +59,7 @@
             BlueprintIdentifier = "3243DFCB1A08EC1500C64A65"
             BuildableName = "RaTimer3.app"
             BlueprintName = "RaTimer3"
-            ReferencedContainer = "container:RaTimer3.xcodeproj">
+            ReferencedContainer = "container:RaTimer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "3243DFCB1A08EC1500C64A65"
             BuildableName = "RaTimer3.app"
             BlueprintName = "RaTimer3"
-            ReferencedContainer = "container:RaTimer3.xcodeproj">
+            ReferencedContainer = "container:RaTimer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,7 +96,7 @@
             BlueprintIdentifier = "3243DFCB1A08EC1500C64A65"
             BuildableName = "RaTimer3.app"
             BlueprintName = "RaTimer3"
-            ReferencedContainer = "container:RaTimer3.xcodeproj">
+            ReferencedContainer = "container:RaTimer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
