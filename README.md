@@ -4,8 +4,15 @@ Simple time tracking app demo for iOS8.
 
 ## Installation
 
-XCode 6 and iOS simulator required. Cocoapods required. Requisite pods should be installed by running
-    pod install
+Requires XCode 6.
+
+Requires cocoapods, which can be installed with
+
+sudo gem install cocoapods
+
+Then, pods used by RaTimer can be installed with
+
+pod install
 
 ## Usage
 
