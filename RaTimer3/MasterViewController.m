@@ -104,20 +104,15 @@
         //dataa pitää siirtää detailviewistä takaisinpäin:
         controller.delegate=self;
     }
-    //masterview asetetaan settingsin popovercontrollerin delegaatiksi
     if ([segue.identifier isEqualToString:@"naytaPopover"]) {
         UINavigationController *navigationController = segue.destinationViewController;
         SettingsViewController *settingsViewController = navigationController.viewControllers.firstObject;
         UIPopoverPresentationController *popoverPresentaatioController = navigationController.popoverPresentationController;
+        //masterview asetetaan settingsin popovercontrollerin delegaatiksi
         popoverPresentaatioController.delegate = self;
-        //asetetaan settingsin kontrollit asetusten mukaisiksi ja tehdään niille actionit:
-        [settingsViewController.rangeSegmentedControl addTarget:self action:@selector(paivitaAikavali:) forControlEvents:UIControlEventValueChanged];
-        switch (self.naytettavaAikavali) {
-            case (NSCalendarUnitDay): settingsViewController.rangeSegmentedControl.selectedSegmentIndex=1;
-            case (NSCalendarUnitWeekOfMonth): settingsViewController.rangeSegmentedControl.selectedSegmentIndex=2;
-            case (NSCalendarUnitMonth): settingsViewController.rangeSegmentedControl.selectedSegmentIndex=3;
-            case (NSCalendarUnitYear): settingsViewController.rangeSegmentedControl.selectedSegmentIndex=4;
-        }
+        //settingsviewcontrollerin IBOutletteja ei voi konfiguroida ennen segueta - viewtä ei ole alustettu
+        //sen sijaan asetetaan masterview myös settingsviewcontrollerin delegaatiksi:
+        settingsViewController.delegate = self;
     }
 
 }
@@ -138,8 +133,8 @@
     return UIModalPresentationNone;
 }
 
-- (void) paivitaAikavali:(id) sender {
-    
+- (void)paivitaTaulukko {
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table View

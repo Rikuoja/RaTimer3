@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "DetailViewController.h"
+#import "SettingsViewController.h"
 
 @class DetailViewController;
 
-@interface MasterViewController : UITableViewController <DetailViewControllerDelegate, UIPopoverPresentationControllerDelegate>
+@interface MasterViewController : UITableViewController <DetailViewControllerDelegate, UIPopoverPresentationControllerDelegate, SettingsViewControllerDelegate>
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 //tallennetaan kohteet yhteen arrayhin:
@@ -23,12 +24,13 @@
 //miltä aikaväliltä kulunut aika näytetään:
 @property (nonatomic) NSCalendarUnit naytettavaAikavali;
 
-
 - (IBAction)playPainettu:(UIButton *)sender;
 - (void)tallennaKohteet;
 - (void)lueKohteet;
 - (NSDateComponents *)aikaaKulunut:(NSMutableDictionary *)kysyttyKohde aikavalilla:(NSCalendarUnit)haluttuAikavali;
 - (NSString *)aikaaKulunutSelkokielella:(NSDateComponents *)aikaaKulunut;
+- (void)muuttunutKohde:(NSMutableDictionary *) kohde vanhaKohde:(NSMutableDictionary *) vanha;
+- (void)paivitaTaulukko;
 
 @end
 

@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SettingsViewControllerDelegate;
+
 @interface SettingsViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *rangeSegmentedControl;
+@property (nonatomic, assign) id <SettingsViewControllerDelegate> delegate;
 
+- (IBAction)paivitaAikavali:(id)sender;
+
+@end
+
+@protocol SettingsViewControllerDelegate <NSObject>
+@property (nonatomic) NSCalendarUnit naytettavaAikavali;
+- (void)paivitaTaulukko;
 @end

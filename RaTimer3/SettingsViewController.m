@@ -7,6 +7,7 @@
 //
 
 #import "SettingsViewController.h"
+#import "DismissSegue.h"
 
 @interface SettingsViewController ()
 
@@ -17,6 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    switch (self.delegate.naytettavaAikavali) {
+        case (NSCalendarUnitDay): self.rangeSegmentedControl.selectedSegmentIndex=0; break;
+        case (NSCalendarUnitWeekOfMonth): self.rangeSegmentedControl.selectedSegmentIndex=1; break;
+        case (NSCalendarUnitMonth): self.rangeSegmentedControl.selectedSegmentIndex=2; break;
+        case (NSCalendarUnitYear): self.rangeSegmentedControl.selectedSegmentIndex=3; break;
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +42,15 @@
 }
 */
 
+- (IBAction)paivitaAikavali:(id)sender {
+    switch (self.rangeSegmentedControl.selectedSegmentIndex) {
+        case (0): self.delegate.naytettavaAikavali=NSCalendarUnitDay; break;
+        case (1): self.delegate.naytettavaAikavali=NSCalendarUnitWeekOfMonth; break;
+        case (2): self.delegate.naytettavaAikavali=NSCalendarUnitMonth; break;
+        case (3): self.delegate.naytettavaAikavali=NSCalendarUnitYear; break;
+    }
+    [self.delegate paivitaTaulukko];
+    //käytetään storyboardin dismiss-segueta poistumiseen:
+    [self performSegueWithIdentifier:@"dismiss" sender:self];
+}
 @end
