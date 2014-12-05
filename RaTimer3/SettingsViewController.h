@@ -25,4 +25,5 @@
 @property (nonatomic) NSCalendarUnit naytettavaAikavali;
 @property (nonatomic) NSTimeInterval ajanNayttotarkkuus;
 - (void)paivitaTaulukko;
+- (void)tallennaAsetukset;
 @end

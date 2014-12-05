@@ -15,8 +15,9 @@
 
 @interface MasterViewController ()
 
-//tallennettavan plistin sijainti:
-@property (strong, nonatomic) NSString *path;
+//tallennettavien plistien sijainti:
+@property (strong, nonatomic) NSString *kohteetPath;
+@property (strong, nonatomic) NSString *asetuksetPath;
 @end
 
 @implementation MasterViewController
@@ -31,6 +32,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.ajanNayttotarkkuus = 60;
+    self.naytettavaAikavali = NSCalendarUnitWeekOfMonth; //oletusarvot
+    
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
@@ -48,22 +52,29 @@
     
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
-    //asetetaan haluttu sijainti plistille (tässä documentdirectory):
-    self.path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    self.path = [self.path stringByAppendingPathComponent:@"TallennetutKohteet.plist"];
+    //asetetaan haluttu sijainti plisteille (tässä documentdirectory):
+    self.kohteetPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    self.kohteetPath = [self.kohteetPath stringByAppendingPathComponent:@"TallennetutKohteet.plist"];
+    self.asetuksetPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    self.asetuksetPath = [self.asetuksetPath stringByAppendingPathComponent:@"Asetukset.plist"];
     
-    //kopioidaan documentdirectoryyn testiplist, jos käyttäjällä ei ole plistiä:
+    //kopioidaan documentdirectoryyn esimerkkikohteet ja oletusasetukset, jos plistejä ei löydy:
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
-    if (![fileManager fileExistsAtPath:self.path]) {
+    if (![fileManager fileExistsAtPath:self.kohteetPath]) {
         NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"TallennetutKohteet" ofType:@"plist"];
-        [fileManager copyItemAtPath:sourcePath toPath:self.path error:nil];
+        [fileManager copyItemAtPath:sourcePath toPath:self.kohteetPath error:nil];
     }
     [self lueKohteet];
     
     //ladataan asetukset:
-    self.ajanNayttotarkkuus = 60;
-    self.naytettavaAikavali = NSCalendarUnitWeekOfMonth; //oletusarvot
+    
+    if (![fileManager fileExistsAtPath:self.asetuksetPath]) {
+        NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"Asetukset" ofType:@"plist"];
+        [fileManager copyItemAtPath:sourcePath toPath:self.asetuksetPath error:nil];
+    }
+    [self lueAsetukset];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -336,11 +347,7 @@
 #pragma mark - I/O
 
 - (void)tallennaKohteet {
-    //Tällä voi halutessaan luoda testiplistin uudestaan:
-    /*self.objects = [NSMutableArray arrayWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:@"Opetus",@"Nimi",@"256px-Common_Squirrel.jpg",@"Vari",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Materiaali & suunnittelu",@"Nimi",@"256px-Common_Squirrel.jpg",@"Vari",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Muut työt",@"Nimi",@"256px-Common_Squirrel.jpg",@"Vari",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Opiskelu",@"Nimi",@"256px-Common_Squirrel.jpg",@"Vari",@NO,@"Kaytossa", nil],[NSDictionary dictionaryWithObjectsAndKeys:@"Oravien ruokinta",@"Nimi",@"256px-Common_Squirrel.jpg",@"Vari",@NO,@"Kaytossa", nil],nil];
-     */
-    
-    [self.objects writeToFile:self.path atomically:YES];
+    [self.objects writeToFile:self.kohteetPath atomically:YES];
     
     //Propertylistserialization tekee täsmälleen saman optiolla NSDataWritingAtomic:
     /*
@@ -362,11 +369,29 @@
     //luodaan tiedostosta mutablearray, jossa sisällä mutabledictionaryja:
     NSError *virhe;
     NSPropertyListFormat alkuperainenFormaatti;
-    NSData *data = [NSData dataWithContentsOfFile:self.path];
+    NSData *data = [NSData dataWithContentsOfFile:self.kohteetPath];
     self.objects = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListMutableContainers format:&alkuperainenFormaatti error:&virhe];
     //luodaan samankokoinen tyhjä ajastinarray:
     self.ajastimet = [NSMutableArray arrayWithCapacity:self.objects.count];
     for (id kohde in self.objects) [self.ajastimet addObject:[NSNull null]];
+}
+
+- (void)tallennaAsetukset {
+    //enumit ja typet muutettava objekteiksi:
+    NSMutableDictionary* asetukset = [NSMutableDictionary dictionary];
+    asetukset[@"ajanNayttotarkkuus"]=[NSNumber numberWithInt:self.ajanNayttotarkkuus];
+    asetukset[@"naytettavaAikavali"]=[NSNumber numberWithInt:self.naytettavaAikavali];
+    [asetukset writeToFile:self.asetuksetPath atomically:YES];
+}
+
+- (void)lueAsetukset {
+    NSError *virhe;
+    NSPropertyListFormat alkuperainenFormaatti;
+    NSData *data = [NSData dataWithContentsOfFile:self.asetuksetPath];
+    NSMutableDictionary* asetukset = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListMutableContainers format:&alkuperainenFormaatti error:&virhe];
+    //objektit muutettava inteiksi:
+    self.ajanNayttotarkkuus = [asetukset[@"ajanNayttotarkkuus"] intValue];
+    self.naytettavaAikavali = [asetukset[@"naytettavaAikavali"] intValue];
 }
 
 @end

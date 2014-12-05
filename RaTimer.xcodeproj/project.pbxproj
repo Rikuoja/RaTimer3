@@ -17,6 +17,7 @@
 		3243DFE31A08EC1500C64A65 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3243DFE11A08EC1500C64A65 /* LaunchScreen.xib */; };
 		3243DFEF1A08EC1500C64A65 /* RaTimer3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3243DFEE1A08EC1500C64A65 /* RaTimer3Tests.m */; };
 		3243E0081A0BC85F00C64A65 /* TallennetutKohteet.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3243E0071A0BC85F00C64A65 /* TallennetutKohteet.plist */; };
+		3298B9CC1A32254500BBAD36 /* Asetukset.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3298B9CB1A32254500BBAD36 /* Asetukset.plist */; };
 		32A4038F1A2D1D5400330615 /* DismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A4038E1A2D1D5400330615 /* DismissSegue.m */; };
 		32C489041A2FC62D0043D080 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C489031A2FC62D0043D080 /* SettingsViewController.m */; };
 		32C489071A309A970043D080 /* OmaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C489061A309A970043D080 /* OmaTableViewCell.m */; };
@@ -53,6 +54,7 @@
 		3243DFED1A08EC1500C64A65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3243DFEE1A08EC1500C64A65 /* RaTimer3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RaTimer3Tests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		3243E0071A0BC85F00C64A65 /* TallennetutKohteet.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TallennetutKohteet.plist; sourceTree = "<group>"; };
+		3298B9CB1A32254500BBAD36 /* Asetukset.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Asetukset.plist; sourceTree = "<group>"; };
 		32A4038D1A2D1D5400330615 /* DismissSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissSegue.h; sourceTree = "<group>"; };
 		32A4038E1A2D1D5400330615 /* DismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissSegue.m; sourceTree = "<group>"; };
 		32C489021A2FC62D0043D080 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				32C489031A2FC62D0043D080 /* SettingsViewController.m */,
 				32C489051A309A970043D080 /* OmaTableViewCell.h */,
 				32C489061A309A970043D080 /* OmaTableViewCell.m */,
+				3298B9CB1A32254500BBAD36 /* Asetukset.plist */,
 				3243E0071A0BC85F00C64A65 /* TallennetutKohteet.plist */,
 				3243DFD31A08EC1500C64A65 /* AppDelegate.h */,
 				3243DFD41A08EC1500C64A65 /* AppDelegate.m */,
@@ -262,6 +265,7 @@
 				3243DFE31A08EC1500C64A65 /* LaunchScreen.xib in Resources */,
 				3243E0081A0BC85F00C64A65 /* TallennetutKohteet.plist in Resources */,
 				3243DFE01A08EC1500C64A65 /* Images.xcassets in Resources */,
+				3298B9CC1A32254500BBAD36 /* Asetukset.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

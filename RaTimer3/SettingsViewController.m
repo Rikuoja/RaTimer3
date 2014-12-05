@@ -55,6 +55,7 @@
         case (3): self.delegate.naytettavaAikavali=NSCalendarUnitYear; break;
     }
     [self.delegate paivitaTaulukko];
+    [self.delegate tallennaAsetukset];
     //käytetään storyboardin dismiss-segueta poistumiseen:
     [self performSegueWithIdentifier:@"dismiss" sender:self];
 }
@@ -67,6 +68,7 @@
         case (3): self.delegate.ajanNayttotarkkuus=60*60; break;
     }
     [self.delegate paivitaTaulukko];
+    [self.delegate tallennaAsetukset];
     //käytetään storyboardin dismiss-segueta poistumiseen:
     [self performSegueWithIdentifier:@"dismiss" sender:self];
 }
