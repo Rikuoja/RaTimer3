@@ -19,11 +19,10 @@
 @property (nonatomic) NSTimeInterval ajanNayttotarkkuus;
 //miltä aikaväliltä kulunut aika näytetään:
 @property (nonatomic) NSCalendarUnit naytettavaAikavali;
-
-//(kohteet ja ajastimet julkisessa headerissa performance-testejä varten:
 //tallennetaan kohteet yhteen arrayhin:
 @property (strong, nonatomic) NSMutableArray *objects;
 //tallennetaan ruudunpäivityksestä vastaavat ajastimet toiseen arrayhin (ei voi tallentaa plistiin):
+//ajastinten ja kohteiden olisi parempi olla ei-julkisia, mutta tämä estäisi testauksen ja toisaalta detailviewin tekemän kaikkien kohteiden visualisaation.
 @property (strong, nonatomic) NSMutableArray *ajastimet;
 
 - (IBAction)playPainettu:(UIButton *)sender;

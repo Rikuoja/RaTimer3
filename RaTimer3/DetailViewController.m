@@ -13,6 +13,12 @@
 #import "HRColorMapView.h"
 #import "HRBrightnessSlider.h"
 #import "HRColorInfoView.h"
+#import "CPTGraph.h"
+#import "CPTGraphHostingView.h"
+#import "CPTTheme.h"
+#import "CPTMutableTextStyle.h"
+#import "CPTColor.h"
+#import "CPTXYGraph.h"
 
 @interface DetailViewController ()
 
@@ -50,24 +56,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Protocols
-
-- (BOOL) textFieldShouldReturn:(UITextField *)textField {
-    //pointteri vanhaan kohteeseen säilytettävä jotta delegaatti löytää sen:
-    NSMutableDictionary* muuttunutKohde = [self.detailItem mutableCopy];
-    muuttunutKohde[@"Nimi"]=self.nimiTextField.text;
-    //tällä delegaatti kirjoittaa uuden kohteen pointterin vanhan päälle ja päivittää itsensä:
-    [self.delegate muuttunutKohde:(NSMutableDictionary *)muuttunutKohde vanhaKohde:(NSMutableDictionary *)self.detailItem];
-    //näillä detailviewcontroller tekee saman:
-    self.detailItem=muuttunutKohde;
-    [self configureView];
-    return YES;
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    //interface builder on piirtänyt plottialueet vasta nyt => voidaan piirtää kuvaajat!
+    [self piirraKuvat];
 }
 
-- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
-    //tarvitaan uipopoverpresentationcontrollerdelegate-protokollaan!
-    return UIModalPresentationNone;
-}
 
 #pragma mark - Segues
 
@@ -100,6 +94,99 @@
     //näillä detailviewcontroller tekee saman:
     self.detailItem=muuttunutKohde;
     [self configureView];
+}
+
+
+#pragma mark - Protocols
+
+- (BOOL) textFieldShouldReturn:(UITextField *)textField {
+    //pointteri vanhaan kohteeseen säilytettävä jotta delegaatti löytää sen:
+    NSMutableDictionary* muuttunutKohde = [self.detailItem mutableCopy];
+    muuttunutKohde[@"Nimi"]=self.nimiTextField.text;
+    //tällä delegaatti kirjoittaa uuden kohteen pointterin vanhan päälle ja päivittää itsensä:
+    [self.delegate muuttunutKohde:(NSMutableDictionary *)muuttunutKohde vanhaKohde:(NSMutableDictionary *)self.detailItem];
+    //näillä detailviewcontroller tekee saman:
+    self.detailItem=muuttunutKohde;
+    [self configureView];
+    return YES;
+}
+
+- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
+    //tarvitaan uipopoverpresentationcontrollerdelegate-protokollaan!
+    return UIModalPresentationNone;
+}
+
+#pragma mark - Visualization
+
+- (void) piirraKuvat {
+    NSMutableArray* kuvaViewit = [NSMutableArray array];
+    NSMutableArray* kuvaGraphit = [NSMutableArray array];
+    NSMutableArray* otsikot = [NSMutableArray array];
+    NSMutableArray* pieChartit = [NSMutableArray array];
+    [kuvaViewit addObject:self.paivaView];
+    [otsikot addObject:@"Today"];
+    [kuvaViewit addObject:self.viikkoView];
+    [otsikot addObject:@"This week"];
+    [kuvaViewit addObject:self.kuukausiView];
+    [otsikot addObject:@"This month"];
+    [kuvaViewit addObject:self.vuosiView];
+    [otsikot addObject:@"This year"];
+    for (CPTGraphHostingView* view in kuvaViewit) {
+        view.allowPinchScaling=NO;
+        CPTXYGraph* lisattavaGraph=[[CPTXYGraph alloc] initWithFrame:view.bounds];
+        view.hostedGraph=lisattavaGraph;
+        [kuvaGraphit addObject:lisattavaGraph];
+    }
+    for (CPTXYGraph* graph in kuvaGraphit) {
+        graph.paddingLeft = 0.0f;
+        graph.paddingTop = 0.0f;
+        graph.paddingRight = 0.0f;
+        graph.paddingBottom = 0.0f;
+        graph.axisSet = nil;
+        graph.title = otsikot[[kuvaGraphit indexOfObject:graph]];
+        CPTMutableTextStyle *textStyle = [CPTMutableTextStyle textStyle];
+        textStyle.color = [CPTColor grayColor];
+        textStyle.fontName = @"Helvetica-Bold";
+        textStyle.fontSize = 16.0f;
+        [graph applyTheme:[CPTTheme themeNamed:kCPTPlainWhiteTheme]];
+        //sitten vihdoin lisätään piechart:
+        CPTPieChart* pieChart;
+        pieChart = [[CPTPieChart alloc] init];
+        pieChart.dataSource = self;
+        pieChart.delegate = self;
+        pieChart.pieRadius = ((CPTGraphHostingView *)kuvaViewit[[kuvaGraphit indexOfObject:graph]]).bounds.size.height*0.35;
+        pieChart.startAngle = M_PI_4;
+        pieChart.sliceDirection = CPTPieDirectionClockwise;
+        pieChart.identifier = (NSString* )otsikot[[kuvaGraphit indexOfObject:graph]];
+        [graph addPlot:pieChart];
+        [pieChartit addObject:pieChart];
+    }
+}
+
+#pragma mark - CPTPieChartDataSource methods
+-(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot {
+    return [self.delegate.objects count];
+}
+
+-(NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index {
+    NSCalendarUnit haluttuAikavali;
+    NSDateComponents* tunnitMinuutitSekunnit;
+    if ([plot.identifier isEqual:@"Today"]) haluttuAikavali=NSCalendarUnitDay;
+    if ([plot.identifier isEqual:@"This week"]) haluttuAikavali=NSCalendarUnitWeekOfMonth;
+    if ([plot.identifier isEqual:@"This month"]) haluttuAikavali=NSCalendarUnitMonth;
+    if ([plot.identifier isEqual:@"This year"]) haluttuAikavali=NSCalendarUnitYear;
+    tunnitMinuutitSekunnit=[self.delegate aikaaKulunut:self.delegate.objects[index] aikavalilla:haluttuAikavali];
+    if (CPTPieChartFieldSliceWidth == fieldEnum) {
+        return [NSNumber numberWithInt:tunnitMinuutitSekunnit.hour*60*60+tunnitMinuutitSekunnit.minute*60+tunnitMinuutitSekunnit.second];
+    } else return nil;
+}
+
+-(CPTLayer *)dataLabelForPlot:(CPTPlot *)plot recordIndex:(NSUInteger)index {
+    return nil;
+}
+
+-(NSString *)legendTitleForPieChart:(CPTPieChart *)pieChart recordIndex:(NSUInteger)index {
+    return @"";
 }
 
 @end
